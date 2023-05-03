@@ -1,0 +1,9 @@
+empleado1;1234;empleado
+admin;1*;administrador
+empleado2;1234567;empleado
+gaviotiva911;hola;usuario;holac;12345;usuario;
+holacol;123;usuario
+gavis;1234;usuario
+gabriela;1234;usuario
+francois;1234;usuario
+nicoxd;nico;usuario
