@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.List;
 
 import java.util.Set;
-
+//molina es perdedor y gay
 public class FuncionesEmpleado {
 	Inventario inventarioInstancia = new Inventario();
 	HashMap<String, ArrayList<Date>> inventario = inventarioInstancia.getInventario();
