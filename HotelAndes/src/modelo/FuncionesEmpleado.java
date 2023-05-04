@@ -1,4 +1,4 @@
-package Logica;
+package modelo;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,6 +12,14 @@ import java.util.HashSet;
 import java.util.List;
 
 import java.util.Set;
+
+import logica_.Bebida;
+import logica_.Consumo;
+import logica_.Habitacion;
+import logica_.HuespedReserva;
+import logica_.Plato;
+import logica_.Servicio;
+
 //molina es perdedor y gay
 public class FuncionesEmpleado {
 	Inventario inventarioInstancia = new Inventario();
@@ -253,7 +261,7 @@ public class FuncionesEmpleado {
 	}
 
 	public void cargarConsumo(HashMap<String, Object> opcion) {
-		Servicio elServicio=null;
+		Servicio elServicio = null;
 		System.out.println(opcion);
 		if (opcion.get("bebidas") != null) {
 			Object op = opcion.get("bebidas");
@@ -273,15 +281,13 @@ public class FuncionesEmpleado {
 		}
 		if (elServicio == null) {
 			System.out.println("Algo Salio Mal");
-		} 
-		
-			Consumo objconsumo = new Consumo(LocalDate.now(), (String) elServicio.getNombre(),
-					elServicio.getPrecioTotal(), (float) (elServicio.getPrecioTotal() * 0.19), false);
-			HuespedReserva a = (HuespedReserva) opcion.get("reserva");
-			HashMap<String, Consumo> losconsumos = a.getConsumos();
-			losconsumos.put(objconsumo.getNombre(), objconsumo);
+		}
 
-		
+		Consumo objconsumo = new Consumo(LocalDate.now(), (String) elServicio.getNombre(), elServicio.getPrecioTotal(),
+				(float) (elServicio.getPrecioTotal() * 0.19), false);
+		HuespedReserva a = (HuespedReserva) opcion.get("reserva");
+		HashMap<String, Consumo> losconsumos = a.getConsumos();
+		losconsumos.put(objconsumo.getNombre(), objconsumo);
 
 	}
 

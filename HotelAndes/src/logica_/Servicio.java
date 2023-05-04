@@ -1,4 +1,4 @@
-package Logica;
+package logica_;
 
 public interface Servicio {
 	public String getNombre() ;

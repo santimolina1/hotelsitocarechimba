@@ -1,4 +1,4 @@
-package Logica;
+package modelo;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -11,7 +11,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
-import Logica.modelo.Tarifa;
+import logica_.Bebida;
+import logica_.Cama;
+import logica_.Habitacion;
+import logica_.Plato;
+import logica_.Reserva;
+import logica_.Servicio;
+import logica_.ServicioRecreativo;
+import logica_.Tarifa;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -1,11 +1,11 @@
-package Consola;
+package consola;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import Logica.CargadorArchivo;
+import modelo.CargadorArchivo;
 
 public class  AplicacionPrincipal {
 	Hotel hotel= new Hotel();

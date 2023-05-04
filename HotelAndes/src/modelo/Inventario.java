@@ -1,8 +1,10 @@
-package Logica;
+package modelo;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+
+import logica_.Habitacion;
 
 public class Inventario {
 

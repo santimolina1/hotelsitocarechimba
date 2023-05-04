@@ -1,9 +1,4 @@
-package Consola;
-
-import Logica.Bebida;
-import Logica.CargadorArchivo;
-import Logica.Consumo;
-import Logica.Factura;
+package consola;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -17,13 +12,17 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-import Logica.Reserva;
-import Logica.Servicio;
-import Logica.FuncionesEmpleado;
-import Logica.Habitacion;
-import Logica.HuespedReserva;
-import Logica.Inventario;
-import Logica.Plato;
+import logica_.Bebida;
+import logica_.Consumo;
+import logica_.Factura;
+import logica_.Habitacion;
+import logica_.HuespedReserva;
+import logica_.Plato;
+import logica_.Reserva;
+import logica_.Servicio;
+import modelo.CargadorArchivo;
+import modelo.FuncionesEmpleado;
+import modelo.Inventario;
 
 public class AplicacionCliente {
 	public HashMap<String, HuespedReserva> huespedes = new HashMap<String, HuespedReserva>();

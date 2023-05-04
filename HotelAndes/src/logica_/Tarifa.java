@@ -1,10 +1,10 @@
-package Logica.modelo;
+package logica_;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
-import Logica.CargadorArchivo;
+import modelo.CargadorArchivo;
 
 public class Tarifa {
 	CargadorArchivo cargador = CargadorArchivo.getInstance();

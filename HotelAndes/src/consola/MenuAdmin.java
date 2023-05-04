@@ -1,6 +1,4 @@
-package Consola;
-
-import Logica.CargadorArchivo;
+package consola;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,12 +12,13 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-import Logica.Bebida;
-import Logica.Cama;
-import Logica.Habitacion;
-import Logica.Plato;
-import Logica.Servicio;
-import Logica.modelo.Tarifa;
+import logica_.Bebida;
+import logica_.Cama;
+import logica_.Habitacion;
+import logica_.Plato;
+import logica_.Servicio;
+import logica_.Tarifa;
+import modelo.CargadorArchivo;
 
 public class MenuAdmin {
 	static CargadorArchivo Admin= CargadorArchivo.getInstance();

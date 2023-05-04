@@ -1,16 +1,13 @@
-package Logica;
+package logica_;
 
 public class ProductoMenu {
-	
-	public String nombre;
-	public float precio;
+
+	private String nombre;
+	private float precio;
 
 	private float getPrecio() {
 		return precio;
 	}
-
-
-	
 
 	public ProductoMenu() {
 		// TODO Auto-generated constructor stub

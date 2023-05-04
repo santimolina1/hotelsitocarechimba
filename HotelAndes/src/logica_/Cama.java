@@ -1,16 +1,19 @@
-package Logica;
+package logica_;
 
 import java.util.HashMap;
 
+import modelo.CargadorArchivo;
+
 public class Cama {
-	CargadorArchivo cargador=CargadorArchivo.getInstance();
-	//Atributos
+	CargadorArchivo cargador = CargadorArchivo.getInstance();
+	// Atributos
 	public String tamaño;
-	public String uso;
-	public int numeroNiños;
-	public int numeroAdultos;
-	public HashMap<String,Cama> camas= cargador.getCamas();
-	//Constructor
+	private String uso;
+	private int numeroNiños;
+	private int numeroAdultos;
+	private HashMap<String, Cama> camas = cargador.getCamas();
+
+	// Constructor
 	public Cama(String tamaño, String uso, int numeroNiños, int numeroAdultos) {
 		this.tamaño = tamaño;
 		this.uso = uso;
@@ -33,7 +36,5 @@ public class Cama {
 	public int getNumeroAdultos() {
 		return numeroAdultos;
 	}
-	
-	
 
 }

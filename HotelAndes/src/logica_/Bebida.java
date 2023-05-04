@@ -1,6 +1,8 @@
-package Logica;
+package logica_;
 
 import java.util.HashMap;
+
+import modelo.CargadorArchivo;
 
 public  class Bebida implements Servicio {
 	CargadorArchivo cargador= CargadorArchivo.getInstance();

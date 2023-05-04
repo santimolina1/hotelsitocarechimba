@@ -1,4 +1,4 @@
-package Consola;
+package consola;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
-import Logica.Cama;
+import logica_.Cama;
 
 public class Hotel {
 	public String nombre = "Hotel Andes";
