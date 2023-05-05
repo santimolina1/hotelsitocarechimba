@@ -20,7 +20,7 @@ import logica_.HuespedReserva;
 import logica_.Plato;
 import logica_.Servicio;
 
-//molina es perdedor y gay
+
 public class FuncionesEmpleado {
 	Inventario inventarioInstancia = new Inventario();
 	HashMap<String, ArrayList<Date>> inventario = inventarioInstancia.getInventario();

@@ -34,7 +34,7 @@ public class AplicacionCliente {
 	FuncionesEmpleado empleado = new FuncionesEmpleado();
 	Inventario inventarioInstancia = new Inventario();
 	HashMap<String, ArrayList<Date>> inventario = inventarioInstancia.getInventario();
-
+	Hotel hotel= new Hotel();
 	// public HashMap<HuespedReserva, Reserva> reservas = new
 	// HashMap<HuespedReserva, Reserva>();
 
@@ -310,7 +310,7 @@ public class AplicacionCliente {
 			Reserva reserva = new Reserva(huesped, Fecha_llegada, Fecha_salida, precio_habitaciones,
 					cantidadDeAcompañantes, numHabitaciones, 0, false, xd);
 			reservas.put(nombre, reserva);
-
+			hotel.crearReserva(reserva);
 		}
 
 	}
@@ -323,7 +323,7 @@ public class AplicacionCliente {
 		Date Fecha_llegada = reserva.getFecha_llegada();
 		Date Fecha_salida = reserva.getFecha_salida();
 		String xd = empleado.cancelarReserva(habitacionesReserva, Fecha_llegada, Fecha_salida, inventario);
-
+		hotel.eliminarReserva(nombre, Fecha_llegada, Fecha_salida);
 	}
 
 	public static void main(String[] args) throws IOException {

@@ -1,17 +1,22 @@
 package consola;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
 import logica_.Cama;
+import logica_.HuespedReserva;
+import logica_.Reserva;
 
 public class Hotel {
 	public String nombre = "Hotel Andes";
@@ -105,5 +110,78 @@ public class Hotel {
 		}
 		return retorno;
 	}
+	
+	public String crearReserva(Reserva reserva) throws IOException {
+		
+		String retorno="";
+		File archivo= new File("./data/reservas.txt");
+		HuespedReserva huesped=reserva.getHuespedReserva();
+		String nombre=huesped.getNombre();
+		Date fecha_llegada=reserva.getFecha_llegada();
+		Date fecha_salida=reserva.getFecha_salida();
+		int acompañantes=reserva.getCantidadDeAcompañantes();
+		ArrayList<String> habitaciones=reserva.getHabitaciones();
+		String habs= String.join(",",habitaciones);
+	
+		
+		FileWriter escritor= new FileWriter(archivo,true);
+		escritor.write(nombre+";");
+		escritor.write(fecha_llegada+";");
+		escritor.write(fecha_salida+";");
+		escritor.write(acompañantes+";");
+		escritor.write(habs+";");
+		escritor.write("reserva"+"\n");
+		escritor.close();
+		
+		
+		
+		
+		
+		
+		return retorno ;
+		
+		
+	}
+
+	public String eliminarReserva(String nombre, Date fechaLlegada, Date fechaSalida) {
+	    String retorno = "";
+	    try {
+	        File archivo = new File("./data/reservas.txt");
+	        File tempArchivo = new File("./data/reservas_temp.txt");
+	        BufferedReader lector = new BufferedReader(new FileReader(archivo));
+	        BufferedWriter escritor = new BufferedWriter(new FileWriter(tempArchivo));
+
+	        String lineaActual;
+
+	        while ((lineaActual = lector.readLine()) != null) {
+	            String[] datos = lineaActual.split(";");
+
+	            // Comparamos los datos de la reserva actual con los parámetros de entrada
+	            String nombreReserva = datos[0];
+	            Date llegadaReserva = new Date(Long.parseLong(datos[1]));
+	            Date salidaReserva = new Date(Long.parseLong(datos[2]));
+
+	            if (nombreReserva.equals(nombre) && llegadaReserva.equals(fechaLlegada) && salidaReserva.equals(fechaSalida)) {
+	                continue; // Saltamos la línea actual, que corresponde a la reserva que queremos eliminar
+	            }
+
+	            // Si la línea actual no corresponde a la reserva que queremos eliminar, la escribimos en el archivo temporal
+	            escritor.write(lineaActual + System.getProperty("line.separator"));
+	        }
+
+	        escritor.close();
+	        lector.close();
+
+	        // Borramos el archivo original y renombramos el temporal con su nombre
+	        archivo.delete();
+	        tempArchivo.renameTo(archivo);
+
+	    } catch (IOException e) {
+	        retorno = "Error al intentar eliminar la reserva.";
+	    }
+	    return retorno;
+	}
+
+
 
 }
