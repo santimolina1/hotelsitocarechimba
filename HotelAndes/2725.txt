@@ -1,0 +1,8 @@
+Número de factura: 5789
+Fecha: 2023-05-06
+Nombre: g
+Producto   ----   Precio ----  Pagado
+Alitas   ----   36000.0   ----   false
+Precio neto de lo NO pago: 36000.0
+valor del IVA de lo NO pago: 6840.0
+Valor total de lo NO pago: 42840.0
