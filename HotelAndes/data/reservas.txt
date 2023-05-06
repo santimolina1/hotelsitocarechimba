@@ -1,0 +1,1 @@
+nombre;fecha_llegada;fecha_salida;acompañantes;habitaciones
