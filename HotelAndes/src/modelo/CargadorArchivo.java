@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import logica_.Bebida;
 import logica_.Cama;
@@ -25,20 +26,20 @@ import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 
 public class CargadorArchivo {
-	public HashMap<String, Cama> camas = new HashMap<String, Cama>();
-	public HashMap<String, Habitacion> habitacionies = new HashMap<String, Habitacion>();
-	public HashMap<String, ArrayList<Habitacion>> habitacionesPorTipo = new HashMap<String, ArrayList<Habitacion>>();
-	public HashMap<Date, ArrayList<Tarifa>> tarifas = new HashMap<Date, ArrayList<Tarifa>>();
-	public HashMap<Date, String> diasAño = new HashMap<Date, String>();
-	public HashMap<Date, Float> tarifaEstandar = new HashMap<Date, Float>();
-	public HashMap<Date, Float> tarifaSuite = new HashMap<Date, Float>();
-	public HashMap<Date, Float> tarifaSuiteDoble = new HashMap<Date, Float>();
-	public HashMap<String, Plato> platos = new HashMap<String, Plato>();
+	private HashMap<String, Cama> camas = new HashMap<String, Cama>();
+	private HashMap<String, Habitacion> habitacionies = new HashMap<String, Habitacion>();
+	private HashMap<String, ArrayList<Habitacion>> habitacionesPorTipo = new HashMap<String, ArrayList<Habitacion>>();
+	private HashMap<Date, ArrayList<Tarifa>> tarifas = new HashMap<Date, ArrayList<Tarifa>>();
+	private HashMap<Date, String> diasAño = new HashMap<Date, String>();
+	private HashMap<Date, Float> tarifaEstandar = new HashMap<Date, Float>();
+	private HashMap<Date, Float> tarifaSuite = new HashMap<Date, Float>();
+	private HashMap<Date, Float> tarifaSuiteDoble = new HashMap<Date, Float>();
+	private HashMap<String, Plato> platos = new HashMap<String, Plato>();
 	private ArrayList<HashMap<String, ArrayList<Plato>>> PlatoporNom = new ArrayList<HashMap<String, ArrayList<Plato>>>();
-	public HashMap<String, Bebida> bebidas = new HashMap<String, Bebida>();
+	private HashMap<String, Bebida> bebidas = new HashMap<String, Bebida>();
 	private ArrayList<HashMap<String, ArrayList<Bebida>>> BebidaporNom = new ArrayList<HashMap<String, ArrayList<Bebida>>>();
-	public HashMap<String, Servicio> servicios = new HashMap<String, Servicio>();
-	public HashMap<String, Reserva> reservas = new HashMap<String, Reserva>();
+	private HashMap<String, Servicio> servicios = new HashMap<String, Servicio>();
+	private HashMap<String, Reserva> reservas = new HashMap<String, Reserva>();
 
 	private static CargadorArchivo instancia;
 	
@@ -54,6 +55,14 @@ public class CargadorArchivo {
 		
 		return instancia;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	public HashMap<String, Reserva> getReservas() {
@@ -433,6 +442,29 @@ public class CargadorArchivo {
 			}
 		}
 		return date;
+	}
+	
+	
+	public ArrayList<Servicio> getListaPlatos()
+	{
+		ArrayList<Servicio> values= platos.values().stream().collect(Collectors.toCollection(ArrayList::new));
+		
+		return values;
+		
+	}
+	public ArrayList<Servicio> getListaBebidas()
+	{
+		ArrayList<Servicio> values= bebidas.values().stream().collect(Collectors.toCollection(ArrayList::new));
+		
+		return values;
+		
+	}
+	public ArrayList<Servicio> getListaServicios()
+	{
+		ArrayList<Servicio> values= servicios.values().stream().collect(Collectors.toCollection(ArrayList::new));
+		
+		return values;
+		
 	}
 
 }

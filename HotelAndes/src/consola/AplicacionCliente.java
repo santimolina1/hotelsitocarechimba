@@ -34,7 +34,7 @@ public class AplicacionCliente {
 	FuncionesEmpleado empleado = new FuncionesEmpleado();
 	Inventario inventarioInstancia = new Inventario();
 	HashMap<String, ArrayList<Date>> inventario = inventarioInstancia.getInventario();
-	Hotel hotel= new Hotel();
+	//
 	// public HashMap<HuespedReserva, Reserva> reservas = new
 	// HashMap<HuespedReserva, Reserva>();
 
@@ -122,17 +122,18 @@ public class AplicacionCliente {
 
 				System.out.println(cont + ". " + c.getNombre() + ", precio: " + c.getPrecio() + ", impuesto: "
 						+ c.getImpuestos() + ", pagado: " + c.getPagado());
+				cont++;
 			}
 			int producto = Integer.parseInt(input("Ingrese el numero del producto que desea pagar"));
 			List<Consumo> listaConsumo = new ArrayList<Consumo>(consumosH.values());
-			(listaConsumo.get(producto)).setPagado(true);
+			(listaConsumo.get(producto-1)).setPagado(true);
 			System.out.println("Se realizo el pago con exito");
 		}
 
 	}
 
 	public void checkOut() {
-		// TODO hacer todo el checjout
+		
 
 		// aca cuando hace el check out le doy la factura
 		String nombre = input("Ingrese su nombre");
@@ -140,9 +141,11 @@ public class AplicacionCliente {
 		if (huespedes.get(nombre) == null) {
 			System.out.println("No ingreso el nombre de un huesped");
 		} else {
+			
 			ArrayList<Consumo> consumosLiii = new ArrayList<Consumo>(((huespedes.get(nombre)).getConsumos()).values());
-
+			
 			Factura f = new Factura(LocalDate.now(), nombre, (huespedes.get(nombre)), consumosLiii);
+			f.generarTextoFactura();
 		}
 
 	}
@@ -191,7 +194,7 @@ public class AplicacionCliente {
 					}
 					break;
 				case 1:
-					int servicio = Integer.parseInt(input("Ingrese el numero de bebida que desea ordenar: "));
+					int servicio = Integer.parseInt(input("Ingrese el numero de Servicio que desea ordenar: "));
 					rta.put("servicio", servicio);
 					break;
 			}
@@ -238,6 +241,7 @@ public class AplicacionCliente {
 
 			System.out.println(cont + ". " + c.getNombre() + ", precio: " + c.getPrecioTotal() + ", tiempo: "
 					+ c.getHorariosDeDisponibilidad() + ", ubicacion: " + c.getUbicacion());
+		cont++;
 		}
 	}
 
@@ -310,6 +314,7 @@ public class AplicacionCliente {
 			Reserva reserva = new Reserva(huesped, Fecha_llegada, Fecha_salida, precio_habitaciones,
 					cantidadDeAcompañantes, numHabitaciones, 0, false, xd);
 			reservas.put(nombre, reserva);
+			Hotel hotel= Hotel.getInstance();
 			hotel.crearReserva(reserva);
 		}
 
@@ -323,6 +328,7 @@ public class AplicacionCliente {
 		Date Fecha_llegada = reserva.getFecha_llegada();
 		Date Fecha_salida = reserva.getFecha_salida();
 		String xd = empleado.cancelarReserva(habitacionesReserva, Fecha_llegada, Fecha_salida, inventario);
+		Hotel hotel= Hotel.getInstance();
 		hotel.eliminarReserva(nombre, Fecha_llegada, Fecha_salida);
 	}
 

@@ -12,25 +12,25 @@ import java.util.HashSet;
 import java.util.List;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import logica_.Bebida;
 import logica_.Consumo;
 import logica_.Habitacion;
 import logica_.HuespedReserva;
 import logica_.Plato;
+import logica_.Reserva;
 import logica_.Servicio;
 
 
 public class FuncionesEmpleado {
 	Inventario inventarioInstancia = new Inventario();
 	HashMap<String, ArrayList<Date>> inventario = inventarioInstancia.getInventario();
-	public CargadorArchivo cargador = CargadorArchivo.getInstance();
-	public HashMap<String, Bebida> bebidas = cargador.getBebidas();
-	public HashMap<String, Plato> platos = cargador.getPlatos();
-	public HashMap<String, Servicio> servicios = cargador.getServicios();
-	List<Servicio> listaPlatos = new ArrayList<Servicio>(platos.values());
-	List<Servicio> listaBebidas = new ArrayList<Servicio>(bebidas.values());
-	List<Servicio> listaServicio = new ArrayList<Servicio>(servicios.values());
+	private CargadorArchivo cargador = CargadorArchivo.getInstance();
+	private HashMap<String, Bebida> bebidas = cargador.getBebidas();
+	private HashMap<String, Plato> platos = cargador.getPlatos();
+	private HashMap<String, Servicio> servicios = cargador.getServicios();
+	
 
 	public ArrayList<String> reserva(HuespedReserva huesped1, Date Fecha_llegada, Date Fecha_salida,
 			int cantidadDeAcompañantes, HashMap<String, ArrayList<Habitacion>> catalogo) {
@@ -263,20 +263,32 @@ public class FuncionesEmpleado {
 	public void cargarConsumo(HashMap<String, Object> opcion) {
 		Servicio elServicio = null;
 		System.out.println(opcion);
-		if (opcion.get("bebidas") != null) {
-			Object op = opcion.get("bebidas");
-			elServicio = listaBebidas.get(Integer.parseInt((String) op) - 1);
+		
+		if (opcion.get("bebida") != null) {
+			Object op = opcion.get("bebida");
+			ArrayList<Servicio> listaBebidas=  cargador.getListaBebidas();
+			System.out.println(op);
+			System.out.println(bebidas);
+			System.out.println(listaBebidas);
+			elServicio = listaBebidas.get((int)op - 1);
 
 		}
 		if (opcion.get("plato") != null) {
 			Object op = opcion.get("plato");
+			ArrayList<Servicio> listaPlatos=  cargador.getListaPlatos();
 			System.out.println(op);
-			elServicio = listaPlatos.get(Integer.parseInt((String) op) - 1);
+			System.out.println(platos);
+			System.out.println(listaPlatos);
+			elServicio = listaPlatos.get((int)op - 1);
 
 		}
 		if (opcion.get("servicio") != null) {
 			Object op = opcion.get("servicio");
-			elServicio = listaServicio.get(Integer.parseInt((String) op) - 1);
+			ArrayList<Servicio> listaServicio=  cargador.getListaServicios();
+			System.out.println(op);
+			System.out.println(servicios);
+			System.out.println(listaServicio);
+			elServicio = listaServicio.get((int) op - 1);
 
 		}
 		if (elServicio == null) {
@@ -285,7 +297,8 @@ public class FuncionesEmpleado {
 
 		Consumo objconsumo = new Consumo(LocalDate.now(), (String) elServicio.getNombre(), elServicio.getPrecioTotal(),
 				(float) (elServicio.getPrecioTotal() * 0.19), false);
-		HuespedReserva a = (HuespedReserva) opcion.get("reserva");
+		Reserva res= (Reserva) opcion.get("reserva");
+		HuespedReserva a = res.getHuespedReserva();
 		HashMap<String, Consumo> losconsumos = a.getConsumos();
 		losconsumos.put(objconsumo.getNombre(), objconsumo);
 

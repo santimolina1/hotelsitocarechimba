@@ -8,7 +8,7 @@ import java.util.HashMap;
 import modelo.CargadorArchivo;
 
 public class  AplicacionPrincipal {
-	Hotel hotel= new Hotel();
+	
 	
 	
 	
@@ -69,7 +69,7 @@ public class  AplicacionPrincipal {
 	public void ejecutarIniciarSesion() throws IOException {
 		String usuario= input("Ingrese su usuario: ");
 		String contraseña= input("Ingrese su contraseña: ");
-		
+		Hotel hotel= Hotel.getInstance();
 		System.out.println(hotel.iniciarSesion(usuario,contraseña));
 		
 		
@@ -79,6 +79,7 @@ public class  AplicacionPrincipal {
 		String usuario= input("Ingrese un nombre de usuario: ");
 		String contraseña= input("Ingrese una contraseña: ");
 		ArrayList<String> us= new ArrayList<String>();
+		Hotel hotel= Hotel.getInstance();
 		hotel.crearUsuario(usuario, contraseña);
 		
 	}
@@ -102,7 +103,7 @@ public class  AplicacionPrincipal {
 	public static void main(String[] args) throws IOException
 	{
 		AplicacionPrincipal app= new AplicacionPrincipal();
-		Hotel hotel= new Hotel();
+		Hotel hotel= Hotel.getInstance();
 		hotel.cargarUsuarios();
 		app.ejecutarAplicacion();
 	}

@@ -17,6 +17,7 @@ import java.util.HashMap;
 import logica_.Cama;
 import logica_.HuespedReserva;
 import logica_.Reserva;
+import modelo.CargadorArchivo;
 
 public class Hotel {
 	public String nombre = "Hotel Andes";
@@ -28,6 +29,28 @@ public class Hotel {
 	ArrayList<String> usuarios = new ArrayList<String>(usuariosYPass.keySet());
 	AplicacionCliente clientes = new AplicacionCliente();
 	MenuAdmin admins = new MenuAdmin();
+	
+private static Hotel instancia;
+	
+	private Hotel()
+	{
+		
+	}
+	
+	public static Hotel getInstance()
+	{
+		if (instancia == null)
+			instancia = new Hotel();
+		
+		return instancia;
+	}
+	
+	
+	
+	
+	
+	
+	
 
 	public HashMap<String, String> cargarUsuarios() throws IOException {
 		File archivoUsers = new File("./data/usuarios.txt");

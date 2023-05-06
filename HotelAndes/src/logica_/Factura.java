@@ -1,7 +1,10 @@
 package logica_;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -86,16 +89,20 @@ public class Factura {
 	}
 
 	public void generarTextoFactura() {
-
-		File archivo = new File(Integer.toString(getNumeroFactura()) + ".txt");
+		
+		
+		
+		File archivo =new File (Integer.toString(getNumeroFactura())+".txt");
 		PrintWriter pw = null;
-
 		try {
 			pw = new PrintWriter(archivo);
 			// escribir
 			pw.println("Número de factura: " + getNumeroFactura());
+			System.out.println("Número de factura: " + getNumeroFactura());
 			pw.println("Fecha: " + fecha);
+			System.out.println("Fecha: " + fecha);
 			pw.println("Nombre: " + nombre);
+			System.out.println("Nombre: " + nombre);
 
 			pw.println("Producto   ----   Precio ----  Pagado");
 			for (Consumo i : consumos) {
