@@ -10,6 +10,7 @@ public class agregar_huesped extends javax.swing.JFrame {
      */
     public agregar_huesped() {
         initComponents();
+
         
         jButton1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -30,6 +31,9 @@ public class agregar_huesped extends javax.swing.JFrame {
             	
             }
         });
+
+        setSize(490, 390);
+
     }
 
     /**

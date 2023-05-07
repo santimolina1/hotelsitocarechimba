@@ -1,5 +1,7 @@
 package interfaz;
 
+import javax.swing.ImageIcon;
+
 public class solicitar_servicio extends javax.swing.JFrame {
 
     /**
@@ -7,6 +9,7 @@ public class solicitar_servicio extends javax.swing.JFrame {
      */
     public solicitar_servicio() {
         initComponents();
+        setSize(490, 390);
     }
 
     /**
@@ -73,11 +76,11 @@ public class solicitar_servicio extends javax.swing.JFrame {
         jPanel1.add(jButton5);
         jButton5.setBounds(330, 10, 110, 30);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("./img/spa.jpg"))); // NOI18N
+        jLabel3.setIcon(new ImageIcon("./img/spa.jpg")); // NOI18N
         jPanel1.add(jLabel3);
         jLabel3.setBounds(100, 160, 90, 100);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("./img/plato.jpg"))); // NOI18N
+        jLabel4.setIcon(new ImageIcon("./img/plato.jpg")); // NOI18N
         jPanel1.add(jLabel4);
         jLabel4.setBounds(110, 60, 80, 80);
 
@@ -86,7 +89,7 @@ public class solicitar_servicio extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(290, 60, 60, 70);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("./img/turismo.jpg"))); // NOI18N
+        jLabel6.setIcon(new ImageIcon("./img/turismo.jpg")); // NOI18N
         jPanel1.add(jLabel6);
         jLabel6.setBounds(290, 180, 80, 70);
 

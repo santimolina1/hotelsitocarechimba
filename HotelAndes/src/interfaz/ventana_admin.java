@@ -2,6 +2,8 @@ package interfaz;
 
 import java.io.IOException;
 
+import javax.swing.ImageIcon;
+
 import consola.MenuAdmin;
 
 public class ventana_admin extends javax.swing.JFrame {
@@ -11,6 +13,8 @@ public class ventana_admin extends javax.swing.JFrame {
      */
     public ventana_admin() {
         initComponents();
+        setSize(490, 390);
+        
     }
 
     /**

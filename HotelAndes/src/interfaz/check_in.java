@@ -10,12 +10,16 @@ public class check_in extends javax.swing.JFrame {
      */
     public check_in() {
         initComponents();
+
         jButton2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 agregar_huesped agregarHuesped = new agregar_huesped();
                 agregarHuesped.setVisible(true);
             }
         });
+
+        setSize(490, 390);
+
     }
 
     /**
@@ -73,9 +77,9 @@ public class check_in extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    	new ventana_usuario().setVisible(true);}
+    
 
     /**
      * @param args the command line arguments
@@ -105,6 +109,7 @@ public class check_in extends javax.swing.JFrame {
             new check_in().setVisible(true);
         });
     }
+    
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;

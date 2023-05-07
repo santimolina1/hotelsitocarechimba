@@ -1,5 +1,7 @@
 package interfaz;
 
+import javax.swing.ImageIcon;
+
 public class turismo extends javax.swing.JFrame {
 
     /**
@@ -7,6 +9,7 @@ public class turismo extends javax.swing.JFrame {
      */
     public turismo() {
         initComponents();
+        setSize(490, 390);
     }
 
     /**
@@ -56,7 +59,7 @@ public class turismo extends javax.swing.JFrame {
         jPanel1.add(jComboBox1);
         jComboBox1.setBounds(150, 160, 180, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("./img/turismo.png"))); // NOI18N
+        jLabel1.setIcon(new ImageIcon("./img/turismo.jpg")); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(200, 60, 80, 70);
 

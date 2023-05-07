@@ -11,32 +11,15 @@ import controlador.controlador;
 
 
 public class realizar_reserva extends javax.swing.JFrame {
-	controlador control=new controlador();
+	controlador control= controlador.getInstance();
+	
     /**
      * Creates new form Realizar_Reserva
      */
     public realizar_reserva() {
         initComponents();
-        
-        jButton1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                // Aquí va el código para obtener los valores de los text fields
-                String nombreUsuario = jTextField1.getText();
-                int numAcompanantes = Integer.parseInt(jTextField2.getText());
-                String fechaInicio = jTextField3.getText();
-                String fechaSalida = jTextField4.getText();
-                
-                
+        setSize(490, 390);
 
-                try {
-                	HashMap<String, Float> valores=control.reservar(nombreUsuario, numAcompanantes, fechaInicio, fechaSalida);
-                	
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-            }
-        });
 
     }
 
@@ -94,11 +77,24 @@ public class realizar_reserva extends javax.swing.JFrame {
         jButton1.setText("Ingresar");
         jPanel1.add(jButton1);
         jButton1.setBounds(170, 240, 110, 30);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	try {
+					botonIngresarActionPerformed(evt);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(255, 249, 132));
         jButton2.setText("Volver");
         jPanel1.add(jButton2);
         jButton2.setBounds(330, 290, 110, 30);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);}});
 
         jLabel2.setText("Nombre");
         jPanel1.add(jLabel2);
@@ -153,6 +149,21 @@ public class realizar_reserva extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> {
             new realizar_reserva().setVisible(true);
         });
+        
+    }
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    	new ventana_usuario().setVisible(true);
+    }
+    private void botonIngresarActionPerformed(java.awt.event.ActionEvent evt) throws IOException {
+    	String nombreUsuario = jTextField1.getText();
+        int numAcompanantes = Integer.parseInt(jTextField2.getText());
+        String fechaInicio = jTextField3.getText();
+        String fechaSalida = jTextField4.getText();
+        
+        HashMap<String, Float> valores=control.reservar(nombreUsuario, numAcompanantes, fechaInicio, fechaSalida);
+        ReservaRespuesta respuesta=new ReservaRespuesta(valores);
+        respuesta.setVisible(true);
+        System.out.println(valores);
     }
 
     // Variables declaration - do not modify                     

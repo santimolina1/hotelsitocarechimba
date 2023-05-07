@@ -7,6 +7,7 @@ public class factura extends javax.swing.JFrame {
      */
     public factura() {
         initComponents();
+        setSize(490, 390);
     }
 
     /**

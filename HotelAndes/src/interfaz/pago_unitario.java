@@ -7,6 +7,7 @@ public class pago_unitario extends javax.swing.JFrame {
      */
     public pago_unitario() {
         initComponents();
+        setSize(490, 390);
     }
 
     /**

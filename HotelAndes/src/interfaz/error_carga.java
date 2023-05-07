@@ -1,5 +1,7 @@
 package interfaz;
 
+import javax.swing.ImageIcon;
+
 public class error_carga extends javax.swing.JFrame {
 
     /**
@@ -7,6 +9,7 @@ public class error_carga extends javax.swing.JFrame {
      */
     public error_carga() {
         initComponents();
+        setSize(490, 390);
     }
 
     /**
@@ -40,7 +43,7 @@ public class error_carga extends javax.swing.JFrame {
         jPanel2.add(jButton1);
         jButton1.setBounds(180, 250, 110, 30);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/disgusto.png"))); // NOI18N
+        jLabel2.setIcon(new ImageIcon("./img/disgusto.jpg")); // NOI18N
         jPanel2.add(jLabel2);
         jLabel2.setBounds(190, 90, 100, 80);
 

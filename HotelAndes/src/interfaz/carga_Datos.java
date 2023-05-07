@@ -8,6 +8,7 @@ public class carga_Datos extends javax.swing.JFrame {
 	     */
 	    public carga_Datos() {
 	        initComponents();
+	        setSize(490, 390);
 	    }
 
 	    /**

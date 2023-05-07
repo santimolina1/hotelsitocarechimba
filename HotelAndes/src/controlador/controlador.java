@@ -21,14 +21,32 @@ public class controlador {
 	public HashMap<String, HuespedReserva> huespedes = new HashMap<String, HuespedReserva>();
 	public HashMap<String, Reserva> reservas = new HashMap<String, Reserva>();
 	public CargadorArchivo cargador =CargadorArchivo.getInstance();
-
-
+	
+	
 	public ArrayList<String> usuariosCheckIn = new ArrayList<String>();
 	FuncionesEmpleado empleado = new FuncionesEmpleado();
 	Inventario inventarioInstancia = new Inventario();
 	HashMap<String, ArrayList<Date>> inventario = inventarioInstancia.getInventario();
+	private static controlador instancia;
 	
 	
+	
+	public static controlador getInstance()
+	{
+		if (instancia == null)
+			instancia = new controlador();
+		
+		return instancia;
+	}
+	
+	public HashMap<String, HuespedReserva> getHuespedes() {
+		return huespedes;
+	}
+
+	public static controlador getInstancia() {
+		return instancia;
+	}
+
 	public boolean ingresarDatos(String nombre, String documento, String correo, String celular) {
 		{
 
@@ -41,6 +59,8 @@ public class controlador {
 				HashMap<String, Consumo> consumoss = new HashMap<String, Consumo>();
 				huesped1 = new HuespedReserva(nombre, documento1, correo, celular, consumoss);
 				huespedes.put(nombre, huesped1);
+				
+				System.out.println(huespedes);
 				return true;
 			} else {
 				return false;
@@ -89,18 +109,23 @@ public class controlador {
 					habitacionies);
 			HashMap<String, Float> valores = empleado.calcularValoresTotales(xd, habitaciones, tarifaEstandar,
 					tarifaSuite, tarifaSuiteDoble, fechas);
-			
+			System.out.println(xd);
+			System.out.println(valores);
+			System.out.println(huespedes);
 			HuespedReserva huesped = huespedes.get(nombre);
 			int numHabitaciones = xd.size();
 			float precio_habitaciones = 0;
 			for (float precio : valores.values()) {
 				precio_habitaciones += precio;
 			}
-
+			System.out.println(huesped.getNombre());
 			Reserva reserva = new Reserva(huesped, Fecha_llegada, Fecha_salida, precio_habitaciones,
 					cantidadDeAcompañantes, numHabitaciones, 0, false, xd);
 			reservas.put(nombre, reserva);
+			
+			System.out.println(reserva.getHuespedReserva());
 			Hotel hotel= Hotel.getInstance();
+			System.out.println(reserva.getHuespedReserva());
 			hotel.crearReserva(reserva);
 			
 		
@@ -109,7 +134,7 @@ public class controlador {
 	}
 
 	public controlador() {
-		super();
+	
 	}
 
 

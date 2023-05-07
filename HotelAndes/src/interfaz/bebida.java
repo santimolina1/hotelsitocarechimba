@@ -2,7 +2,11 @@ package interfaz;
 
 import java.io.IOException;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 import consola.MenuAdmin;
+import logica_.Bebida;
 import logica_.Servicio;
 import modelo.CargadorArchivo;
 
@@ -14,6 +18,8 @@ public class bebida extends javax.swing.JFrame {
      */
     public bebida() throws IOException {
         initComponents();
+        setSize(490, 390);
+   
     }
 
     /**
@@ -80,15 +86,22 @@ public class bebida extends javax.swing.JFrame {
         });
         jPanel1.add(jComboBox1);
         jComboBox1.setBounds(150, 130, 180, 40);
+        jRadioButton1.setText("Llevar a la habitación");
+        jPanel1.add(jRadioButton1);
+        jRadioButton1.setBounds(150, 180, 150, 21);
+
+        jRadioButton2.setText("Consumir en el restaurante");
+        jPanel1.add(jRadioButton2);
+        jRadioButton2.setBounds(150, 210, 190, 21);
 
         
-/*
-        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bebidas-sin-alcohol.png"))); // NOI18N
+
+        imagen.setIcon(new ImageIcon("./img/bebidas-sin-alcohol.jpg")); // NOI18N
         jPanel1.add(imagen);
         imagen.setBounds(170, 10, 130, 110);
 
         
-        */
+        
         getContentPane().add(jPanel1);
         jPanel1.setBounds(6, 6, 460, 330);
 
@@ -106,20 +119,17 @@ public class bebida extends javax.swing.JFrame {
     	MenuAdmin.ejecutarCargarBebidas();
     	//ArrayList<Servicio>=cargador.getListaBebidas();
     	String pedido=jComboBox1.getSelectedItem().toString();
-    	Servicio servicio=null;
-    	for(Servicio i :cargador.getListaBebidas()) {
+    	Bebida servicio=null;
+    	for(Bebida i :cargador.getListaBebidas()) {
     		if(pedido.equals(i.getNombre())) {
     			servicio=i;
     		}
-    		
     	}
-    	jRadioButton1.setText("Llevar a la habitación");
-        jPanel1.add(jRadioButton1);
-        jRadioButton1.setBounds(150, 180, 150, 21);
-
-        jRadioButton2.setText("Consumir en el restaurante");
-        jPanel1.add(jRadioButton2);
-        jRadioButton2.setBounds(150, 210, 190, 21);
+    	//if(servicio.isLlevable()) {
+    		 JLabel label = new JLabel();
+    		 label.setText("Seleccionaste: " );
+    		 jPanel1.add(label);
+    	
     }
 
     /**
