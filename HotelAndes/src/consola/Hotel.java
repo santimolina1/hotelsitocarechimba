@@ -93,14 +93,13 @@ private static Hotel instancia;
 		if (cond1 & cond2) {
 			retorno = "Inició sesión con exito";
 
-			if (persona.equals("empleado")) {
-				retorno = "dhdd";
-			} // TODO
 			if (persona.equals("administrador")) {
-				admins.ejecutarAplicacion();
+				retorno="admin";
+				//admins.ejecutarAplicacion();
 			}
 			if (persona.equals("usuario")) {
-				clientes.ejecutarAplicacion();
+				retorno="user";
+				//clientes.ejecutarAplicacion();
 			}
 
 		} else {
@@ -149,7 +148,7 @@ private static Hotel instancia;
 		
 		FileWriter escritor= new FileWriter(archivo,true);
 		escritor.write(nombre+";");
-		escritor.write(fecha_llegada+";");
+		escritor.write(fechaString(fecha_llegada)+";");
 		escritor.write(fecha_salida+";");
 		escritor.write(acompañantes+";");
 		escritor.write(habs+";");
@@ -203,6 +202,15 @@ private static Hotel instancia;
 	        retorno = "Error al intentar eliminar la reserva.";
 	    }
 	    return retorno;
+	    
+	    
+	}
+	public static String fechaString(Date date) {
+		SimpleDateFormat dateFormatter=null;
+        
+        dateFormatter = new SimpleDateFormat("dd/MM");
+       
+        return dateFormatter.format(date);
 	}
 
 

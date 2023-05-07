@@ -1,0 +1,10 @@
+Número de factura: 8901
+Fecha: 2023-05-06
+Nombre: g
+Producto   ----   Precio ----  Pagado
+Gaseosa   ----   6000.0   ----   true
+masajeAfrodisiaco   ----   345600.0   ----   false
+PalitosDeQueso   ----   7000.0   ----   false
+Precio neto de lo NO pago: 352600.0
+valor del IVA de lo NO pago: 66994.0
+Valor total de lo NO pago: 419594.0

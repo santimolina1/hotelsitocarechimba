@@ -20,15 +20,15 @@ public class ventana_usuario extends javax.swing.JFrame {
 
 		jPanel1 = new javax.swing.JPanel();
 		jLabel1 = new javax.swing.JLabel();
-		jButton1 = new javax.swing.JButton();
-		jButton2 = new javax.swing.JButton();
-		jButton3 = new javax.swing.JButton();
-		jButton4 = new javax.swing.JButton();
-		jButton5 = new javax.swing.JButton();
-		jButton6 = new javax.swing.JButton();
-		jButton7 = new javax.swing.JButton();
-		jButton8 = new javax.swing.JButton();
-		jButton9 = new javax.swing.JButton();
+		cerrarSesionBut = new javax.swing.JButton();
+		ingresarDatosBut = new javax.swing.JButton();
+		reservarBut = new javax.swing.JButton();
+		checkInBut = new javax.swing.JButton();
+		catalogoBut = new javax.swing.JButton();
+		menuBut = new javax.swing.JButton();
+		solicitarServBut = new javax.swing.JButton();
+		cacelarReservBut = new javax.swing.JButton();
+		pagarServBut = new javax.swing.JButton();
 		jLabel2 = new javax.swing.JLabel();
 		jLabel3 = new javax.swing.JLabel();
 		jLabel4 = new javax.swing.JLabel();
@@ -50,42 +50,87 @@ public class ventana_usuario extends javax.swing.JFrame {
 		jPanel1.add(jLabel1);
 		jLabel1.setBounds(10, 10, 100, 40);
 
-		jButton1.setBackground(new java.awt.Color(255, 249, 132));
-		jButton1.setText("Cerrar Sesión");
-		jPanel1.add(jButton1);
-		jButton1.setBounds(340, 10, 110, 30);
+		cerrarSesionBut.setBackground(new java.awt.Color(255, 249, 132));
+		cerrarSesionBut.setText("Cerrar Sesión");
+		jPanel1.add(cerrarSesionBut);
+		cerrarSesionBut.setBounds(340, 10, 110, 30);
+		cerrarSesionBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	cerrarSesBActionPerformed(evt);
+            }
+        });
 
-		jButton2.setText("Ingresar Datos");
-		jPanel1.add(jButton2);
-		jButton2.setBounds(10, 110, 130, 30);
+		ingresarDatosBut.setText("Ingresar Datos");
+		jPanel1.add(ingresarDatosBut);
+		ingresarDatosBut.setBounds(10, 110, 130, 30);
+		ingresarDatosBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	ingresarDatosActionPerformed(evt);
+            }
+        });
 
-		jButton3.setText("Realizar una reserva");
-		jPanel1.add(jButton3);
-		jButton3.setBounds(160, 110, 148, 30);
+		reservarBut.setText("Realizar una reserva");
+		jPanel1.add(reservarBut);
+		reservarBut.setBounds(160, 110, 148, 30);
+		reservarBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	reservarButActionPerformed(evt);
+            }
+        });
 
-		jButton4.setText("Realizar Check-in");
-		jPanel1.add(jButton4);
-		jButton4.setBounds(320, 110, 132, 30);
+		checkInBut.setText("Realizar Check-in");
+		jPanel1.add(checkInBut);
+		checkInBut.setBounds(320, 110, 132, 30);
+		checkInBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	checkInButActionPerformed(evt);
+            }
+        });
 
-		jButton5.setText("Catalogo de Servicios");
-		jPanel1.add(jButton5);
-		jButton5.setBounds(10, 200, 157, 30);
+		catalogoBut.setText("Catalogo de Servicios");
+		jPanel1.add(catalogoBut);
+		catalogoBut.setBounds(10, 200, 157, 30);
+		catalogoBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	catalogoButActionPerformed(evt);
+            }
+        });
 
-		jButton6.setText("Menú");
-		jPanel1.add(jButton6);
-		jButton6.setBounds(210, 200, 70, 30);
+		menuBut.setText("Menú");
+		jPanel1.add(menuBut);
+		menuBut.setBounds(210, 200, 70, 30);
+		menuBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	menuButActionPerformed(evt);
+            }
+        });
 
-		jButton7.setText("Solicitar Servicio");
-		jPanel1.add(jButton7);
-		jButton7.setBounds(320, 200, 130, 30);
+		solicitarServBut.setText("Solicitar Servicio");
+		jPanel1.add(solicitarServBut);
+		solicitarServBut.setBounds(320, 200, 130, 30);
+		solicitarServBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	solicitarServButActionPerformed(evt);
+            }
+        });
 
-		jButton8.setText("Cancelar Reserva");
-		jPanel1.add(jButton8);
-		jButton8.setBounds(80, 290, 140, 30);
+		cacelarReservBut.setText("Cancelar Reserva");
+		jPanel1.add(cacelarReservBut);
+		cacelarReservBut.setBounds(80, 290, 140, 30);
+		cacelarReservBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	cacelarReservButActionPerformed(evt);
+            }
+        });
 
-		jButton9.setText("Pagar Servicio");
-		jPanel1.add(jButton9);
-		jButton9.setBounds(280, 290, 120, 30);
+		pagarServBut.setText("Pagar Servicio");
+		jPanel1.add(pagarServBut);
+		pagarServBut.setBounds(280, 290, 120, 30);
+		pagarServBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	pagarServButActionPerformed(evt);
+            }
+        });
 
 		jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
 		jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuario.png"))); // NOI18N
@@ -126,58 +171,44 @@ public class ventana_usuario extends javax.swing.JFrame {
 		jPanel1.setBounds(0, 0, 460, 330);
 
 		pack();
-	}// </editor-fold>
-
-	/**
-	 * @param args the command line arguments
-	 */
-	public static void main(String args[]) {
-		/* Set the Nimbus look and feel */
-		// <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
-		// (optional) ">
-		/*
-		 * If Nimbus (introduced in Java SE 6) is not available, stay with the default
-		 * look and feel. For details see
-		 * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-		 */
-
-		// </editor-fold>
-
-		/* Create and display the form */
-		
-		try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ventana_usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-
-
-		
-		
-		
-		
-		java.awt.EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				new ventana_usuario().setVisible(true);
-			}
-		});
 	}
-
-	// Variables declaration - do not modify
-	private javax.swing.JButton jButton1;
-	private javax.swing.JButton jButton2;
-	private javax.swing.JButton jButton3;
-	private javax.swing.JButton jButton4;
-	private javax.swing.JButton jButton5;
-	private javax.swing.JButton jButton6;
-	private javax.swing.JButton jButton7;
-	private javax.swing.JButton jButton8;
-	private javax.swing.JButton jButton9;
+	private void cerrarSesBActionPerformed(java.awt.event.ActionEvent evt) {
+		new venatana_principal().setVisible(true);
+	}
+	private void ingresarDatosActionPerformed(java.awt.event.ActionEvent evt) {
+		new ingresar_datos().setVisible(true);
+	}
+	private void cacelarReservButActionPerformed(java.awt.event.ActionEvent evt) {
+		new cancelar_reserva().setVisible(true);
+	}
+	private void solicitarServButActionPerformed(java.awt.event.ActionEvent evt) {
+		//TODO
+	}
+	private void catalogoButActionPerformed(java.awt.event.ActionEvent evt) {
+		//TODO
+	}
+	private void menuButActionPerformed(java.awt.event.ActionEvent evt) {
+		//TODO
+	}
+	private void reservarButActionPerformed(java.awt.event.ActionEvent evt) {
+		new realizar_reserva().setVisible(true);
+	}
+	private void checkInButActionPerformed(java.awt.event.ActionEvent evt) {
+		//TODO
+	}
+	private void pagarServButActionPerformed(java.awt.event.ActionEvent evt) {
+		new pago_unitario().setVisible(true);
+	}
+	
+	private javax.swing.JButton cerrarSesionBut;
+	private javax.swing.JButton ingresarDatosBut;
+	private javax.swing.JButton reservarBut;
+	private javax.swing.JButton checkInBut;
+	private javax.swing.JButton catalogoBut;
+	private javax.swing.JButton menuBut;
+	private javax.swing.JButton solicitarServBut;
+	private javax.swing.JButton cacelarReservBut;
+	private javax.swing.JButton pagarServBut;
 	private javax.swing.JLabel jLabel1;
 	private javax.swing.JLabel jLabel2;
 	private javax.swing.JLabel jLabel3;

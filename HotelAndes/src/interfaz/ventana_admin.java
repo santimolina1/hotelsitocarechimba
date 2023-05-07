@@ -1,5 +1,9 @@
 package interfaz;
 
+import java.io.IOException;
+
+import consola.MenuAdmin;
+
 public class ventana_admin extends javax.swing.JFrame {
 
     /**
@@ -23,8 +27,8 @@ public class ventana_admin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        volverb = new javax.swing.JButton();
+        siguienteb = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -55,7 +59,7 @@ public class ventana_admin extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(30, 50, 360, 30);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona el archivo a cargar", "Cargar Camas", "Cargar Habitaciones", "Cargar Bebidas", "Cargar Platos", "Cargar Servicios", "Cargar Tarifas" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona el archivo a cargar","Cargar Todo", "Cargar Camas", "Cargar Habitaciones", "Cargar Bebidas", "Cargar Platos", "Cargar Servicios", "Cargar Tarifas" }));
         jComboBox1.setToolTipText("");
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,15 +69,30 @@ public class ventana_admin extends javax.swing.JFrame {
         jPanel1.add(jComboBox1);
         jComboBox1.setBounds(30, 110, 220, 23);
 
-        jButton1.setBackground(new java.awt.Color(255, 249, 132));
-        jButton1.setText("Volver");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(90, 200, 110, 30);
+        volverb.setBackground(new java.awt.Color(255, 249, 132));
+        volverb.setText("Volver");
+        jPanel1.add(volverb);
+        volverb.setBounds(90, 200, 110, 30);
+        volverb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	volverbActionPerformed(evt);
+            }
+        });
 
-        jButton2.setBackground(new java.awt.Color(255, 249, 132));
-        jButton2.setText("Siguiente");
-        jPanel1.add(jButton2);
-        jButton2.setBounds(270, 200, 110, 30);
+        siguienteb.setBackground(new java.awt.Color(255, 249, 132));
+        siguienteb.setText("Siguiente");
+        siguienteb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	siguientebActionPerformed(evt);
+            }
+        });
+        
+        
+        
+        
+        jPanel1.add(siguienteb);
+        siguienteb.setBounds(270, 200, 110, 30);
+        
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(10, 10, 460, 330);
@@ -82,45 +101,30 @@ public class ventana_admin extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-    }                                          
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-       
-        //</editor-fold>
-
-        /* Create and display the form */
-    	
+        // F
+    } 
+    private void siguientebActionPerformed(java.awt.event.ActionEvent evt)  {                                           
+    	MenuAdmin MenuAdmin = new MenuAdmin();
     	try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ventana_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+			MenuAdmin.ejecutarCargarBebidas();
+			MenuAdmin.ejecutarCargarPlatos();
+	    	MenuAdmin.ejecutarCargarServicios();
+		} catch (IOException e) {
+			new error_carga().setVisible(true);
+			e.printStackTrace();
+		}
     	
     	
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ventana_admin().setVisible(true);
-            }
-        });
+    	new carga_Datos().setVisible(true);
+    } 
+    private void volverbActionPerformed(java.awt.event.ActionEvent evt) {                                           
+    	new venatana_principal().setVisible(true);
+    	
     }
 
-    // Variables declaration - do not modify                     
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+                        
+    private javax.swing.JButton volverb;
+    private javax.swing.JButton siguienteb;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

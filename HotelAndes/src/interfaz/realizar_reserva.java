@@ -16,7 +16,6 @@ public class realizar_reserva extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    // </editor-fold>   
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -94,7 +93,7 @@ public class realizar_reserva extends javax.swing.JFrame {
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
-    } 
+    }                                           
 
     /**
      * @param args the command line arguments

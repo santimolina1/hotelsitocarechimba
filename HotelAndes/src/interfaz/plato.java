@@ -24,7 +24,7 @@ public class plato extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        jLabel1 = new javax.swing.JLabel();
+        imagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -65,11 +65,13 @@ public class plato extends javax.swing.JFrame {
         jRadioButton2.setText("Consumir en el restaurante");
         jPanel1.add(jRadioButton2);
         jRadioButton2.setBounds(150, 200, 190, 21);
+/*
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/plato.png"))); // NOI18N
+        jPanel1.add(imagen);
+        imagen.setBounds(190, 30, 80, 80);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/plato.png"))); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(190, 30, 80, 80);
-
+        
+        */
         getContentPane().add(jPanel1);
         jPanel1.setBounds(6, 6, 460, 330);
 
@@ -117,7 +119,7 @@ public class plato extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel imagen;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
