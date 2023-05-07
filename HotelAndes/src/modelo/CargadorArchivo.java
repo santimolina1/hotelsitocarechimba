@@ -38,7 +38,7 @@ public class CargadorArchivo {
 	private HashMap<String, Bebida> bebidas = new HashMap<String, Bebida>();
 	private HashMap<String, Servicio> servicios = new HashMap<String, Servicio>();
 	private HashMap<String, Reserva> reservas = new HashMap<String, Reserva>();
-
+	private ArrayList<Date> arr= new ArrayList<Date>();
 	private static CargadorArchivo instancia;
 	
 	private CargadorArchivo()
@@ -106,7 +106,7 @@ public class CargadorArchivo {
 	}
 
 	public HashMap<String, Bebida> cargarBebida(File archivoBebidas) throws IOException {
-
+		
 		FileReader archivo = new FileReader(archivoBebidas);
 		BufferedReader br = new BufferedReader(archivo);
 		String linea = br.readLine();
@@ -464,5 +464,7 @@ public class CargadorArchivo {
 		return values;
 		
 	}
+	
+	
 
 }

@@ -136,10 +136,7 @@ public class MenuAdmin {
 
 	public void ejecutarCargarServicios() throws IOException {
 		
-		String archivo = input ("Ingrese el nombre del archivo en formato .txt: ");
-		
-		
-		File archivoS= new File ("./data/" + archivo);
+		File archivoS= new File ("./data/servicios.txt");
 		HashMap<String,Servicio> servicios= Admin.cargarServicios( archivoS);
 		for(String i: servicios.keySet() ) {
 			Servicio c = servicios.get(i);
@@ -160,10 +157,8 @@ public class MenuAdmin {
 
 
 	public void ejecutarCargarPlatos() throws IOException {
-		String archivo = input ("Ingrese el nombre del archivo en formato .txt: ");
 		
-		
-		File archivoP= new File ("./data/" + archivo);
+		File archivoP= new File ("./data/platos.txt");
 		HashMap<String,Plato> platos= Admin.cargarPlato( archivoP);
 		for(String i: platos.keySet() ) {
 			Plato c = platos.get(i);
@@ -183,10 +178,7 @@ public class MenuAdmin {
 
 	public void ejecutarCargarBebidas() throws IOException {
 		
-		String archivo = input ("Ingrese el nombre del archivo en formato .txt: ");
-		
-		
-		File archivoB= new File ("./data/" + archivo);
+		File archivoB= new File ("./data/bebidas.txt" );
 		HashMap<String,Bebida> bebidas= Admin.cargarBebida( archivoB);
 		for(String i: bebidas.keySet() ) {
 			Bebida c = bebidas.get(i);

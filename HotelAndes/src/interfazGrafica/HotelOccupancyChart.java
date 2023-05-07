@@ -3,6 +3,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.io.IOException;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -71,12 +73,16 @@ public class HotelOccupancyChart extends JPanel {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
         String[] meses = {"Enero Febrero Marzo Abril Mayo Junio Julio Agosto Septiembre Octubre Noviembre Diciembre"};
        
-        		
-        	int[] data = {30,25,15,34,21,60,55,20,12,20,25,40};
+        	DatosGrafica a= new	DatosGrafica();
+        	int[] data = a.getData();
+        	for (int i: data) {
+        		System.out.println(i);
+        	}
+        	
             HotelOccupancyChart chart = new HotelOccupancyChart(data, meses, "Ocupación Hotel Andes", "meses", "porcentaje de ocupación"); 
 
             JFrame frame = new JFrame("Hotel Occupancy Chart");
@@ -84,6 +90,9 @@ public class HotelOccupancyChart extends JPanel {
             frame.setSize(810, 600);
             frame.getContentPane().add(chart);
             frame.setVisible(true);
+            
+            
+            
     }
 }
 

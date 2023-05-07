@@ -23,7 +23,7 @@ public class carga_Datos extends javax.swing.JFrame {
 	        jLabel1 = new javax.swing.JLabel();
 	        jLabel2 = new javax.swing.JLabel();
 	        jButton1 = new javax.swing.JButton();
-	        jButton2 = new javax.swing.JButton();
+	        cerrarSesB = new javax.swing.JButton();
 
 	        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 	        getContentPane().setLayout(null);
@@ -47,55 +47,40 @@ public class carga_Datos extends javax.swing.JFrame {
 	        jButton1.setText("Volver");
 	        jPanel1.add(jButton1);
 	        jButton1.setBounds(100, 190, 110, 30);
+	        jButton1.addActionListener(new java.awt.event.ActionListener() {
+	            public void actionPerformed(java.awt.event.ActionEvent evt) {
+	            volverActionPerformed(evt);
+	            }
+	        });
 
-	        jButton2.setBackground(new java.awt.Color(255, 249, 132));
-	        jButton2.setText("Cerrar Sesión");
-	        jButton2.setToolTipText("");
-	        jPanel1.add(jButton2);
-	        jButton2.setBounds(260, 190, 110, 30);
+	        cerrarSesB.setBackground(new java.awt.Color(255, 249, 132));
+	        cerrarSesB.setText("Cerrar Sesión");
+	        cerrarSesB.setToolTipText("");
+	        jPanel1.add(cerrarSesB);
+	        cerrarSesB.setBounds(260, 190, 110, 30);
+	        cerrarSesB.addActionListener(new java.awt.event.ActionListener() {
+	            public void actionPerformed(java.awt.event.ActionEvent evt) {
+	            	cerrarSesBActionPerformed(evt);
+	            }
+	        });
 
 	        getContentPane().add(jPanel1);
 	        jPanel1.setBounds(0, 0, 458, 329);
 
 	        pack();
-	    }// </editor-fold>                        
-
-	    /**
-	     * @param args the command line arguments
-	     */
-	    public static void main(String args[]) {
-	        /* Set the Nimbus look and feel */
-	        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-	        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-	         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-	         */
 	        
-	        //</editor-fold>
-
-	        /* Create and display the form */
-	    	
-	    	try {
-	            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-	                if ("Nimbus".equals(info.getName())) {
-	                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-	                    break;
-	                }
-	            }
-	        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-	            java.util.logging.Logger.getLogger(carga_Datos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-	        }
-	    	
-	    	
-	        java.awt.EventQueue.invokeLater(new Runnable() {
-	            public void run() {
-	                new carga_Datos().setVisible(true);
-	            }
-	        });
+	        
 	    }
+	    private void cerrarSesBActionPerformed(java.awt.event.ActionEvent evt) {                                           
+	    	new venatana_principal().setVisible(true);
+        }
+	    private void volverActionPerformed(java.awt.event.ActionEvent evt) {                                           
+	    	new ventana_admin().setVisible(true);
+        }
 
 	    // Variables declaration - do not modify                     
 	    private javax.swing.JButton jButton1;
-	    private javax.swing.JButton jButton2;
+	    private javax.swing.JButton cerrarSesB;
 	    private javax.swing.JLabel jLabel1;
 	    private javax.swing.JLabel jLabel2;
 	    private javax.swing.JPanel jPanel1;
