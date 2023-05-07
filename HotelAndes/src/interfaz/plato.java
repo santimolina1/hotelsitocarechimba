@@ -1,5 +1,7 @@
 package interfaz;
 
+import javax.swing.ImageIcon;
+
 public class plato extends javax.swing.JFrame {
 
     /**
@@ -7,6 +9,7 @@ public class plato extends javax.swing.JFrame {
      */
     public plato() {
         initComponents();
+        setSize(490, 390);
     }
 
     /**
@@ -65,13 +68,13 @@ public class plato extends javax.swing.JFrame {
         jRadioButton2.setText("Consumir en el restaurante");
         jPanel1.add(jRadioButton2);
         jRadioButton2.setBounds(150, 200, 190, 21);
-/*
-        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/plato.png"))); // NOI18N
+
+        imagen.setIcon(new ImageIcon("./img/plato.jpg")); // NOI18N
         jPanel1.add(imagen);
         imagen.setBounds(190, 30, 80, 80);
 
         
-        */
+        
         getContentPane().add(jPanel1);
         jPanel1.setBounds(6, 6, 460, 330);
 

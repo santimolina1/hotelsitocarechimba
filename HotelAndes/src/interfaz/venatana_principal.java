@@ -20,6 +20,7 @@ public class venatana_principal extends javax.swing.JFrame {
     
     public venatana_principal() {
         initComponents();
+        setSize(490, 390);
     }
 
     

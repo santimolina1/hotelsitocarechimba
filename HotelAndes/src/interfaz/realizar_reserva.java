@@ -7,6 +7,7 @@ public class realizar_reserva extends javax.swing.JFrame {
      */
     public realizar_reserva() {
         initComponents();
+        setSize(490, 390);
     }
 
     /**

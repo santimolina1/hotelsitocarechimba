@@ -7,6 +7,7 @@ public class cancelar_reserva extends javax.swing.JFrame {
 	 */
 	public cancelar_reserva() {
 		initComponents();
+		setSize(490, 390);
 	}
 
 	/**

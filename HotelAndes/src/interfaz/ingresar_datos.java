@@ -7,6 +7,7 @@ public class ingresar_datos extends javax.swing.JFrame {
      */
     public ingresar_datos() {
         initComponents();
+        setSize(490, 390);
     }
 
     /**

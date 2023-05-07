@@ -7,6 +7,7 @@ public class check_in extends javax.swing.JFrame {
      */
     public check_in() {
         initComponents();
+        setSize(490, 390);
     }
 
     /**

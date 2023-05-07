@@ -7,6 +7,7 @@ public class agregar_huesped extends javax.swing.JFrame {
      */
     public agregar_huesped() {
         initComponents();
+        setSize(490, 390);
     }
 
     /**

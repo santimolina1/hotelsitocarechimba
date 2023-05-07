@@ -1,5 +1,8 @@
 package interfaz;
 
+import javax.swing.ImageIcon;
+import javax.swing.SwingUtilities;
+
 public class ventana_usuario extends javax.swing.JFrame {
 
 	/**
@@ -7,6 +10,7 @@ public class ventana_usuario extends javax.swing.JFrame {
 	 */
 	public ventana_usuario() {
 		initComponents();
+		setSize(490, 390);
 	}
 
 	/**
@@ -132,38 +136,38 @@ public class ventana_usuario extends javax.swing.JFrame {
             }
         });
 
-		jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-		jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("./img/usuario.jpg"))); // NOI18N
+		jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N "./img/error.jpg"
+		jLabel2.setIcon(new ImageIcon("./img/usuaio.jpg")); // NOI18N
 		jPanel1.add(jLabel2);
-		jLabel2.setBounds(60, 60, 40, 40);
+		jLabel2.setBounds(60, 60, 100, 100);
 
 		jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-		jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("./img/reserva.jpg"))); // NOI18N
+		jLabel3.setIcon(new ImageIcon("./img/reserva.jpg")); // NOI18N
 		jPanel1.add(jLabel3);
 		jLabel3.setBounds(220, 60, 50, 50);
 
 		jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-		jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("./img/mapa.jpg"))); // NOI18N
+		jLabel4.setIcon(new ImageIcon("./img/mapa.jpg")); // NOI18N
 		jPanel1.add(jLabel4);
 		jLabel4.setBounds(350, 40, 70, 70);
 
-		jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("./img/catalogo.jpg"))); // NOI18N
+		jLabel5.setIcon(new ImageIcon("./img/cama.jpg")); // NOI18N
 		jPanel1.add(jLabel5);
 		jLabel5.setBounds(60, 147, 50, 50);
 
-		jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("./img/menu.jpg"))); // NOI18N
+		jLabel6.setIcon(new ImageIcon("./img/catalogo.jpg")); // NOI18N
 		jPanel1.add(jLabel6);
 		jLabel6.setBounds(230, 150, 50, 50);
 
-		jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("./img/contratacion.jpg"))); // NOI18N
+		jLabel7.setIcon(new ImageIcon("./img/contratacion.jpg")); // NOI18N
 		jPanel1.add(jLabel7);
 		jLabel7.setBounds(360, 150, 40, 40);
 
-		jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("./img/archivo.jpg"))); // NOI18N
+		jLabel8.setIcon(new ImageIcon("./img/archivo.jpg")); // NOI18N
 		jPanel1.add(jLabel8);
 		jLabel8.setBounds(130, 240, 40, 40);
 
-		jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("./img/metodo-de-pago.jpg"))); // NOI18N
+		jLabel9.setIcon(new ImageIcon("./img/metodo-de-pago.jpg")); // NOI18N
 		jPanel1.add(jLabel9);
 		jLabel9.setBounds(320, 240, 50, 40);
 
@@ -199,6 +203,13 @@ public class ventana_usuario extends javax.swing.JFrame {
 	private void pagarServButActionPerformed(java.awt.event.ActionEvent evt) {
 		new pago_unitario().setVisible(true);
 	}
+	public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new ventana_usuario().setVisible(true);
+            }
+        });
+    }
 	
 	private javax.swing.JButton cerrarSesionBut;
 	private javax.swing.JButton ingresarDatosBut;
