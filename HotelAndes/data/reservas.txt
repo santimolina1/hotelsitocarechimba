@@ -1,1 +1,22 @@
 nombre;fecha_llegada;fecha_salida;acompañantes;habitaciones
+g;Thu Jun 01 00:00:00 COT 2023;Wed Jun 07 00:00:00 COT 2023;1;1;reserva
+g;Wed Jul 05 00:00:00 COT 2023;Fri Jul 07 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Mon Jul 10 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Mon Jul 10 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sat Jul 08 00:00:00 COT 2023;1;1;reserva
+claudia;Sat Jun 03 00:00:00 COT 2023;Wed Jun 07 00:00:00 COT 2023;4;3;reserva

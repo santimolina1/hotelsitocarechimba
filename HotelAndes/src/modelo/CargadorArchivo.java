@@ -35,9 +35,7 @@ public class CargadorArchivo {
 	private HashMap<Date, Float> tarifaSuite = new HashMap<Date, Float>();
 	private HashMap<Date, Float> tarifaSuiteDoble = new HashMap<Date, Float>();
 	private HashMap<String, Plato> platos = new HashMap<String, Plato>();
-	private ArrayList<HashMap<String, ArrayList<Plato>>> PlatoporNom = new ArrayList<HashMap<String, ArrayList<Plato>>>();
 	private HashMap<String, Bebida> bebidas = new HashMap<String, Bebida>();
-	private ArrayList<HashMap<String, ArrayList<Bebida>>> BebidaporNom = new ArrayList<HashMap<String, ArrayList<Bebida>>>();
 	private HashMap<String, Servicio> servicios = new HashMap<String, Servicio>();
 	private HashMap<String, Reserva> reservas = new HashMap<String, Reserva>();
 

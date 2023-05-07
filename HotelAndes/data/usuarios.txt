@@ -7,3 +7,4 @@ gavis;1234;usuario
 gabriela;1234;usuario
 francois;1234;usuario
 nicoxd;nico;usuario
+clau;123;usuario
