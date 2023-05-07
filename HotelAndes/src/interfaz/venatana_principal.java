@@ -94,6 +94,20 @@ public class venatana_principal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+    	
+    	try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(venatana_principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+    	
+    	
+    	
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new venatana_principal().setVisible(true);

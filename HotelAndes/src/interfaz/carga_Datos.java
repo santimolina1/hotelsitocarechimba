@@ -73,6 +73,19 @@ public class carga_Datos extends javax.swing.JFrame {
 	        //</editor-fold>
 
 	        /* Create and display the form */
+	    	
+	    	try {
+	            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+	                if ("Nimbus".equals(info.getName())) {
+	                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+	                    break;
+	                }
+	            }
+	        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+	            java.util.logging.Logger.getLogger(carga_Datos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+	        }
+	    	
+	    	
 	        java.awt.EventQueue.invokeLater(new Runnable() {
 	            public void run() {
 	                new carga_Datos().setVisible(true);
