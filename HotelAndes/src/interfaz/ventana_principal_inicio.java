@@ -34,7 +34,7 @@ public class ventana_principal_inicio extends javax.swing.JFrame {
 		jLabel2.setBounds(150, 20, 159, 17);
 
 		jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hoteles_espaa_lujo-U301387819834kHH--1234x900@abc.jpeg"))); // NOI18N
+		jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("./img/hoteles_espaa_lujo-U301387819834kHH--1234x900@abc.jpg"))); // NOI18N
 		jLabel1.setText("jLabel1");
 		jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 		jPanel1.add(jLabel1);

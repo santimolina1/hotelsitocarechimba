@@ -56,7 +56,7 @@ public class spa extends javax.swing.JFrame {
         jPanel1.add(jComboBox1);
         jComboBox1.setBounds(150, 160, 180, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/spa.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("./img/spa.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(190, 30, 90, 100);
 
