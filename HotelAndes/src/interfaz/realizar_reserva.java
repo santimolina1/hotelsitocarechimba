@@ -1,12 +1,43 @@
 package interfaz;
 
-public class realizar_reserva extends javax.swing.JFrame {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.HashMap;
 
+import javax.swing.JOptionPane;
+
+import controlador.controlador;
+
+
+public class realizar_reserva extends javax.swing.JFrame {
+	controlador control=new controlador();
     /**
      * Creates new form Realizar_Reserva
      */
     public realizar_reserva() {
         initComponents();
+        
+        jButton1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                // Aquí va el código para obtener los valores de los text fields
+                String nombreUsuario = jTextField1.getText();
+                int numAcompanantes = Integer.parseInt(jTextField2.getText());
+                String fechaInicio = jTextField3.getText();
+                String fechaSalida = jTextField4.getText();
+                
+                
+
+                try {
+                	HashMap<String, Float> valores=control.reservar(nombreUsuario, numAcompanantes, fechaInicio, fechaSalida);
+                	
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            }
+        });
+
     }
 
     /**

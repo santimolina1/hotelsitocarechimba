@@ -1,5 +1,8 @@
 package interfaz;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class check_in extends javax.swing.JFrame {
 
     /**
@@ -7,6 +10,12 @@ public class check_in extends javax.swing.JFrame {
      */
     public check_in() {
         initComponents();
+        jButton2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                agregar_huesped agregarHuesped = new agregar_huesped();
+                agregarHuesped.setVisible(true);
+            }
+        });
     }
 
     /**
@@ -32,13 +41,13 @@ public class check_in extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jLabel1.setText("El archivo a cargar,");
+        jLabel1.setText("CHECK-IN");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(160, 110, 156, 23);
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("ha sido cargado con éxito.");
+        jLabel2.setText("");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(130, 140, 220, 23);
 

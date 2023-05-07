@@ -1,5 +1,8 @@
 package interfaz;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class agregar_huesped extends javax.swing.JFrame {
 
     /**
@@ -7,6 +10,26 @@ public class agregar_huesped extends javax.swing.JFrame {
      */
     public agregar_huesped() {
         initComponents();
+        
+        jButton1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+            
+            	String nombre=jTextField1.getText();
+            	String cedula=jTextField2.getText();
+            	check_in check_in=new check_in();
+            	check_in.setVisible(true);
+            	
+            }
+        });
+        jButton2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+            
+            	
+            	check_in check_in=new check_in();
+            	check_in.setVisible(true);
+            	
+            }
+        });
     }
 
     /**

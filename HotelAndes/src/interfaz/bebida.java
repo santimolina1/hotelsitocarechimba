@@ -70,7 +70,12 @@ public class bebida extends javax.swing.JFrame {
         }
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-            	seleccionActionPerformed(evt);
+            	try {
+					seleccionActionPerformed(evt);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
         jPanel1.add(jComboBox1);
