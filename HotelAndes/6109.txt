@@ -1,0 +1,9 @@
+Número de factura: 1903
+Fecha: 2023-05-07
+Nombre: h
+Producto   ----   Precio ----  Pagado
+Gatorade   ----   4000.0   ----   false
+PiñaColada   ----   8000.0   ----   true
+Precio neto de lo NO pago: 4000.0
+valor del IVA de lo NO pago: 760.0
+Valor total de lo NO pago: 4760.0

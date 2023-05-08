@@ -46,13 +46,13 @@ sis;15/12/2023;17/12/2023;7;1,2
 sis;15/12/2023;17/12/2023;7;1,2
 sis;15/12/2023;17/12/2023;7;1,2
 sis;15/12/2023;17/12/2023;7;1,2
-clau;10/08;Sat Aug 12 00:00:00 COT 2023;10;1,3,10;reserva
-clau;01/01;Mon Jan 02 00:00:00 COT 2023;5;1,3;reserva
-clau;02/06;Mon Jun 05 00:00:00 COT 2023;2;1;reserva
-clau;10/11;Sun Nov 12 00:00:00 COT 2023;2;1;reserva
-clau;01/07;Sun Jul 02 00:00:00 COT 2023;5;1,3;reserva
-clau;11/09;Fri Sep 15 00:00:00 COT 2023;3;;reserva
-clau;01/05;Tue May 02 00:00:00 COT 2023;3;;reserva
-clau;10/11;Sat Nov 11 00:00:00 COT 2023;10;1,3,10;reserva
-clau;08/05;Wed May 10 00:00:00 COT 2023;2;1;reserva
-clau;21/12;Sat Dec 23 00:00:00 COT 2023;5;1,3;reserva
+g;Sun Aug 06 00:00:00 COT 2023;Wed Aug 09 00:00:00 COT 2023;5;1,3;reserva
+g;Wed Jul 05 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+g;Mon Jul 03 00:00:00 COT 2023;Thu Jul 06 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+g;Fri Jul 07 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+manolito;Tue Jan 03 00:00:00 COT 2023;Mon Jan 09 00:00:00 COT 2023;2;1;reserva
+manolis;Mon Jul 03 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+h;Sun Jul 02 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
+g;Mon Jul 03 00:00:00 COT 2023;Sat Jul 08 00:00:00 COT 2023;1;1;reserva
+s;Sat May 06 00:00:00 COT 2023;Tue May 09 00:00:00 COT 2023;2;1;reserva

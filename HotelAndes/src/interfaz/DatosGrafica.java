@@ -16,7 +16,7 @@ public class DatosGrafica {
 	
 	int[] data= {0,0,0,0,0,0,0,0,0,0,0,0};
 	public void obtenerOcupacion() throws IOException{
-		FileReader archivo = new FileReader("./data/reservas.txt");
+		FileReader archivo = new FileReader("./data/reservas_temp.txt");
 		BufferedReader br = new BufferedReader(archivo);
 		String linea = br.readLine();
 		String[] titulos = linea.split(";");

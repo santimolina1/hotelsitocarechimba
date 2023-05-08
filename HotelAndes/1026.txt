@@ -1,0 +1,8 @@
+Número de factura: 8007
+Fecha: 2023-05-07
+Nombre: manolis
+Producto   ----   Precio ----  Pagado
+Gaseosa   ----   6000.0   ----   false
+Precio neto de lo NO pago: 6000.0
+valor del IVA de lo NO pago: 1140.0
+Valor total de lo NO pago: 7140.0

@@ -4,21 +4,26 @@ import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.stream.Collectors;
 
 import consola.Hotel;
 import logica_.Consumo;
+import logica_.Factura;
 import logica_.Habitacion;
 import logica_.HuespedReserva;
 import logica_.Reserva;
+import logica_.Servicio;
 import modelo.CargadorArchivo;
 import modelo.FuncionesEmpleado;
 import modelo.Inventario;
 
 public class controlador {
 	public HashMap<String, HuespedReserva> huespedes = new HashMap<String, HuespedReserva>();
+	
 	public HashMap<String, Reserva> reservas = new HashMap<String, Reserva>();
 	public CargadorArchivo cargador =CargadorArchivo.getInstance();
 	
@@ -30,7 +35,21 @@ public class controlador {
 	private static controlador instancia;
 	
 	
-	
+	public void cargarConsumo(Servicio consumo) {
+		
+		
+		Consumo objconsumo = new Consumo(LocalDate.now(), (String) consumo.getNombre(), consumo.getPrecioTotal(),
+				(float) (consumo.getPrecioTotal() * 0.19), false);
+		
+		ArrayList<HuespedReserva> huespedesList= huespedes.values().stream().collect(Collectors.toCollection(ArrayList::new));
+		System.out.println(huespedes);
+		System.out.println(huespedesList);
+		HuespedReserva a = huespedesList.get(0);
+		HashMap<String, Consumo> losconsumos = a.getConsumos();
+		losconsumos.put(objconsumo.getNombre(), objconsumo);
+		System.out.println(a.getNombre());
+		System.out.println(a.getConsumos());
+	}
 	public static controlador getInstance()
 	{
 		if (instancia == null)
@@ -48,7 +67,7 @@ public class controlador {
 	}
 
 	public boolean ingresarDatos(String nombre, String documento, String correo, String celular) {
-		{
+		
 
 			
 			int documento1 = Integer
@@ -60,13 +79,15 @@ public class controlador {
 				huesped1 = new HuespedReserva(nombre, documento1, correo, celular, consumoss);
 				huespedes.put(nombre, huesped1);
 				
-				System.out.println(huespedes);
+				
 				return true;
 			} else {
 				return false;
 			}
+			
+			
 
-		}
+		
 	}
 	
 	public Date formatearHora(String date_time, String formato) {
@@ -157,6 +178,26 @@ public class controlador {
 		reserva.setEstado(true);
 		usuariosCheckIn.add(nombre);
 		}
+	
+		
+	}
+	public Factura generarFactura() {
+		ArrayList<HuespedReserva> huespedesList= huespedes.values().stream().collect(Collectors.toCollection(ArrayList::new));
+		System.out.println(huespedes);
+		System.out.println(huespedesList);
+		HuespedReserva persona = huespedesList.get(0);
+		ArrayList<Consumo> consumosLiii = new ArrayList<Consumo>(((persona).getConsumos()).values());
+		Factura f = new Factura(LocalDate.now(), persona.getNombre(), persona, consumosLiii);
+		f.generarTextoFactura();
+		return f;
+		
+	}
+	public ArrayList<Consumo> getConsumos(){
+		ArrayList<HuespedReserva> huespedesList= huespedes.values().stream().collect(Collectors.toCollection(ArrayList::new));
+		
+		HuespedReserva persona = huespedesList.get(0);
+		ArrayList<Consumo> consumosLiii = new ArrayList<Consumo>(((persona).getConsumos()).values());
+		return consumosLiii;
 		
 	}
 }

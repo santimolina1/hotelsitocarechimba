@@ -443,16 +443,16 @@ public class CargadorArchivo {
 	}
 	
 	
-	public ArrayList<Plato> getListaPlatos()
+	public ArrayList<Servicio> getListaPlatos()
 	{
-		ArrayList<Plato> values= platos.values().stream().collect(Collectors.toCollection(ArrayList::new));
+		ArrayList<Servicio> values= platos.values().stream().collect(Collectors.toCollection(ArrayList::new));
 		
 		return values;
 		
 	}
-	public ArrayList<Bebida> getListaBebidas()
+	public ArrayList<Servicio> getListaBebidas()
 	{
-		ArrayList<Bebida> values= bebidas.values().stream().collect(Collectors.toCollection(ArrayList::new));
+		ArrayList<Servicio> values= bebidas.values().stream().collect(Collectors.toCollection(ArrayList::new));
 		
 		return values;
 		

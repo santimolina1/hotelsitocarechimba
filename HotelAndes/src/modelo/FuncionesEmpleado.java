@@ -266,7 +266,7 @@ public class FuncionesEmpleado {
 		
 		if (opcion.get("bebida") != null) {
 			Object op = opcion.get("bebida");
-			ArrayList<Bebida> listaBebidas=  cargador.getListaBebidas();
+			ArrayList<Servicio> listaBebidas=  cargador.getListaBebidas();
 			System.out.println(op);
 			System.out.println(bebidas);
 			System.out.println(listaBebidas);
@@ -275,7 +275,7 @@ public class FuncionesEmpleado {
 		}
 		if (opcion.get("plato") != null) {
 			Object op = opcion.get("plato");
-			ArrayList<Plato> listaPlatos=  cargador.getListaPlatos();
+			ArrayList<Servicio> listaPlatos=  cargador.getListaPlatos();
 			System.out.println(op);
 			System.out.println(platos);
 			System.out.println(listaPlatos);
@@ -303,6 +303,7 @@ public class FuncionesEmpleado {
 		losconsumos.put(objconsumo.getNombre(), objconsumo);
 
 	}
+	
 
 	public static String fechaString(Date date) {
 

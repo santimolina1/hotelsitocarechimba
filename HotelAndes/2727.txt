@@ -1,0 +1,10 @@
+Número de factura: 7808
+Fecha: 2023-05-07
+Nombre: g
+Producto   ----   Precio ----  Pagado
+Empanadas   ----   9000.0   ----   false
+PiñaColada   ----   8000.0   ----   true
+guiaPorElMar   ----   63200.0   ----   false
+Precio neto de lo NO pago: 72200.0
+valor del IVA de lo NO pago: 13718.0
+Valor total de lo NO pago: 85918.0

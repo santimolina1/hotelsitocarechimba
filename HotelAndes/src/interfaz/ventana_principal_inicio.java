@@ -99,7 +99,7 @@ public class ventana_principal_inicio extends javax.swing.JFrame {
 			public static void main(String args[]) {
 				
 
-				/* Create and display the form */
+				
 				try {
 					for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
 						if ("Nimbus".equals(info.getName())) {
