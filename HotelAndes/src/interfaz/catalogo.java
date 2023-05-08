@@ -1,23 +1,13 @@
 package interfaz;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.IOException;
 
-import controlador.controlador;
+public class catalogo extends javax.swing.JFrame {
 
-public class check_in extends javax.swing.JFrame {
-	controlador control= controlador.getInstance();
     /**
-     * Creates new form Check_in
+     * Creates new form catalogo
      */
-    public check_in() {
+    public catalogo() {
         initComponents();
-
-       
-
-        setSize(490, 390);
-
     }
 
     /**
@@ -31,10 +21,11 @@ public class check_in extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField1=new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -44,60 +35,39 @@ public class check_in extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jLabel1.setText("CHECK-IN");
+        jLabel1.setText("Catálogo de servicios del hotel.");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(170, 80, 156, 23);
-
-        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Ingresa tu nombre");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(170, 110, 220, 23);
-        
-        
-        jTextField1.setBounds(170, 150, 190, 30);
-        jPanel1.add(jTextField1);
+        jLabel1.setBounds(100, 10, 270, 23);
 
         jButton1.setBackground(new java.awt.Color(255, 249, 132));
         jButton1.setText("Volver");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
         jPanel1.add(jButton1);
-        jButton1.setBounds(280, 200, 110, 30);
+        jButton1.setBounds(310, 280, 110, 30);
 
-        jButton2.setBackground(new java.awt.Color(255, 249, 132));
-        jButton2.setText("Agregar huésped");
-        jButton2.setToolTipText("");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                try {
-					jButton2ActionPerformed(evt);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-            }
-        });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(90, 200, 140, 30);
+        jTextField1.setText("jTextField1");
+        jPanel1.add(jTextField1);
+        jTextField1.setBounds(50, 170, 140, 110);
+
+        jTextField2.setText("jTextField2");
+        jPanel1.add(jTextField2);
+        jTextField2.setBounds(260, 50, 150, 100);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("./img/46ccf3733c648df7203c79d321b717037c62f80a.XL2.jpg"))); // NOI18N
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(60, 60, 130, 90);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("./img/turismo_sostenible copia.jpg"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(210, 160, 180, 110);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 450, 320);
+        jPanel1.setBounds(10, 10, 460, 330);
 
         pack();
     }// </editor-fold>                        
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws IOException { 
-    	String nombre = jTextField1.getText();
-    	control.checkIn(nombre);
-    	new agregar_huesped().setVisible(true);}
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) { 
-    	new ventana_usuario().setVisible(true);
-    }
-    
 
     /**
      * @param args the command line arguments
@@ -116,7 +86,7 @@ public class check_in extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(check_in.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(catalogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         
@@ -124,17 +94,17 @@ public class check_in extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new check_in().setVisible(true);
+            new catalogo().setVisible(true);
         });
     }
-   
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration                   
 }

@@ -1,13 +1,24 @@
 package interfaz;
 
-public class ingresar_datos extends javax.swing.JFrame {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.HashMap;
+import controlador.controlador;
 
+public class ingresar_datos extends javax.swing.JFrame {
+	controlador control= controlador.getInstance();
     /**
      * Creates new form Ingresar_Datos
      */
     public ingresar_datos() {
         initComponents();
+
+        
+     
+
         setSize(490, 390);
+
     }
 
     /**
@@ -61,17 +72,48 @@ public class ingresar_datos extends javax.swing.JFrame {
         jButton1.setText("Ingresar");
         jPanel1.add(jButton1);
         jButton1.setBounds(170, 240, 110, 30);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	try {
+					botonIngresarActionPerformed(evt);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            }
+        });
+
+        
 
         jButton2.setBackground(new java.awt.Color(255, 249, 132));
         jButton2.setText("Volver");
         jPanel1.add(jButton2);
         jButton2.setBounds(330, 290, 110, 30);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 460, 330);
 
         pack();
-    }                     
+        
+    }
+    private void botonIngresarActionPerformed(java.awt.event.ActionEvent evt) throws IOException {
+    	 String nombreUsuario = jTextField1.getText();
+         String documento = jTextField2.getText();
+         String celular = jTextField3.getText();
+         String correo = jTextField4.getText();
+         
+         
+         boolean valor=control.ingresarDatos(nombreUsuario, documento, correo, celular);
+         new ventana_usuario().setVisible(true);
+    }
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    	new ventana_usuario().setVisible(true);
+    } 
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
