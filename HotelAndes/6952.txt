@@ -1,0 +1,10 @@
+Número de factura: 1541
+Fecha: 2023-05-07
+Nombre: s
+Producto   ----   Precio ----  Pagado
+Cafe   ----   5000.0   ----   false
+Empanadas   ----   9000.0   ----   true
+Safari   ----   54300.0   ----   false
+Precio neto de lo NO pago: 59300.0
+valor del IVA de lo NO pago: 11267.0
+Valor total de lo NO pago: 70567.0
