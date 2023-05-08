@@ -111,12 +111,6 @@ public class venatana_principal extends javax.swing.JFrame {
     }                                        
 
     
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new venatana_principal().setVisible(true);
-            }
-        });
-    }
+   
           
 }

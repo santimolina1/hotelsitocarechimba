@@ -1,5 +1,7 @@
 package interfaz;
 
+import java.io.IOException;
+
 import javax.swing.ImageIcon;
 
 public class ventana_principal_inicio extends javax.swing.JFrame {
@@ -34,7 +36,7 @@ public class ventana_principal_inicio extends javax.swing.JFrame {
 		jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
 		jLabel2.setText("Bienvenido a Hotel Andes");
 		jPanel1.add(jLabel2);
-		jLabel2.setBounds(150, 20, 159, 17);
+		jLabel2.setBounds(150, 20, 200, 17);
 
 		jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		jLabel1.setIcon(new ImageIcon("./img/hoteles_espaa_lujo-U301387819834kHH--1234x900@abc.jpg")); // NOI18N
@@ -47,7 +49,13 @@ public class ventana_principal_inicio extends javax.swing.JFrame {
 		jButton1.setText("Estadisticas");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jButton1ActionPerformed(evt);
+				try {
+					jButton1ActionPerformed(evt);
+				} catch (IOException e) {
+					VentanaEmergente ventana = new VentanaEmergente(null);
+			        ventana.setVisible(true);
+					e.printStackTrace();
+				}
 			}
 		});
 		jPanel1.add(jButton1);
@@ -80,22 +88,16 @@ public class ventana_principal_inicio extends javax.swing.JFrame {
 						);
 
 				pack();
-			}// </editor-fold>                        
+			}                      
 
-			private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-				// TODO add your handling code here:
+			private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws IOException {                                         
+				new Estadisticas().setVisible(true);
 			}                                        
 			private void inicSesActionPerformed(java.awt.event.ActionEvent evt) {                                         
-				// TODO add your handling code here:
+				new venatana_principal().setVisible(true);
 			} 
 			public static void main(String args[]) {
-				/* Set the Nimbus look and feel */
-				//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-				/* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-				 * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-				 */
-
-				//</editor-fold>
+				
 
 				/* Create and display the form */
 				try {

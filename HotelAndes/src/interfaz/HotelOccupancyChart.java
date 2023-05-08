@@ -1,4 +1,4 @@
-package interfazGrafica;
+package interfaz;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -64,7 +64,7 @@ public class HotelOccupancyChart extends JPanel {
             x += anchoBarra;
         }
 
-        //  nombres  en el eje X
+       
         x = 70;
         int y = getHeight() - 30;
         for (int i = 0; i < meses.length; i++) {
@@ -73,27 +73,7 @@ public class HotelOccupancyChart extends JPanel {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        
-        String[] meses = {"Enero Febrero Marzo Abril Mayo Junio Julio Agosto Septiembre Octubre Noviembre Diciembre"};
-       
-        	DatosGrafica a= new	DatosGrafica();
-        	int[] data = a.getData();
-        	for (int i: data) {
-        		System.out.println(i);
-        	}
-        	
-            HotelOccupancyChart chart = new HotelOccupancyChart(data, meses, "Ocupación Hotel Andes", "meses", "porcentaje de ocupación"); 
-
-            JFrame frame = new JFrame("Hotel Occupancy Chart");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(810, 600);
-            frame.getContentPane().add(chart);
-            frame.setVisible(true);
-            
-            
-            
-    }
+   
 }
 
       

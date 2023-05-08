@@ -1,5 +1,7 @@
 package interfaz;
 
+import java.io.IOException;
+
 import javax.swing.ImageIcon;
 
 public class solicitar_servicio extends javax.swing.JFrame {
@@ -23,11 +25,11 @@ public class solicitar_servicio extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        platosb = new javax.swing.JButton();
+        bebidas = new javax.swing.JButton();
+        spa = new javax.swing.JButton();
+        guia = new javax.swing.JButton();
+        volver = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -46,35 +48,60 @@ public class solicitar_servicio extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(50, 10, 360, 30);
 
-        jButton1.setBackground(new java.awt.Color(255, 249, 133));
-        jButton1.setText("Platos");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(90, 140, 110, 30);
-
-        jButton2.setBackground(new java.awt.Color(255, 249, 133));
-        jButton2.setText("Bebidas");
-        jPanel1.add(jButton2);
-        jButton2.setBounds(270, 140, 110, 30);
-
-        jButton3.setBackground(new java.awt.Color(255, 249, 133));
-        jButton3.setText("Spa");
-        jPanel1.add(jButton3);
-        jButton3.setBounds(90, 250, 110, 30);
-
-        jButton4.setBackground(new java.awt.Color(255, 249, 133));
-        jButton4.setText("Guia turistico");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        platosb.setBackground(new java.awt.Color(255, 249, 133));
+        platosb.setText("Platos");
+        jPanel1.add(platosb);
+        platosb.setBounds(90, 140, 110, 30);
+        platosb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+            	platosbActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4);
-        jButton4.setBounds(270, 250, 110, 30);
 
-        jButton5.setBackground(new java.awt.Color(255, 249, 133));
-        jButton5.setText("Volver");
-        jPanel1.add(jButton5);
-        jButton5.setBounds(330, 10, 110, 30);
+        bebidas.setBackground(new java.awt.Color(255, 249, 133));
+        bebidas.setText("Bebidas");
+        jPanel1.add(bebidas);
+        bebidas.setBounds(270, 140, 110, 30);
+        bebidas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	try {
+					bebidasActionPerformed(evt);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            }
+        });
+
+        spa.setBackground(new java.awt.Color(255, 249, 133));
+        spa.setText("Spa");
+        jPanel1.add(spa);
+        spa.setBounds(90, 250, 110, 30);
+        spa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                spaActionPerformed(evt);
+            }
+        });
+
+        guia.setBackground(new java.awt.Color(255, 249, 133));
+        guia.setText("Guia turistico");
+        guia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guiaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(guia);
+        guia.setBounds(270, 250, 110, 30);
+
+        volver.setBackground(new java.awt.Color(255, 249, 133));
+        volver.setText("Volver");
+        jPanel1.add(volver);
+        volver.setBounds(330, 10, 110, 30);
+        volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	volverActionPerformed(evt);
+            }
+        });
 
         jLabel3.setIcon(new ImageIcon("./img/spa.jpg")); // NOI18N
         jPanel1.add(jLabel3);
@@ -84,7 +111,7 @@ public class solicitar_servicio extends javax.swing.JFrame {
         jPanel1.add(jLabel4);
         jLabel4.setBounds(110, 60, 80, 80);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("./img/bebidas-sin-alcohol.jpg"))); // NOI18N
+        jLabel5.setIcon(new ImageIcon("./img/bebidas-sin-alcohol.jpg")); // NOI18N
         jLabel5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jLabel5);
         jLabel5.setBounds(290, 60, 60, 70);
@@ -99,13 +126,22 @@ public class solicitar_servicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
+    private void platosbActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    	new plato().setVisible(true);
+    }   
+    private void bebidasActionPerformed(java.awt.event.ActionEvent evt) throws IOException {                                         
+    	new bebida().setVisible(true);
+    }
+    private void spaActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    	 new spa().setVisible(true);
+    }
+    private void guiaActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    	new turismo().setVisible(true);
+    }
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    	new ventana_usuario().setVisible(true);
+    }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -122,22 +158,18 @@ public class solicitar_servicio extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(solicitar_servicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        
-        //</editor-fold>
-
-        /* Create and display the form */
+      
         java.awt.EventQueue.invokeLater(() -> {
             new solicitar_servicio().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton platosb;
+    private javax.swing.JButton bebidas;
+    private javax.swing.JButton spa;
+    private javax.swing.JButton guia;
+    private javax.swing.JButton volver;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

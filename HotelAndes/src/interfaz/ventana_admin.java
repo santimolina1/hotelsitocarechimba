@@ -11,7 +11,7 @@ public class ventana_admin extends javax.swing.JFrame {
      */
     public ventana_admin() {
         initComponents();
-        new ImageIcon("./img/error.jpg")
+        setSize(490, 390);
     }
 
     /**

@@ -1,4 +1,4 @@
-package interfazGrafica;
+package interfaz;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

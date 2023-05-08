@@ -41,7 +41,7 @@ public class ventana_usuario extends javax.swing.JFrame {
 		jLabel7 = new javax.swing.JLabel();
 		jLabel8 = new javax.swing.JLabel();
 		jLabel9 = new javax.swing.JLabel();
-
+		a=new javax.swing.JLabel();
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 
@@ -137,9 +137,9 @@ public class ventana_usuario extends javax.swing.JFrame {
         });
 
 		jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N "./img/error.jpg"
-		jLabel2.setIcon(new ImageIcon("./img/usuaio.jpg")); // NOI18N
+		jLabel2.setIcon(new ImageIcon("./img/usuario.jpg")); // NOI18N
 		jPanel1.add(jLabel2);
-		jLabel2.setBounds(60, 60, 100, 100);
+		jLabel2.setBounds(60, 40, 100, 100);
 
 		jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
 		jLabel3.setIcon(new ImageIcon("./img/reserva.jpg")); // NOI18N
@@ -158,6 +158,10 @@ public class ventana_usuario extends javax.swing.JFrame {
 		jLabel6.setIcon(new ImageIcon("./img/catalogo.jpg")); // NOI18N
 		jPanel1.add(jLabel6);
 		jLabel6.setBounds(230, 150, 50, 50);
+		
+		a.setIcon(new ImageIcon("./img/menu.jpg")); // NOI18N
+		jPanel1.add(a);
+		a.setBounds(60, 150, 50, 50);
 
 		jLabel7.setIcon(new ImageIcon("./img/contratacion.jpg")); // NOI18N
 		jPanel1.add(jLabel7);
@@ -186,7 +190,7 @@ public class ventana_usuario extends javax.swing.JFrame {
 		new cancelar_reserva().setVisible(true);
 	}
 	private void solicitarServButActionPerformed(java.awt.event.ActionEvent evt) {
-		//TODO
+		new solicitar_servicio().setVisible(true);
 	}
 	private void catalogoButActionPerformed(java.awt.event.ActionEvent evt) {
 		//TODO
@@ -221,6 +225,7 @@ public class ventana_usuario extends javax.swing.JFrame {
 	private javax.swing.JButton cacelarReservBut;
 	private javax.swing.JButton pagarServBut;
 	private javax.swing.JLabel jLabel1;
+	private javax.swing.JLabel a;
 	private javax.swing.JLabel jLabel2;
 	private javax.swing.JLabel jLabel3;
 	private javax.swing.JLabel jLabel4;
