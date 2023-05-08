@@ -149,4 +149,14 @@ public class controlador {
 		Hotel hotel= Hotel.getInstance();
 		hotel.eliminarReserva(nombre, Fecha_llegada, Fecha_salida);
 	}
+	
+	public void checkIn(String nombre) throws IOException{
+		Reserva reserva = reservas.get(nombre);
+		int z=usuariosCheckIn.indexOf(nombre);
+		if (z==-1) {
+		reserva.setEstado(true);
+		usuariosCheckIn.add(nombre);
+		}
+		
+	}
 }

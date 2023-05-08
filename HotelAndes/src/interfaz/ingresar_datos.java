@@ -109,7 +109,7 @@ public class ingresar_datos extends javax.swing.JFrame {
          
          
          boolean valor=control.ingresarDatos(nombreUsuario, documento, correo, celular);
-         System.out.println(valor);
+         new ventana_usuario().setVisible(true);
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                            
     	new ventana_usuario().setVisible(true);

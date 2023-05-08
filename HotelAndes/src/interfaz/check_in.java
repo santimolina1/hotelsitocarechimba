@@ -2,21 +2,19 @@ package interfaz;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+
+import controlador.controlador;
 
 public class check_in extends javax.swing.JFrame {
-
+	controlador control= controlador.getInstance();
     /**
      * Creates new form Check_in
      */
     public check_in() {
         initComponents();
 
-        jButton2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                agregar_huesped agregarHuesped = new agregar_huesped();
-                agregarHuesped.setVisible(true);
-            }
-        });
+       
 
         setSize(490, 390);
 
@@ -36,6 +34,7 @@ public class check_in extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jTextField1=new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -47,16 +46,25 @@ public class check_in extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel1.setText("CHECK-IN");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(160, 110, 156, 23);
+        jLabel1.setBounds(170, 80, 156, 23);
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("");
+        jLabel2.setText("Ingresa tu nombre");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(130, 140, 220, 23);
+        jLabel2.setBounds(170, 110, 220, 23);
+        
+        
+        jTextField1.setBounds(170, 150, 190, 30);
+        jPanel1.add(jTextField1);
 
         jButton1.setBackground(new java.awt.Color(255, 249, 132));
         jButton1.setText("Volver");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1);
         jButton1.setBounds(280, 200, 110, 30);
 
@@ -65,7 +73,12 @@ public class check_in extends javax.swing.JFrame {
         jButton2.setToolTipText("");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                try {
+					jButton2ActionPerformed(evt);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
         jPanel1.add(jButton2);
@@ -77,8 +90,13 @@ public class check_in extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-    	new ventana_usuario().setVisible(true);}
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws IOException { 
+    	String nombre = jTextField1.getText();
+    	control.checkIn(nombre);
+    	new agregar_huesped().setVisible(true);}
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) { 
+    	new ventana_usuario().setVisible(true);
+    }
     
 
     /**
@@ -109,7 +127,7 @@ public class check_in extends javax.swing.JFrame {
             new check_in().setVisible(true);
         });
     }
-    
+   
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;
@@ -117,5 +135,6 @@ public class check_in extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration                   
 }

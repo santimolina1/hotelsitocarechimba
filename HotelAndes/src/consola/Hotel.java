@@ -148,7 +148,7 @@ private static Hotel instancia;
 	
 		
 		FileWriter escritor= new FileWriter(archivo,true);
-		escritor.write("\n");
+		
 		escritor.write(nombre+";");
 		escritor.write(fechaString(fecha_llegada)+";");
 		escritor.write(fecha_salida+";");
