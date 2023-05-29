@@ -8,3 +8,10 @@ gabriela;1234;usuario
 francois;1234;usuario
 nicoxd;nico;usuario
 clau;123;usuario
+prueba;1234;usuario
+clau;123;usuario
+clau;123;usuario
+clau;123;usuario
+clau;123;usuario
+clau;123;usuario
+clau;123;usuario
