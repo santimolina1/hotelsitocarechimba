@@ -35,7 +35,7 @@ public class controlador {
 	private static controlador instancia;
 	
 	
-	public void cargarConsumo(Servicio consumo) {
+	public void cargarConsumo (Servicio consumo) {
 		
 		
 		Consumo objconsumo = new Consumo(LocalDate.now(), (String) consumo.getNombre(), consumo.getPrecioTotal(),

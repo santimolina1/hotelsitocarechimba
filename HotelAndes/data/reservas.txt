@@ -56,3 +56,8 @@ manolis;Mon Jul 03 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
 h;Sun Jul 02 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;1;1;reserva
 g;Mon Jul 03 00:00:00 COT 2023;Sat Jul 08 00:00:00 COT 2023;1;1;reserva
 s;Sat May 06 00:00:00 COT 2023;Tue May 09 00:00:00 COT 2023;2;1;reserva
+claudia;Fri Nov 03 00:00:00 COT 2023;Fri Nov 10 00:00:00 COT 2023;3;;reserva
+claudia;Wed Jun 07 00:00:00 COT 2023;Sat Jul 15 00:00:00 COT 2023;3;;reserva
+clau;Wed Jun 07 00:00:00 COT 2023;Thu Jun 15 00:00:00 COT 2023;3;;reserva
+manolo;Wed Jul 05 00:00:00 COT 2023;Sat Jul 08 00:00:00 COT 2023;2;1;reserva
+fracois;Mon May 08 00:00:00 COT 2023;Tue May 09 00:00:00 COT 2023;2;1;reserva

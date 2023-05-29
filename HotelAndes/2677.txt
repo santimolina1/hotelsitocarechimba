@@ -1,0 +1,10 @@
+Número de factura: 821
+Fecha: 2023-05-08
+Nombre: fracois
+Producto   ----   Precio ----  Pagado
+PolloGrille   ----   26000.0   ----   false
+masajeAfrodisiaco   ----   345600.0   ----   true
+Safari   ----   54300.0   ----   false
+Precio neto de lo NO pago: 80300.0
+valor del IVA de lo NO pago: 15257.0
+Valor total de lo NO pago: 95557.0

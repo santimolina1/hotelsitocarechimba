@@ -2,25 +2,19 @@ package interfaz;
 
 import java.io.IOException;
 
-import javax.swing.SwingUtilities;
-
 import consola.Hotel;
 
-
-
-
-public class venatana_principal extends javax.swing.JFrame {
+public class CrearUsuario  extends javax.swing.JFrame {
 
 	private javax.swing.JButton botonIngresar;
+	private javax.swing.JButton volver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField usuarioField;
     private javax.swing.JTextField contraseñaField;
-    private javax.swing.JButton crearUser;
     
-    
-    public venatana_principal() {
+    public CrearUsuario() {
         initComponents();
         setSize(490, 390);
     }
@@ -34,7 +28,7 @@ public class venatana_principal extends javax.swing.JFrame {
         usuarioField = new javax.swing.JTextField();
         contraseñaField = new javax.swing.JTextField();
         botonIngresar = new javax.swing.JButton();
-        crearUser=new javax.swing.JButton();
+        volver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Hotel Andes. Pagina Principal");
@@ -52,7 +46,7 @@ public class venatana_principal extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(150, 40, 200, 40);
 
-        jLabel2.setText("Ingrese su usuario y contraseña:");
+        jLabel2.setText("Ingrese su usuario y contraseña nuevos:");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(130, 70, 190, 40);
 
@@ -71,7 +65,7 @@ public class venatana_principal extends javax.swing.JFrame {
         contraseñaField.setBounds(120, 190, 210, 23);
 
         botonIngresar.setBackground(new java.awt.Color(255, 249, 132));
-        botonIngresar.setText("Ingresar");
+        botonIngresar.setText("Crear Usuario");
         botonIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
             	try {
@@ -85,51 +79,48 @@ public class venatana_principal extends javax.swing.JFrame {
         jPanel1.add(botonIngresar);
         botonIngresar.setBounds(170, 250, 110, 30);
         
-        crearUser.setBackground(new java.awt.Color(255, 249, 132));
-        crearUser.setText("Crear Usuario");
-        crearUser.addActionListener(new java.awt.event.ActionListener() {
+        volver.setBackground(new java.awt.Color(255, 249, 132));
+        volver.setText("Volver");
+        volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-            	crearUserActionPerformed(evt);
-            	
+                volverActionPerformed(evt);
             }
         });
-        jPanel1.add(crearUser);
-        crearUser.setBounds(170, 280, 110, 30);
+        jPanel1.add(volver);
+        volver.setBounds(340, 290, 110, 30);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(-4, -4, 460, 330);
 
         pack();
-    }                       
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        
-    }          
+    }   
     
-    private void crearUserActionPerformed(java.awt.event.ActionEvent evt) {
-    	new CrearUsuario().setVisible(true);
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) { 
+    	new venatana_principal().setVisible(true);
     	
     }
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+       
+    }                                           
 
     private void botonIngresarActionPerformed(java.awt.event.ActionEvent evt) throws IOException {                                         
     	String nombreUsuario= usuarioField.getText();
     	String contraseñaU= contraseñaField.getText();
     	Hotel hotel= Hotel.getInstance();
-		String desicion=hotel.iniciarSesion(nombreUsuario,contraseñaU);
-		if (desicion.equals("Usuario o contraseña incorrecta")) {
-			VentanaEmergente ventana = new VentanaEmergente(null);
-	        ventana.setVisible(true);
-		}
-		else if(desicion.equals("admin")) {
-			new ventana_admin().setVisible(true);
+    	String desicion=hotel.crearUsuario(nombreUsuario, contraseñaU);
+    	System.out.println(desicion);
+		
+		if (desicion.equals("")) {
+			new venatana_principal().setVisible(true);
 			
 		}
-		else if(desicion.equals("user")) {
-			new ventana_usuario().setVisible(true);
+		else {
+			UsuarioCreadoExito ventana = new UsuarioCreadoExito(null);
+	        ventana.setVisible(true);
 		}
     }                                        
 
     
-   
-          
+            
 }

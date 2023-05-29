@@ -1,0 +1,9 @@
+Número de factura: 5644
+Fecha: 2023-05-08
+Nombre: clau
+Producto   ----   Precio ----  Pagado
+Jugo   ----   4000.0   ----   false
+Empanadas   ----   9000.0   ----   false
+Precio neto de lo NO pago: 13000.0
+valor del IVA de lo NO pago: 2470.0
+Valor total de lo NO pago: 15470.0

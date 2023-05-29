@@ -75,10 +75,10 @@ public class  AplicacionPrincipal {
 		
 	}
 	
-	public void ejecutarCrearUsuario() {
+	public void ejecutarCrearUsuario() throws IOException {
 		String usuario= input("Ingrese un nombre de usuario: ");
 		String contraseña= input("Ingrese una contraseña: ");
-		ArrayList<String> us= new ArrayList<String>();
+		
 		Hotel hotel= Hotel.getInstance();
 		hotel.crearUsuario(usuario, contraseña);
 		

@@ -69,7 +69,7 @@ public class ingresar_datos extends javax.swing.JFrame {
             	try {
 					botonIngresarActionPerformed(evt);
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
+					
 					e.printStackTrace();
 				}
             }

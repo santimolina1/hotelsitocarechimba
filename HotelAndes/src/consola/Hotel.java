@@ -110,10 +110,12 @@ private static Hotel instancia;
 		return retorno;
 	}
 
-	public String crearUsuario(String user, String password) {
+	public String crearUsuario(String user, String password) throws IOException {
+		cargarUsuarios();
+		
 		String retorno = "";
-		Boolean cond = usuarios.contains(user);
-
+		Boolean cond = usuariosYPass.containsKey(user);
+		
 		if (cond) {
 			retorno = "El usuario ya existe";
 		} else {
