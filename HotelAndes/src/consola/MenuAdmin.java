@@ -205,7 +205,7 @@ public class MenuAdmin {
 		{
 			
 			Habitacion hab = cuartos.get(i);
-            System.out.println("iD: " + i+ ", Capacidad: "+hab.getCapacidad() + ", Ubicacion : " + hab.getUbicacion() + ", Precio: "+hab.getPrecioFijo()+ "Camas: ");
+            System.out.println("iD: " + i+ ", Capacidad: "+hab.getCapacidad() + ", Ubicacion : " + hab.getUbicacion() + ", Precio: "+hab.getPrecioTotal()+ "Camas: ");
             ArrayList<Cama> camasHab= hab.getCama();
             for(Cama c:camasHab ) {
             	System.out.println(c.tamaño +  ".");

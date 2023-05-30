@@ -236,7 +236,7 @@ public class FuncionesEmpleado {
 			float valorTotal = 0;
 
 			for (Date fecha : fechasEntreEntradaYSalida) {
-				float valorBase = habitacion.getPrecioFijo();
+				float valorBase = habitacion.getPrecioTotal();
 				String tipo = habitacion.getTipo();
 				Float valorAdicional = null;
 				if (tipo == "estandar") {

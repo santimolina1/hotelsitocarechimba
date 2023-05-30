@@ -245,7 +245,7 @@ public class CargadorArchivo {
 			// id;ubicacion;capacidad;camas;precioFijo;vista;balcon;cocina;tipo
 
 			String[] partes = linea.split(";");
-
+//tamañoCuarto;aireAcondicionado;calefaccion;tamañoCama;TV;cafetera;higeneCama;plancha;secador;voltaje;tomaUSB-A;tomaUSB-C;desayuno
 			String id = partes[0];
 			String ubicacion = partes[1];
 			int capacidad = Integer.parseInt(partes[2]);
@@ -259,15 +259,45 @@ public class CargadorArchivo {
 			}
 
 			float precioFijo = Float.parseFloat(partes[4]);
-			boolean vista = toBool(partes[5]);
-			boolean balcon = toBool(partes[6]);
-			boolean cocina = toBool(partes[7]);
-			String tipo = partes[8];
-
+			String tipo = partes[5];
+			String vista = (partes[6]);
+			String balcon = (partes[7]);
+			String cocina = (partes[8]);
+			String tamañoCuarto = (partes[9]);
+			String aireAcondicionado= (partes[10]);
+			String calefaccion= (partes[11]);
+			String tamañoCama=(partes[12]);
+			String TV= (partes[13]);
+			String cafetera= (partes[14]);
+			String higeneCama= (partes[15]);
+			String plancha= (partes[16]);
+			String secador= (partes[17]);
+			String voltaje=(partes[18]);
+			String tomaUSBA= (partes[19]);
+			String tomaUSBC= (partes[20]);
+			String desayuno= (partes[21]);
+			ArrayList<String> atributos= new ArrayList<String> ();
+			atributos.add(vista);
+			atributos.add(balcon);
+			atributos.add(cocina);
+			atributos.add(tamañoCuarto);
+			atributos.add(aireAcondicionado);
+			atributos.add(calefaccion);
+			atributos.add(tamañoCama);
+			atributos.add(TV);
+			atributos.add(cafetera);
+			atributos.add(higeneCama);
+			atributos.add(plancha);
+			atributos.add(secador);
+			atributos.add(voltaje);
+			atributos.add(tomaUSBA);
+			atributos.add(tomaUSBC);
+			atributos.add(desayuno);
+			
+			
 			Habitacion laHabitacion = habitacionies.get(id);
 			if (laHabitacion == null) {
-				laHabitacion = new Habitacion(id, capacidad, camasCuarto, ubicacion, tipo, precioFijo, vista, balcon,
-						cocina);
+				laHabitacion = new Habitacion(id, capacidad, camasCuarto, ubicacion, tipo, precioFijo, atributos);
 				habitacionies.put(id, laHabitacion);
 
 				if (tipo.equals("estandar")) {
