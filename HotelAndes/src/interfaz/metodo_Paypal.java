@@ -1,11 +1,11 @@
 package interfaz;
 
-public class metodo_paypal extends javax.swing.JFrame {
+public class metodo_Paypal extends javax.swing.JFrame {
 
     /**
      * Creates new form metodo_paypal
      */
-    public metodo_paypal() {
+    public metodo_Paypal() {
         initComponents();
     }
 
@@ -84,7 +84,7 @@ public class metodo_paypal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(metodo_paypal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(metodo_Paypal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         
@@ -92,7 +92,7 @@ public class metodo_paypal extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new metodo_paypal().setVisible(true);
+            new metodo_Paypal().setVisible(true);
         });
     }
 
