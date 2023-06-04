@@ -224,4 +224,15 @@ public class controlador {
 		return disponibles;
 		
 	}
+	
+	public String mostrarCaracteristicasHotel() {
+		Hotel hotel= Hotel.getInstance();
+		String caracteristicas=hotel.getCaracteristicas();
+		return caracteristicas;
+	}
+	
+	public String mostrarCaracteristicasHbatiacion(String id) {
+		String todo ="ajd";
+		return todo;
+	}
 }

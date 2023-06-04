@@ -25,6 +25,7 @@ public class Hotel {
 	public String tiposDeHabitación = "Estandar, Suite, Suite Doble";
 	public String servicios = "Alojamiento, spa, guia turistico, Restaurante, servicio a la habitación y muchas diversiones más :)";
 	public String restaurante;
+	public String caracteristicas="Parqueadero, Piscina, Zonas húmedas, BBQ, Wifi Gratis, Recepción 24 horas, Admite mascotas";
 	HashMap<String, String> usuariosYPass = new HashMap<String, String>();
 	HashMap<String, String> tipoDePersona = new HashMap<String, String>();
 	ArrayList<String> usuarios = new ArrayList<String>(usuariosYPass.keySet());
@@ -38,6 +39,10 @@ private static Hotel instancia;
 		
 	}
 	
+	public String getCaracteristicas() {
+		return caracteristicas;
+	}
+
 	public static Hotel getInstance()
 	{
 		if (instancia == null)
