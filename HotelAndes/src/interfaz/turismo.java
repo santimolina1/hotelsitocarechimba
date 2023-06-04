@@ -69,7 +69,7 @@ public class turismo extends javax.swing.JFrame {
         jPanel1.setBounds(6, 6, 450, 320);
 
         pack();
-    }// </editor-fold>                        
+    }                        
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
     	new solicitar_servicio().setVisible(true);

@@ -87,6 +87,56 @@ public class Factura {
 		return elementos;
 
 	}
+	public void cargarValoresHabitacion(){
+		File archivo =new File ("valoresPorHabitacion.txt");
+		PrintWriter pw = null;
+		Consumo tarifa=null;
+		Consumo habitacion=null;
+		for(Consumo i: consumos) {
+			if(i.getNombre().contains("Tarifa habitación")) {
+				tarifa=i;
+			}
+			else if(esNumeroEntero(i.getNombre())) {
+				habitacion=i;
+			}
+		}
+		if(tarifa!=null && habitacion!=null) {
+		try {
+			pw = new PrintWriter(archivo);
+			pw.println(tarifa.getNombre() + "   ----   " + tarifa.getPrecio() );
+			pw.println(habitacion.getNombre() + "   ----   " + habitacion.getPrecio() );
+		
+		} catch (FileNotFoundException ex) {
+			ex.printStackTrace();
+
+		} finally {
+			if (pw != null) {
+				pw.close();
+			}
+		}
+		}
+
+	}
+	
+	public void cargarValoresTotales(){
+		File archivo =new File ("valoresTotalesFacturas.txt");
+		PrintWriter pw = null;
+		try {
+			pw = new PrintWriter(archivo);
+			pw.println(getNombre() + "   ----   " + getValotTotal() + getImpuestos());
+		
+		} catch (FileNotFoundException ex) {
+			ex.printStackTrace();
+
+		} finally {
+			if (pw != null) {
+				pw.close();
+			}
+		}
+
+	}
+
+	
 
 	public void generarTextoFactura() {
 		
@@ -122,7 +172,19 @@ public class Factura {
 				pw.close();
 			}
 		}
+		cargarValoresTotales();
 
 	}
+	
+	public boolean esNumeroEntero(String texto) {
+	    try {
+	        Integer.parseInt(texto);
+	        return true;
+	    } catch (NumberFormatException e) {
+	        return false;
+	    }
+	}
+	
+	
 
 }

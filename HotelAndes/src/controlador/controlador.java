@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 import consola.Hotel;
 import logica_.Consumo;
 import logica_.Factura;
+import logica_.GenerarConsumos;
 import logica_.Habitacion;
 import logica_.HuespedReserva;
 import logica_.Reserva;
@@ -23,7 +24,7 @@ import modelo.Inventario;
 
 public class controlador {
 	public HashMap<String, HuespedReserva> huespedes = new HashMap<String, HuespedReserva>();
-	
+	public GenerarConsumos consumos =GenerarConsumos.getInstance();
 	public HashMap<String, Reserva> reservas = new HashMap<String, Reserva>();
 	public CargadorArchivo cargador =CargadorArchivo.getInstance();
 	
@@ -49,6 +50,8 @@ public class controlador {
 		losconsumos.put(objconsumo.getNombre(), objconsumo);
 		System.out.println(a.getNombre());
 		System.out.println(a.getConsumos());
+		consumos.generarConsumo(objconsumo);
+		
 	}
 	public static controlador getInstance()
 	{
