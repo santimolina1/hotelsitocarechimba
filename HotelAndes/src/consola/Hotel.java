@@ -145,8 +145,8 @@ private static Hotel instancia;
 		Date fecha_llegada=reserva.getFecha_llegada();
 		Date fecha_salida=reserva.getFecha_salida();
 		int acompañantes=reserva.getCantidadDeAcompañantes();
-		ArrayList<String> habitaciones=reserva.getHabitaciones();
-		String habs= String.join(",",habitaciones);
+		String habitacion=reserva.getHabitacion();
+		
 	
 		
 		FileWriter escritor= new FileWriter(archivo,true);
@@ -155,7 +155,7 @@ private static Hotel instancia;
 		escritor.write(fecha_llegada+";");
 		escritor.write(fecha_salida+";");
 		escritor.write(acompañantes+";");
-		escritor.write(habs+";");
+		escritor.write(habitacion+";");
 		escritor.write("reserva"+"\n");
 		escritor.close();
 		

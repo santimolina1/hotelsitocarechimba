@@ -40,7 +40,7 @@ public class CargadorArchivo {
 	private HashMap<String, Reserva> reservas = new HashMap<String, Reserva>();
 	private ArrayList<Date> arr= new ArrayList<Date>();
 	private static CargadorArchivo instancia;
-	
+	private HashMap<String, ArrayList<String>> fechas;
 	private CargadorArchivo()
 	{
 		
@@ -496,5 +496,45 @@ public class CargadorArchivo {
 	}
 	
 	
+	public void cargarFechas(String txtFile) {
+        try (BufferedReader br = new BufferedReader(new FileReader(txtFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] elements = line.split(";", 2);
+                String date = elements[0].trim(); // Primer elemento de la línea es la fecha
 
+                // Crear una lista para almacenar los enteros de la línea
+                ArrayList<String> values = new ArrayList<>();
+
+                if (elements.length > 1) {
+                    String[] valueElements = elements[1].split(";");
+                    for (String value : valueElements) {
+                        if (!value.isEmpty()) {
+                            
+                            values.add(value);
+                        }
+                    }
+                }
+
+                // Agregar la lista de enteros al HashMap usando la fecha como clave
+                fechas.put(date, values);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public HashMap<String, ArrayList<String>> getFechas() {
+		return fechas;
+	}
+
+	public void addStringToDate(String date, String str) {
+        if (fechas.containsKey(date)) {
+            List<String> values = fechas.get(date);
+            values.add(str);
+            System.out.println("El string '" + str + "' se agregó correctamente a la lista de valores para la fecha " + date);
+        } else {
+            System.out.println("La fecha " + date + " no existe en el HashMap.");
+        }
+    }
 }

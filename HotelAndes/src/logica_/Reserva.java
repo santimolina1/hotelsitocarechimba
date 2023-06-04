@@ -9,13 +9,12 @@ public class Reserva {
 	private Date fecha_salida;
 	private float precio;
 	private int cantidadDeAcompañantes;
-	private int numeroDeHabitaciones;
 	private float montoTotal;
 	private boolean estado;
-	private ArrayList<String> habitaciones;
+	private String habitacion;
 
-	public ArrayList<String> getHabitaciones() {
-		return habitaciones;
+	public String getHabitacion() {
+		return habitacion;
 	}
 
 	public int getCantidadDeAcompañantes() {
@@ -43,23 +42,21 @@ public class Reserva {
 	}
 
 	public Reserva(HuespedReserva huesped, Date fecha_llegada, Date fecha_salida, float precio,
-			int cantidadDeAcompañantes, int numeroDeHabitaciones,
-			float montoTotal, boolean estado, ArrayList<String> habitaciones) {
+			int cantidadDeAcompañantes,
+			float montoTotal, boolean estado, String habitacion) {
 
 		this.huesped = huesped;
 		this.fecha_llegada = fecha_llegada;
 		this.fecha_salida = fecha_salida;
 		this.precio = precio;
 		this.cantidadDeAcompañantes = cantidadDeAcompañantes;
-		this.habitaciones = habitaciones;
-		this.numeroDeHabitaciones = numeroDeHabitaciones;
+		this.habitacion = habitacion;
+		;
 		this.montoTotal = montoTotal;
 		this.estado = estado;
 	}
 
-	public int getNumeroDeHabitaciones() {
-		return numeroDeHabitaciones;
-	}
+	
 
 	public float getMontoTotal() {
 		return montoTotal;

@@ -1,5 +1,6 @@
 package modelo;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -14,6 +15,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import modelo.CargadorArchivo;
+import consola.Hotel;
+import controlador.controlador;
 import logica_.Bebida;
 import logica_.Consumo;
 import logica_.Habitacion;
@@ -182,13 +186,13 @@ public class FuncionesEmpleado {
 		return fechasEntreEntradaYSalida;
 	}
 
-	public void cancelarReservaFecha(ArrayList<String> habitacionesReserva, Date Fecha,
+	public void cancelarReservaFecha(String habitacion, Date Fecha,
 			HashMap<String, ArrayList<Date>> inventario) {
 
-		for (String idHabitacion : habitacionesReserva) {
-			ArrayList<Date> listaFechas = inventario.get(idHabitacion);
+		
+			ArrayList<Date> listaFechas = inventario.get(habitacion);
 			listaFechas.remove(Fecha);
-		}
+		
 
 	}
 
@@ -340,4 +344,79 @@ public class FuncionesEmpleado {
 		return date;
 	}
 
+	public ArrayList<String> mostrarDisponiblesFechas(Date Fecha_llegada, Date Fecha_salida,
+			HashMap<String, ArrayList<String>> dataMap) {
+		ArrayList<String> disponibles = new ArrayList<String>();
+		for (int i = 1; i <= 50; i++) {
+			disponibles.add(Integer.toString(i));
+		}
+
+		ArrayList<Date> fechasEntreEntradaYSalida = fechas(Fecha_llegada, Fecha_salida);
+		for (Date fecha : fechasEntreEntradaYSalida) {
+			String fecha1 = fechaString(fecha);
+			ArrayList<String> ocupados = dataMap.get(fecha1);
+			disponibles.removeAll(ocupados);
+
+		}
+
+		return disponibles;
+	}
+
+	public void reservar(Date Fecha_llegada, Date Fecha_salida, String id, int cantidadAcompañantes, String nombre,
+			HashMap<String, HuespedReserva> huespedes, HashMap<String, Reserva> reservas) throws IOException {
+
+		CargadorArchivo c = CargadorArchivo.getInstance();
+		//controlador.class cotrolador=controlador.getInstance();
+
+		HuespedReserva huesped = huespedes.get(nombre);
+		HashMap<Date, Float> tarifaEstandar = c.getTarifaEstandar();
+		HashMap<Date, Float> tarifaSuite = c.getTarifaSuite();
+		HashMap<Date, Float> tarifaSuiteDoble = c.getTarifaSuiteDoble();
+		HashMap<String, Habitacion> habitaciones = c.getHabitacionies();
+		ArrayList<Date> fechasEntreEntradaYSalida = fechas(Fecha_llegada, Fecha_salida);
+
+		float valorTotal = calcularValorTotal(id, habitaciones, tarifaEstandar, tarifaSuite, tarifaSuiteDoble,
+				fechasEntreEntradaYSalida);
+		for (Date fecha : fechasEntreEntradaYSalida) {
+			String fecha1 = fechaString(fecha);
+			c.addStringToDate(fecha1, id);
+		}
+
+		Reserva reserva = new Reserva(huesped, Fecha_llegada, Fecha_salida, valorTotal, cantidadAcompañantes, 0, false,
+				id);
+		reservas.put(nombre, reserva);
+		Hotel hotel= Hotel.getInstance();
+		hotel.crearReserva(reserva);
+		//co.cargarConsumo(reserva);
+
+	}
+
+	public float calcularValorTotal(String idHabitacion, HashMap<String, Habitacion> habitaciones,
+			HashMap<Date, Float> tarifaEstandar, HashMap<Date, Float> tarifaSuite,
+			HashMap<Date, Float> tarifaSuiteDoble, ArrayList<Date> fechasEntreEntradaYSalida) {
+
+		Habitacion habitacion = habitaciones.get(idHabitacion);
+		float valorTotal = 0;
+
+		for (Date fecha : fechasEntreEntradaYSalida) {
+			float valorBase = habitacion.getPrecioTotal();
+			String tipo = habitacion.getTipo();
+			Float valorAdicional = null;
+			if (tipo == "estandar") {
+				valorAdicional = tarifaEstandar.get(fecha);
+			} else if (tipo == "suite") {
+				valorAdicional = tarifaSuite.get(fecha);
+			} else {
+				valorAdicional = tarifaSuiteDoble.get(fecha);
+			}
+
+			if (valorAdicional != null) {
+				valorBase += valorAdicional;
+			}
+
+			valorTotal += valorBase;
+		}
+
+		return valorTotal;
+	}
 }

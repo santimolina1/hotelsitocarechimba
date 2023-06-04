@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import consola.Hotel;
@@ -113,6 +114,7 @@ public class controlador {
 	public HashMap<String, Float> reservar(String nombre,int cantidadDeAcompañantes, String fecha_llegada, String fecha_salida) throws IOException {
 
 		
+		
 		HashMap<String, Habitacion> habitaciones = cargador.getHabitacionies();
 		HashMap<String, ArrayList<Habitacion>> habitacionies = cargador.getHabitacionesID();
 		HashMap<Date, Float> tarifaEstandar = cargador.getTarifaEstandar();
@@ -166,10 +168,10 @@ public class controlador {
 		
 		FuncionesEmpleado empleado = new FuncionesEmpleado();
 		Reserva reserva = reservas.get(nombre);
-		ArrayList<String> habitacionesReserva = reserva.getHabitaciones();
+		String habitacion = reserva.getHabitacion();
 		Date Fecha_llegada = reserva.getFecha_llegada();
 		Date Fecha_salida = reserva.getFecha_salida();
-		empleado.cancelarReserva(habitacionesReserva, Fecha_llegada, Fecha_salida, inventario);
+		empleado.cancelarReserva(habitacion, Fecha_llegada, Fecha_salida, inventario);
 		Hotel hotel= Hotel.getInstance();
 		hotel.eliminarReserva(nombre, Fecha_llegada, Fecha_salida);
 	}
@@ -201,6 +203,25 @@ public class controlador {
 		HuespedReserva persona = huespedesList.get(0);
 		ArrayList<Consumo> consumosLiii = new ArrayList<Consumo>(((persona).getConsumos()).values());
 		return consumosLiii;
+		
+	}
+	
+	
+	
+	public void reservar1(String nombre,String id, String fecha_llegada, String fecha_salida) throws IOException
+	{
+		Date Fecha_llegada = formatearHora(fecha_llegada,"dd/MM/yy");
+		Date Fecha_salida = formatearHora(fecha_salida,"dd/MM/yy");
+		empleado.reservar(Fecha_llegada, Fecha_salida, id, 2, nombre, huespedes, reservas);
+	}
+	
+	public ArrayList<String> mostrarDisponiblesFechas(String fecha_llegada, String fecha_salida) {
+		
+		Date Fecha_llegada = formatearHora(fecha_llegada,"dd/MM/yy");
+		Date Fecha_salida = formatearHora(fecha_salida,"dd/MM/yy");
+		HashMap<String, ArrayList<String>> fechas= cargador.getFechas();
+		ArrayList<String> disponibles=empleado.mostrarDisponiblesFechas(Fecha_llegada, Fecha_salida, fechas);
+		return disponibles;
 		
 	}
 }
