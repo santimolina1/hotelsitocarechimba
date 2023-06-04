@@ -173,6 +173,7 @@ public class Factura {
 			}
 		}
 		cargarValoresTotales();
+		cargarValoresHabitacion();
 
 	}
 	
