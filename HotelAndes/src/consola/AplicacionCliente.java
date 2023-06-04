@@ -311,11 +311,11 @@ public class AplicacionCliente {
 				precio_habitaciones += precio;
 			}
 
-			Reserva reserva = new Reserva(huesped, Fecha_llegada, Fecha_salida, precio_habitaciones,
-					cantidadDeAcompañantes, numHabitaciones, 0, false, xd);
-			reservas.put(nombre, reserva);
+			//Reserva reserva = new Reserva(huesped, Fecha_llegada, Fecha_salida, precio_habitaciones,
+				//	cantidadDeAcompañantes, numHabitaciones, 0, false, xd);
+			//reservas.put(nombre, reserva);
 			Hotel hotel= Hotel.getInstance();
-			hotel.crearReserva(reserva);
+			//hotel.crearReserva(reserva);
 		}
 
 	}
@@ -324,10 +324,10 @@ public class AplicacionCliente {
 		String nombre = input("Ingresa tu nombre: ");
 		FuncionesEmpleado empleado = new FuncionesEmpleado();
 		Reserva reserva = reservas.get(nombre);
-		ArrayList<String> habitacionesReserva = reserva.getHabitaciones();
+		//ArrayList<String> habitacionesReserva = reserva.getHabitaciones();
 		Date Fecha_llegada = reserva.getFecha_llegada();
 		Date Fecha_salida = reserva.getFecha_salida();
-		String xd = empleado.cancelarReserva(habitacionesReserva, Fecha_llegada, Fecha_salida, inventario);
+		//String xd = empleado.cancelarReserva(habitacionesReserva, Fecha_llegada, Fecha_salida, inventario);
 		Hotel hotel= Hotel.getInstance();
 		hotel.eliminarReserva(nombre, Fecha_llegada, Fecha_salida);
 	}

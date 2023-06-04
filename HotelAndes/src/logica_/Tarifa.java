@@ -18,7 +18,7 @@ public class Tarifa implements Servicio{
 
 	private String[] diaSemana;
 
-	public Tarifa(String tipoHabitacion, float precio, Date fecha, String[] diaSemana) {
+	public Tarifa(String tipoHabitacion, float precio, Date fecha) {
 		this.tipoHabitacion = tipoHabitacion;
 		this.precio = precio;
 		this.fecha = fecha;

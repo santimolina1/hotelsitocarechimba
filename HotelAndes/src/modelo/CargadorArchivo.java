@@ -242,11 +242,11 @@ public class CargadorArchivo {
 
 		while (linea != null) // Cuando se llegue al final del archivo, linea tendrá el valor null
 		{
-			// id;ubicacion;capacidad;camas;precioFijo;vista;balcon;cocina;tipo
+//id;ubicacion;capacidad;camas;precioFijo;vista;balcon;cocina;tipo;tamañoCuarto;aireAcondicionado;calefaccion;tamañoCama;TV;cafetera;higeneCama;plancha;secador;voltaje;tomaUSB-A;tomaUSB-C;desayuno
 
 			String[] partes = linea.split(";");
-//tamañoCuarto;aireAcondicionado;calefaccion;tamañoCama;TV;cafetera;higeneCama;plancha;secador;voltaje;tomaUSB-A;tomaUSB-C;desayuno
-			String id = partes[0];
+			System.out.println(linea);
+            String id = partes[0];
 			String ubicacion = partes[1];
 			int capacidad = Integer.parseInt(partes[2]);
 			String[] lasCamas = partes[3].split(",");
@@ -259,10 +259,10 @@ public class CargadorArchivo {
 			}
 
 			float precioFijo = Float.parseFloat(partes[4]);
-			String tipo = partes[5];
-			String vista = (partes[6]);
-			String balcon = (partes[7]);
-			String cocina = (partes[8]);
+			String tipo = partes[8];
+			String vista = (partes[5]);
+			String balcon = (partes[6]);
+			String cocina = (partes[7]);
 			String tamañoCuarto = (partes[9]);
 			String aireAcondicionado= (partes[10]);
 			String calefaccion= (partes[11]);
@@ -377,7 +377,7 @@ public class CargadorArchivo {
 
 			}
 
-			Tarifa laTarifa = new Tarifa(tipoHabitación, extra, fecha, dias);
+			Tarifa laTarifa = new Tarifa(tipoHabitación, extra, fecha);
 
 			if ((tarifas.keySet()).contains(fecha)) {
 				ArrayList<Tarifa> listaTarifas = tarifas.get(fecha);
@@ -392,7 +392,7 @@ public class CargadorArchivo {
 		}
 
 		br.close();
-
+		System.out.println(tarifas);
 		ArrayList<Object> listaFinal = new ArrayList<Object>();
 		// 0 estandar, 1 suite, 2 doble, 3 tarifapor fecha
 		listaFinal.add(tarifaEstandar);

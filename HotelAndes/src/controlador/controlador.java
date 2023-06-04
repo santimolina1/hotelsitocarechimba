@@ -31,7 +31,7 @@ public class controlador {
 	
 	
 	public ArrayList<String> usuariosCheckIn = new ArrayList<String>();
-	FuncionesEmpleado empleado = new FuncionesEmpleado();
+	
 	Inventario inventarioInstancia = new Inventario();
 	HashMap<String, ArrayList<Date>> inventario = inventarioInstancia.getInventario();
 	private static controlador instancia;
@@ -110,7 +110,7 @@ public class controlador {
 		return date;
 	}
 	
-	
+	/*
 	public HashMap<String, Float> reservar(String nombre,int cantidadDeAcompañantes, String fecha_llegada, String fecha_salida) throws IOException {
 
 		
@@ -158,12 +158,12 @@ public class controlador {
 		return valores;
 
 	}
-
+*/
 	public controlador() {
 	
 	}
 
-
+/*
 	public void cancelarReserva(String nombre) throws IOException {
 		
 		FuncionesEmpleado empleado = new FuncionesEmpleado();
@@ -175,7 +175,7 @@ public class controlador {
 		Hotel hotel= Hotel.getInstance();
 		hotel.eliminarReserva(nombre, Fecha_llegada, Fecha_salida);
 	}
-	
+	*/
 	public void checkIn(String nombre) throws IOException{
 		Reserva reserva = reservas.get(nombre);
 		int z=usuariosCheckIn.indexOf(nombre);
@@ -210,13 +210,14 @@ public class controlador {
 	
 	public void reservar1(String nombre,String id, String fecha_llegada, String fecha_salida) throws IOException
 	{
+		FuncionesEmpleado empleado = new FuncionesEmpleado();
 		Date Fecha_llegada = formatearHora(fecha_llegada,"dd/MM/yy");
 		Date Fecha_salida = formatearHora(fecha_salida,"dd/MM/yy");
 		empleado.reservar(Fecha_llegada, Fecha_salida, id, 2, nombre, huespedes, reservas);
 	}
 	
 	public ArrayList<String> mostrarDisponiblesFechas(String fecha_llegada, String fecha_salida) {
-		
+		FuncionesEmpleado empleado = new FuncionesEmpleado();
 		Date Fecha_llegada = formatearHora(fecha_llegada,"dd/MM/yy");
 		Date Fecha_salida = formatearHora(fecha_salida,"dd/MM/yy");
 		HashMap<String, ArrayList<String>> fechas= cargador.getFechas();

@@ -100,6 +100,7 @@ public class MenuAdmin {
          Object tarifaEstandar= tarifas.get(1);
          Object tarifaSuite= tarifas.get(2);
          Object tarifaSuiteDoble= tarifas.get(3);
+         
          //System.out.println(tarifaEstandar);
          System.out.println("--------TARIFA ESTANDAR--------");
          for(Date j : ((HashMap<Date, Float>) tarifaEstandar).keySet()) {
