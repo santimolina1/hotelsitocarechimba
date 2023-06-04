@@ -1,6 +1,6 @@
 package interfaz;
 
-public class metodo_credito extends javax.swing.JPanel {
+public class metodo_credito extends javax.swing.JFrame {
 
     /**
      * Creates new form metodo_credito
@@ -31,7 +31,8 @@ public class metodo_credito extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
-        setLayout(null);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(212, 227, 252));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -78,10 +79,40 @@ public class metodo_credito extends javax.swing.JPanel {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(50, 190, 110, 17);
 
-        add(jPanel1);
-        jPanel1.setBounds(0, 0, 460, 330);
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 450, 330);
+
+        pack();
     }// </editor-fold>                        
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(metodo_credito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> {
+            new metodo_credito().setVisible(true);
+        });
+    }
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;
