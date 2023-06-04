@@ -1,0 +1,51 @@
+id;ubicacion;capacidad;camas;precioFijo;vista;balcon;cocina;tipo;tama�oCuarto;aireAcondicionado;calefaccion;tama�oCama;TV;cafetera;higeneCama;plancha;secador;voltaje;tomaUSB-A;tomaUSB-C;desayuno
+1;primerPiso;2;Queen;100000;true;false;false;estandar;9;true;false;1,5x2;true;true;true;true;true;130;true;false;true
+2;primerPiso;2;Doble;100000;false;true;true;estandar;9;true;true;1,3x2;false;false;true;true;false;150;true;true;true
+3;primerPiso;4;Queen,Doble;200000;true;false;false;suiteDoble;14;false;false;1,5x2;true;true;false;false;true;140;true;false;true
+4;primerPiso;2;Doble;100000;false;true;true;estandar;14;true;true;1,3x2;false;false;true;true;false;120;true;true;false
+5;primerPiso;2;Sencilla,Sencilla;100000;true;false;true;estandar;9;true;false;1,3x2;false;false;false;false;false;130;true;false;true
+6;primerPiso;3;Doble,Sencilla;150000;false;true;false;suite ;12;true;false;1,3x2;true;true;false;false;true;140;false;false;true
+7;primerPiso;2;Queen;100000;true;false;false;estandar;9;true;true;1,5x2;false;false;true;true;false;150;true;true;true
+8;primerPiso;2;Doble;100000;false;false;true;estandar;9;false;false;1,3x2;true;true;false;false;true;120;true;false;true
+9;primerPiso;2;Doble;100000;false;false;false;estandar;9;true;true;1,3x2;false;false;true;true;false;130;true;true;true
+10;primerPiso;4;King,Sencilla;200000;true;true;true;suiteDoble;14;false;false;1,8x2;false;false;false;false;false;140;false;false;true
+11;segundoPiso;2;Sencilla,Ni¬§os;100000;false;false;true;estandar;9;false;false;1x2;true;true;false;false;true;150;false;false;false
+12;segundoPiso;2;Queen;100000;true;true;true;estandar;9;true;true;1,5x2;true;false;true;true;false;130;true;false;false
+13;segundoPiso;4;Doble, Doble;200000;false;false;true;suiteDoble;14;false;false;1,3x2;false;true;false;false;true;120;true;true;false
+14;segundoPiso;2;Queen;100000;false;true;false;estandar;9;true;true;1,5x2;true;false;true;true;false;140;false;false;true
+15;segundoPiso;2;Queen;100000;true;false;true;estandar;9;false;false;1,5x2;false;false;false;false;false;120;true;true;true
+16;segundoPiso;2;Sencilla,Ni¬§os;100000;false;true;false;estandar;9;false;true;1x2;false;true;false;false;true;130;true;false;true
+17;segundoPiso;2;Queen;100000;false;true;true;estandar;9;true;false;1,5x2;false;false;true;true;false;130;true;false;true
+18;segundoPiso;2;Doble;100000;true;false;false;estandar;9;false;false;1,3x2;true;true;false;false;true;140;false;true;true
+19;segundoPiso;4;Doble,Doble;200000;false;false;true;suiteDoble;14;true;false;1,3x2;true;false;true;true;false;150;false;false;true
+20;tercerPiso;2;Queen;100000;true;true;false;estandar;9;false;true;1,5x2;true;false;false;false;false;140;true;true;true
+21;tercerPiso;2;Sencilla,Sencilla;100000;false;true;true;estandar;9;false;true;1x2;true;true;false;false;true;120;true;false;true
+22;tercerPiso;2;Doble;100000;true;false;true;estandar;9;true;true;1,3x2;true;true;true;true;true;130;false;false;true
+23;tercerPiso;3;Sencilla,Queen;150000;false;false;false;suite ;12;false;true;1x2;true;false;false;false;true;140;true;false;false
+24;tercerPiso;2;Sencilla,Ni¬§os;100000;true;false;true;estandar;9;true;true;1x2;false;true;true;true;true;130;true;true;false
+25;tercerPiso;2;Doble;100000;false;true;false;estandar;9;true;false;1,3x2;true;false;false;false;true;140;true;false;false
+26;tercerPiso;4;Doble,Sencilla,Sencilla;200000;false;true;true;suiteDoble;14;true;true;1,3x2;false;true;false;false;true;130;false;true;false
+27;tercerPiso;2;QUeen;100000;true;false;false;estandar;9;false;false;1,5x2;false;false;true;true;false;120;false;false;false
+28;tercerPiso;2;Doble;100000;true;true;false;estandar;9;true;true;1,3x2;true;false;false;true;true;130;true;false;true
+29;tercerPiso;2;Sencilla,Sencilla;100000;false;true;true;estandar;9;true;false;1x2;true;true;true;false;false;140;true;true;true
+30;cuartoPiso;2;Doble;100000;false;false;true;estandar;9;false;false;1,3x2;true;false;false;true;false;130;false;false;true
+31;cuartoPiso;3;Queen,Sencilla;150000;false;false;false;suite ;12;true;true;1,5x2;false;true;false;false;false;120;true;true;false
+32;cuartoPiso;2;Doble;100000;true;false;true;estandar;9;false;false;1,3x2;true;false;true;false;false;130;true;false;false
+33;cuartoPiso;4;Doble, Doble;200000;true;true;false;suiteDoble;14;false;true;1,3x2;false;false;false;true;true;120;true;false;false
+34;cuartoPiso;3;King;150000;false;false;false;suite ;12;true;false;1,8x2;false;true;true;false;false;140;false;false;false
+35;cuartoPiso;2;Queen;100000;true;true;false;estandar;9;true;false;1,5x2;true;false;false;true;false;120;true;true;false
+36;cuartoPiso;4;Doble,Sencilla,Ni¬§os;200000;false;false;true;suiteDoble;14;false;true;1,3x2;true;true;false;false;true;130;true;false;true
+37;cuartoPiso;2;Queen;100000;true;true;true;estandar;9;true;false;1,5x2;false;false;true;false;false;120;true;true;true
+38;cuartoPiso;2;Doble;100000;false;false;false;estandar;9;true;;1,3x2;true;false;false;true;true;130;false;false;true
+39;cuartoPiso;3;King, Sencilla;150000;true;true;true;suite ;12;false;false;1,8x2;false;true;true;true;false;140;false;false;false
+40;quintoPiso;2;King, Sencilla;100000;true;false;false;estandar;9;true;true;1,8x2;false;false;false;true;false;130;true;true;false
+41;quintoPiso;2;Doble, Queen;100000;false;false;true;estandar;9;false;false;1,3x2;true;true;false;false;false;120;true;false;false
+42;quintoPiso;2;Queen;100000;false;true;true;estandar;9;true;true;1,5x2;true;false;true;true;false;130;true;true;false
+43;quintoPiso;3;Queen,Sencilla;150000;false;false;false;suite ;12;false;false;1,5x2;true;false;false;false;true;140;false;false;true
+44;quintoPiso;3;King;150000;true;true;true;suite ;12;false;false;1,8x2;true;true;true;false;false;120;false;false;true
+45;quintoPiso;3;Doble,Ni¬§os;150000;true;false;false;suite ;12;true;true;1,3x2;false;false;false;false;true;130;true;true;true
+46;terraza;4;Queen,Doble;200000;false;true;true;suiteDoble;14;true;false;1,5x2;true;true;false;true;false;150;true;true;false
+47;terraza;3;Queen;150000;false;false;true;suite ;12;false;true;1,5x2;false;false;true;false;false;120;false;true;false
+48;terraza;3;Queen,Sencilla;150000;true;false;false;suite ;12;true;false;1,5x2;false;false;true;true;true;130;true;true;true
+49;terraza;4;King, Sencilla;200000;true;true;true;suiteDoble;14;false;false;1,8x2;true;true;true;false;true;140;true;true;true
+50;terraza;3;Doble,Sencilla;150000;false;false;true;suite ;12;false;true;1,3x2;true;true;true;false;false;130;true;true;true
