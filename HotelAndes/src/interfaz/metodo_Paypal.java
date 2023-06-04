@@ -80,7 +80,9 @@ public class metodo_Paypal extends javax.swing.JPanel {
         );
     }// </editor-fold>                        
 
-
+    public static void main(String args[]) {
+    	new metodo_Paypal().setVisible(true);
+    }
     // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

@@ -82,7 +82,9 @@ public class metodo_credito extends javax.swing.JPanel {
         jPanel1.setBounds(0, 0, 460, 330);
     }// </editor-fold>                        
 
-
+    public static void main(String args[]) {
+    	new metodo_credito().setVisible(true);
+    }
     // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
