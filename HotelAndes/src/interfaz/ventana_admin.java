@@ -1,8 +1,12 @@
 package interfaz;
 
+import java.awt.Container;
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 
 import consola.MenuAdmin;
 
@@ -22,6 +26,9 @@ public class ventana_admin extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         volverb = new javax.swing.JButton();
         siguienteb = new javax.swing.JButton();
+        JLabel jLabel3 = new javax.swing.JLabel();
+        JButton jButton3 = new javax.swing.JButton();
+        
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -80,6 +87,24 @@ public class ventana_admin extends javax.swing.JFrame {
             }
         });
         
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
+        jLabel3.setText("Si desea ver los reportes, presione el botón ver reportes ");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(20, 240, 410, 20);
+
+        jButton3.setBackground(new java.awt.Color(255, 249, 132));
+        jButton3.setText("Volver");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+
+			private void jButton3ActionPerformed(ActionEvent evt) {
+				// TODO Auto-generated method stub
+				
+			}
+        });
+        
         
         
         
@@ -118,9 +143,11 @@ public class ventana_admin extends javax.swing.JFrame {
                         
     private javax.swing.JButton volverb;
     private javax.swing.JButton siguienteb;
+    private javax.swing.JLabel jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
                      

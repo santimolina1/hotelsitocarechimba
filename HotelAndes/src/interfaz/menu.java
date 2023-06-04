@@ -65,6 +65,7 @@ public class menu extends javax.swing.JFrame {
 
         JScrollPane scrollPane1 = new JScrollPane(jTextField1);
         scrollPane1.setBounds(50, 180, 150, 100);
+        scrollPane1.setComponentOrientation(javax.swing.JScrollPane.HORIZONTAL);
         jPanel1.add(scrollPane1);;
         
         
@@ -84,6 +85,7 @@ public class menu extends javax.swing.JFrame {
         jTextField2.setEditable(false);
 
         JScrollPane scrollPane2 = new JScrollPane(jTextField2);
+        scrollPane2.setComponentOrientation(javax.swing.JScrollPane.HORIZONTAL);
         scrollPane2.setBounds(260, 50, 150, 100);
         jPanel1.add(scrollPane2);
 
