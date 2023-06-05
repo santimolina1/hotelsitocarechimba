@@ -52,10 +52,20 @@ public class metodo_de_pago extends javax.swing.JFrame {
         jButton4.setText("Master Card");
         jPanel1.add(jButton4);
         jButton4.setBounds(280, 230, 130, 30);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	tarjetaActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Visa");
         jPanel1.add(jButton5);
         jButton5.setBounds(70, 230, 130, 30);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	tarjetaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,6 +98,9 @@ public class metodo_de_pago extends javax.swing.JFrame {
     }
     private void payPalActionPerformed(java.awt.event.ActionEvent evt) {                                         
     	new metodo_Paypal().setVisible(true);
+    }
+    private void tarjetaActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    	new metodo_credito().setVisible(true);
     }
 
                         

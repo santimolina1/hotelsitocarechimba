@@ -14,6 +14,15 @@ public class Transaccion {
 		this.resultado = resultado;
 	}
 	
+	public String verificarDatos(String  tarjeta, String codigo) {
+		String retorno="";
+		if
+		
+		
+		
+		
+		return retorno;
+	}
 	
 	
 	
