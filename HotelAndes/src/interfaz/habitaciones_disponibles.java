@@ -1,8 +1,31 @@
 package interfaz;
 
-public class habitaciones_disponibles extends javax.swing.JFrame {
+import java.io.IOException;
+import java.util.ArrayList;
 
-    /**
+import controlador.controlador;
+
+public class habitaciones_disponibles extends javax.swing.JFrame {
+	controlador control= controlador.getInstance();
+	public String fechaInicio=null;
+	public String fechaFin=null;
+    public String getFechaInicio() {
+		return fechaInicio;
+	}
+
+	public void setFechaInicio(String fechaInicio) {
+		this.fechaInicio = fechaInicio;
+	}
+
+	public String getFechaFin() {
+		return fechaFin;
+	}
+
+	public void setFechaFin(String fechaFin) {
+		this.fechaFin = fechaFin;
+	}
+
+	/**
      * Creates new form habitaciones_disponibles
      */
     public habitaciones_disponibles() {
@@ -53,6 +76,16 @@ public class habitaciones_disponibles extends javax.swing.JFrame {
         jButton1.setText("Mostrar habitaciones");
         jPanel1.add(jButton1);
         jButton1.setBounds(150, 240, 160, 30);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	try {
+            		botonMostarHabitacionesActionPerformed(evt);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(255, 249, 132));
         jButton2.setText("Volver");
@@ -77,6 +110,17 @@ public class habitaciones_disponibles extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                           
 
+    private void botonMostarHabitacionesActionPerformed(java.awt.event.ActionEvent evt) throws IOException {
+    	String fechaInicio=jTextField1.getText();
+    	String fechaFin= jTextField2.getText();
+    	setFechaInicio(fechaInicio);
+    	setFechaFin(fechaFin);
+    	
+    	ArrayList<String> disponibles=control.mostrarDisponiblesFechas(fechaInicio, fechaFin);
+    	lista_habitaciones lista= new lista_habitaciones(disponibles,fechaInicio,fechaFin);
+    	lista.setVisible(true);
+    	
+    }
     /**
      * @param args the command line arguments
      */

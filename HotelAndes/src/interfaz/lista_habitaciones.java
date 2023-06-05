@@ -1,12 +1,14 @@
 package interfaz;
 
+import java.util.ArrayList;
+
 public class lista_habitaciones extends javax.swing.JFrame {
 
     /**
      * Creates new form lista_habitaciones
      */
-    public lista_habitaciones() {
-        initComponents();
+    public lista_habitaciones(ArrayList<String>disponibles,String fechaInicio,String fechaFin ) {
+        initComponents(disponibles,fechaInicio,fechaFin);
     }
 
     /**
@@ -16,7 +18,7 @@ public class lista_habitaciones extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    private void initComponents() {
+    private void initComponents(ArrayList<String>disponibles,String fechaInicio,String fechaFin) {
 
         jPanel1 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
@@ -46,13 +48,13 @@ public class lista_habitaciones extends javax.swing.JFrame {
         jButton3.setText("Ver información de la habitación");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButton3ActionPerformed(evt,fechaInicio,fechaFin,disponibles);
             }
         });
         jPanel1.add(jButton3);
         jButton3.setBounds(110, 220, 240, 50);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar Habitación" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(disponibles.toArray(new String[0])));
         jPanel1.add(jComboBox1);
         jComboBox1.setBounds(110, 120, 240, 50);
 
@@ -68,41 +70,20 @@ public class lista_habitaciones extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        habitaciones_disponibles dispo=new habitaciones_disponibles();
+        dispo.setVisible(true);
     }                                        
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt,String fechaInicio,String fechaFin,ArrayList<String>disponibles) {                                         
+    	String id =  (String) jComboBox1.getSelectedItem();
+    	info_habitacion info=new info_habitacion(id,fechaInicio,fechaFin,disponibles);
+    	info.setVisible(true);
     }                                        
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(lista_habitaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new lista_habitaciones().setVisible(true);
-        });
-    }
+    
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton jButton2;

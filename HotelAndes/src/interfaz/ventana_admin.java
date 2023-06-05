@@ -124,11 +124,18 @@ public class ventana_admin extends javax.swing.JFrame {
     } 
     private void siguientebActionPerformed(java.awt.event.ActionEvent evt)  {                                           
     	MenuAdmin MenuAdmin = new MenuAdmin();
+    	CargadorArchivo cargador =CargadorArchivo.getInstance();
     	try {
 			MenuAdmin.ejecutarCargarBebidas();
 			MenuAdmin.ejecutarCargarPlatos();
 	    	MenuAdmin.ejecutarCargarServicios();
 	    	cargador.cargarFechas("./data/fechas.txt");
+<<<<<<< HEAD
+=======
+	    	MenuAdmin.ejecutarCargarCamas();
+	    	MenuAdmin.ejecutarCargarHabitaciones();
+	    	
+>>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
 		} catch (IOException e) {
 			new error_carga().setVisible(true);
 			e.printStackTrace();

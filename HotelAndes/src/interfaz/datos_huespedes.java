@@ -1,12 +1,16 @@
 package interfaz;
 
-public class datos_huespedes extends javax.swing.JFrame {
+import java.io.IOException;
 
+import controlador.controlador;
+
+public class datos_huespedes extends javax.swing.JFrame {
+	controlador control= controlador.getInstance();
     /**
      * Creates new form datos_huespedes
      */
-    public datos_huespedes() {
-        initComponents();
+    public datos_huespedes(String id,String fechaInicio,String fechaFin) {
+        initComponents(id,fechaInicio,fechaFin);
     }
 
     /**
@@ -16,7 +20,7 @@ public class datos_huespedes extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    private void initComponents() {
+    private void initComponents(String id,String fechaInicio,String fechaFin) {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -53,11 +57,26 @@ public class datos_huespedes extends javax.swing.JFrame {
         jButton1.setText("Reservar");
         jPanel1.add(jButton1);
         jButton1.setBounds(90, 260, 110, 30);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                try {
+					jButton1ActionPerformed(evt,id,fechaInicio,fechaFin);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(255, 249, 132));
         jButton2.setText("Volver");
         jPanel1.add(jButton2);
         jButton2.setBounds(310, 260, 110, 30);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Nombre");
         jPanel1.add(jLabel2);
@@ -72,7 +91,20 @@ public class datos_huespedes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>                        
-
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt,String id,String fechaInicio,String fechaFin) throws IOException {  
+    	String nombreUsuario = jTextField1.getText();
+    	String resp=control.reservar1(nombreUsuario, id, fechaFin, fechaFin);
+    	pago_reserva pago=new pago_reserva(resp);
+    	pago.setVisible(true);
+    	
+    	
+    }
+    
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+    	habitaciones_disponibles habitaciones= new habitaciones_disponibles();
+    	habitaciones.setVisible(true);
+    }
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
     }                                           
@@ -80,31 +112,7 @@ public class datos_huespedes extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(datos_huespedes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new datos_huespedes().setVisible(true);
-        });
-    }
+    
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;

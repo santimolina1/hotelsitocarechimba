@@ -202,7 +202,7 @@ public class ventana_usuario extends javax.swing.JFrame {
 		new menu().setVisible(true);
 	}
 	private void reservarButActionPerformed(java.awt.event.ActionEvent evt) {
-		new realizar_reserva().setVisible(true);
+		new habitaciones_disponibles().setVisible(true);
 	}
 	private void checkInButActionPerformed(java.awt.event.ActionEvent evt) {
 		new check_in().setVisible(true);
