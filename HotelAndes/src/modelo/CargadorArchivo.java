@@ -20,6 +20,7 @@ import logica_.Reserva;
 import logica_.Servicio;
 import logica_.ServicioRecreativo;
 import logica_.Tarifa;
+import logica_.Tarjeta;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -496,33 +497,43 @@ public class CargadorArchivo {
 	}
 	
 	
-	public void cargarFechas(String txtFile) {
-        try (BufferedReader br = new BufferedReader(new FileReader(txtFile))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] elements = line.split(";", 2);
-                String date = elements[0].trim(); // Primer elemento de la línea es la fecha
+	public HashMap<String, ArrayList<String>> cargarFechas(String txtFile) throws IOException {
+		HashMap<String, ArrayList<String>> fechas= new HashMap<String, ArrayList<String>>();
+		FileReader archivo = new FileReader(txtFile);
+		BufferedReader br = new BufferedReader(archivo);
+		String linea = br.readLine();
+		String[] titulos = linea.split(";");
+		linea = br.readLine();
 
-                // Crear una lista para almacenar los enteros de la línea
-                ArrayList<String> values = new ArrayList<>();
+		while (linea != null) // Cuando se llegue al final del archivo, linea tendrá el valor null
+		{
+			//metodo;numero;cedula;codigo;fechaVencimiento;saldo;reportada
 
-                if (elements.length > 1) {
-                    String[] valueElements = elements[1].split(";");
-                    for (String value : valueElements) {
-                        if (!value.isEmpty()) {
-                            
-                            values.add(value);
-                        }
-                    }
-                }
+		String[] partes = linea.split(";");
+		String fecha = partes[0];
+		String pa1 = (partes[1]);
+		String pa2 = partes[2];
+		String pa3 = (partes[3]);
+		
+		linea = br.readLine(); // Leer la siguiente línea
+		ArrayList<String> datos= new ArrayList<String>();
+		if (pa1!="") {
+			datos.add(pa1);
+		}
+		if (pa2!="") {
+			datos.add(pa2);
+		}
+		if (pa3!="") {
+			datos.add(pa3);
+		}
+		fechas.put(fecha, datos);
+	}
 
-                // Agregar la lista de enteros al HashMap usando la fecha como clave
-                fechas.put(date, values);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+	br.close();
+	return fechas;
     }
+	
+	
 
     public HashMap<String, ArrayList<String>> getFechas() {
 		return fechas;
