@@ -12,6 +12,7 @@ public class info_habitacion extends javax.swing.JFrame {
      */
     public info_habitacion(String id,String fechaInicio,String fechaFin,ArrayList<String>disponibles) {
         initComponents(id,fechaInicio,fechaFin,disponibles);
+        setSize(490, 800);
     }
 
     /**
@@ -92,17 +93,17 @@ public class info_habitacion extends javax.swing.JFrame {
         });
         jTextField1.setText(info.get(0));
         jPanel1.add(jTextField1);
-        jTextField1.setBounds(170, 30, 190, 20);
+        jTextField1.setBounds(170, 30, 190, 28);
         jTextField2.setText(info.get(1));
         jPanel1.add(jTextField2);
-        jTextField2.setBounds(170, 60, 190, 20);
+        jTextField2.setBounds(170, 60, 190, 28);
         jTextField3.setText(info.get(2));
         jPanel1.add(jTextField3);
-        jTextField3.setBounds(170, 90, 190, 20);
+        jTextField3.setBounds(170, 90, 190, 28);
 
         jTextField4.setText(info.get(3));
         jPanel1.add(jTextField4);
-        jTextField4.setBounds(170, 120, 190, 20);
+        jTextField4.setBounds(170, 120, 190, 28);
 
         jButton1.setBackground(new java.awt.Color(255, 249, 132));
         jButton1.setText("Reservar");
@@ -211,63 +212,63 @@ public class info_habitacion extends javax.swing.JFrame {
 
         jTextField6.setText(info.get(5));
         jPanel1.add(jTextField6);
-        jTextField6.setBounds(170, 150, 190, 20);
+        jTextField6.setBounds(170, 150, 190, 28);
 
         jTextField7.setText(info.get(6));
         jPanel1.add(jTextField7);
-        jTextField7.setBounds(170, 180, 190, 20);
+        jTextField7.setBounds(170, 180, 190, 28);
 
         jTextField8.setText(info.get(7));
         jPanel1.add(jTextField8);
-        jTextField8.setBounds(170, 210, 190, 20);
+        jTextField8.setBounds(170, 210, 190, 28);
 
         jTextField9.setText(info.get(8));
         jPanel1.add(jTextField9);
-        jTextField9.setBounds(170, 240, 190, 20);
+        jTextField9.setBounds(170, 240, 190, 28);
 
         jTextField10.setText(info.get(9));
         jPanel1.add(jTextField10);
-        jTextField10.setBounds(170, 270, 190, 20);
+        jTextField10.setBounds(170, 270, 190, 28);
 
         jTextField11.setText(info.get(10));
         jPanel1.add(jTextField11);
-        jTextField11.setBounds(170, 300, 190, 20);
+        jTextField11.setBounds(170, 300, 190, 28);
 
         jTextField12.setText(info.get(11));
         jPanel1.add(jTextField12);
-        jTextField12.setBounds(170, 330, 190, 20);
+        jTextField12.setBounds(170, 330, 190, 28);
 
         jTextField13.setText(info.get(12));
         jPanel1.add(jTextField13);
-        jTextField13.setBounds(170, 360, 190, 20);
+        jTextField13.setBounds(170, 360, 190, 28);
 
         jTextField14.setText(info.get(13));
         jPanel1.add(jTextField14);
-        jTextField14.setBounds(170, 390, 190, 20);
+        jTextField14.setBounds(170, 390, 190, 28);
 
         jTextField15.setText(info.get(14));
         jPanel1.add(jTextField15);
-        jTextField15.setBounds(170, 420, 190, 20);
+        jTextField15.setBounds(170, 420, 190, 28);
 
         jTextField16.setText(info.get(15));
         jPanel1.add(jTextField16);
-        jTextField16.setBounds(170, 450, 190, 20);
+        jTextField16.setBounds(170, 450, 190, 28);
 
         jTextField17.setText(info.get(16));
         jPanel1.add(jTextField17);
-        jTextField17.setBounds(170, 480, 190, 20);
+        jTextField17.setBounds(170, 480, 190, 28);
 
         jTextField18.setText(info.get(17));
         jPanel1.add(jTextField18);
-        jTextField18.setBounds(170, 510, 190, 20);
+        jTextField18.setBounds(170, 510, 190, 28);
 
         jTextField19.setText(info.get(18));
         jPanel1.add(jTextField19);
-        jTextField19.setBounds(170, 540, 190, 20);
+        jTextField19.setBounds(170, 540, 190, 28);
 
         jTextField20.setText(info.get(19));
         jPanel1.add(jTextField20);
-        jTextField20.setBounds(170, 570, 190, 20);
+        jTextField20.setBounds(170, 570, 190, 28);
 
         jLabel21.setText("DESAYUNO");
         jPanel1.add(jLabel21);
@@ -275,7 +276,7 @@ public class info_habitacion extends javax.swing.JFrame {
 
         jTextField21.setText(info.get(20));
         jPanel1.add(jTextField21);
-        jTextField21.setBounds(170, 600, 190, 20);
+        jTextField21.setBounds(170, 600, 190, 28);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 400, 670);
@@ -289,6 +290,7 @@ public class info_habitacion extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt,String id,String fechaInicio,String fechaFin) {  
     	datos_huespedes datos=new datos_huespedes(id,fechaInicio,fechaFin);
+    	dispose();
     	datos.setVisible(true);
     }
     /**
@@ -296,6 +298,7 @@ public class info_habitacion extends javax.swing.JFrame {
      */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt,String fechaInicio,String fechaFin,ArrayList<String>disponibles) {
     	lista_habitaciones lista=new lista_habitaciones(disponibles,fechaInicio,fechaFin);
+    	dispose();
     	lista.setVisible(true);
     }
    

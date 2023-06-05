@@ -11,6 +11,7 @@ public class datos_huespedes extends javax.swing.JFrame {
      */
     public datos_huespedes(String id,String fechaInicio,String fechaFin) {
         initComponents(id,fechaInicio,fechaFin);
+        setSize(490, 390);
     }
 
     /**
@@ -95,6 +96,7 @@ public class datos_huespedes extends javax.swing.JFrame {
     	String nombreUsuario = jTextField1.getText();
     	String resp=control.reservar1(nombreUsuario, id, fechaFin, fechaFin);
     	pago_reserva pago=new pago_reserva(resp);
+    	dispose();
     	pago.setVisible(true);
     	
     	
@@ -103,6 +105,7 @@ public class datos_huespedes extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) 
     {
     	habitaciones_disponibles habitaciones= new habitaciones_disponibles();
+    	dispose();
     	habitaciones.setVisible(true);
     }
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            

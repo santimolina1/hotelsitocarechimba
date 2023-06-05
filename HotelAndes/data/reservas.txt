@@ -63,3 +63,5 @@ manolo;Wed Jul 05 00:00:00 COT 2023;Sat Jul 08 00:00:00 COT 2023;2;1;reserva
 fracois;Mon May 08 00:00:00 COT 2023;Tue May 09 00:00:00 COT 2023;2;1;reserva
 clau;Sat Oct 15 00:00:00 COT 2022;Sat Oct 15 00:00:00 COT 2022;2;6;reserva
 clau;Thu Oct 20 00:00:00 COT 2022;Thu Oct 20 00:00:00 COT 2022;2;45;reserva
+clau;Sun Feb 13 00:00:00 COT 2022;Sun Feb 13 00:00:00 COT 2022;2;7;reserva
+clau;Tue Mar 22 00:00:00 COT 2022;Tue Mar 22 00:00:00 COT 2022;2;5;reserva

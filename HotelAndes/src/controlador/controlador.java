@@ -220,8 +220,8 @@ public class controlador {
 	
 	public ArrayList<String> mostrarDisponiblesFechas(String fecha_llegada, String fecha_salida) {
 		FuncionesEmpleado empleado = new FuncionesEmpleado();
-		Date Fecha_llegada = formatearHora(fecha_llegada,"dd/MM/yy");
-		Date Fecha_salida = formatearHora(fecha_salida,"dd/MM/yy");
+		Date Fecha_llegada = formatearHora(fecha_llegada,"dd/MM/yyyy");
+		Date Fecha_salida = formatearHora(fecha_salida,"dd/MM/yyyy");
 		HashMap<String, ArrayList<String>> fechas= cargador.getFechas();
 		ArrayList<String> disponibles=empleado.mostrarDisponiblesFechas(Fecha_llegada, Fecha_salida, fechas);
 		return disponibles;

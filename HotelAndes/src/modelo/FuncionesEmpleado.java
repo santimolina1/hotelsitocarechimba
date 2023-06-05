@@ -316,7 +316,7 @@ public class FuncionesEmpleado {
 
 		SimpleDateFormat dateFormatter = null;
 
-		dateFormatter = new SimpleDateFormat("dd/MM");
+		dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
 
 		return dateFormatter.format(date);
 
@@ -394,7 +394,7 @@ public class FuncionesEmpleado {
 		hotel.crearReserva(reserva);
 		Habitacion hab = habitaciones.get(id);
 		co.cargarConsumo(hab);
-		co.cargarConsumo(tarifa);
+		//co.cargarConsumo(tarifa);
 
 		return (Float) valorTotal;
 	}
