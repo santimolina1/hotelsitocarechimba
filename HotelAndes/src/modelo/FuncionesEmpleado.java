@@ -375,7 +375,7 @@ public class FuncionesEmpleado {
 		return disponibles;
 	}
 
-	public void reservar(Date Fecha_llegada, Date Fecha_salida, String id, int cantidadAcompañantes, String nombre,
+	public float reservar(Date Fecha_llegada, Date Fecha_salida, String id, int cantidadAcompañantes, String nombre,
 			HashMap<String, HuespedReserva> huespedes, HashMap<String, Reserva> reservas) throws IOException {
 
 		CargadorArchivo c = CargadorArchivo.getInstance();
@@ -405,7 +405,8 @@ public class FuncionesEmpleado {
 		Habitacion hab= habitaciones.get(id);
 		co.cargarConsumo(hab);
 		co.cargarConsumo(tarifa);
-
+		
+		return (Float)valorTotal;
 	}
 
 	public ArrayList<Object> calcularValorTotal(String idHabitacion, HashMap<String, Habitacion> habitaciones,
@@ -442,5 +443,59 @@ public class FuncionesEmpleado {
 		retorno.add(valorTotal);
 		retorno.add(tarifa);
 		return retorno;
+	}
+	
+	public ArrayList<String>mostrarInfoHabitacion(String id){
+		CargadorArchivo c = CargadorArchivo.getInstance();
+		HashMap<String, Habitacion> habitaciones = c.getHabitacionies();
+		Habitacion habitacion = habitaciones.get(id);
+		ArrayList<String> informacion= new ArrayList<String>();
+		informacion.add(id);
+		String tipo= habitacion.getTipo();
+		informacion.add(tipo);
+		String capacidad= String.valueOf(habitacion.getCapacidad());
+		informacion.add(capacidad);
+		ArrayList<String> atributos= habitacion.getAtributosAdicionales();
+		String tamCuarto=atributos.get(2);
+		informacion.add(tamCuarto);
+		String ubicacion= habitacion.getUbicacion();
+		informacion.add(ubicacion);
+		String vista= atributos.get(0);
+		informacion.add(vista);
+		String balcon = atributos.get(1);
+		informacion.add(balcon);
+		String cocina=atributos.get(2);
+		informacion.add(cocina);
+		String elemento4 = atributos.get(3);
+		informacion.add(elemento4);
+		String elemento5 = atributos.get(4);
+		informacion.add(elemento5);
+		String elemento6 = atributos.get(5);
+		informacion.add(elemento6);
+		String elemento7 = atributos.get(6);
+		informacion.add(elemento7);
+		String elemento8 = atributos.get(7);
+		informacion.add(elemento8);
+		String elemento9 = atributos.get(8);
+		informacion.add(elemento9);
+		String elemento10 = atributos.get(9);
+		informacion.add(elemento10);
+		String elemento11 = atributos.get(10);
+		informacion.add(elemento11);
+		String elemento12 = atributos.get(11);
+		informacion.add(elemento12);
+		String elemento13 = atributos.get(12);
+		informacion.add(elemento13);
+		String elemento14 = atributos.get(13);
+		informacion.add(elemento14);
+		String elemento15 = atributos.get(14);
+		informacion.add(elemento15);
+		String elemento16 = atributos.get(15);
+		informacion.add(elemento16);
+		
+		
+		
+		
+		return informacion;
 	}
 }

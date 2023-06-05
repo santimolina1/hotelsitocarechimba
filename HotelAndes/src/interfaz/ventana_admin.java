@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import consola.MenuAdmin;
+import modelo.CargadorArchivo;
 
 public class ventana_admin extends javax.swing.JFrame {
 
@@ -123,10 +124,13 @@ public class ventana_admin extends javax.swing.JFrame {
     } 
     private void siguientebActionPerformed(java.awt.event.ActionEvent evt)  {                                           
     	MenuAdmin MenuAdmin = new MenuAdmin();
+    	CargadorArchivo cargador =CargadorArchivo.getInstance();
     	try {
 			MenuAdmin.ejecutarCargarBebidas();
 			MenuAdmin.ejecutarCargarPlatos();
 	    	MenuAdmin.ejecutarCargarServicios();
+	    	cargador.cargarFechas("./data/fechas.txt");
+	    	
 		} catch (IOException e) {
 			new error_carga().setVisible(true);
 			e.printStackTrace();

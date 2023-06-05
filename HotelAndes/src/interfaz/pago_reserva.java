@@ -5,8 +5,8 @@ public class pago_reserva extends javax.swing.JFrame {
     /**
      * Creates new form pago_reserva
      */
-    public pago_reserva() {
-        initComponents();
+    public pago_reserva(String resp) {
+        initComponents(resp);
     }
 
     /**
@@ -16,7 +16,7 @@ public class pago_reserva extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    private void initComponents() {
+    private void initComponents(String resp) {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -32,13 +32,13 @@ public class pago_reserva extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jLabel1.setText("Pagar inmediatamente una reserva de habitación con ");
+        jLabel1.setText(resp);
         jPanel1.add(jLabel1);
         jLabel1.setBounds(10, 90, 450, 23);
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("tarjeta de crédito tiene derecho a un 10%");
+        jLabel2.setText("Pagar con tarjeta de crédito da un 10%  ");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(40, 120, 360, 23);
 
@@ -46,15 +46,16 @@ public class pago_reserva extends javax.swing.JFrame {
         jButton1.setText("No pagar");
         jPanel1.add(jButton1);
         jButton1.setBounds(270, 200, 110, 30);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(255, 249, 132));
         jButton2.setText("Pagar");
         jButton2.setToolTipText("");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        
         jPanel1.add(jButton2);
         jButton2.setBounds(80, 200, 100, 30);
 
@@ -87,7 +88,10 @@ public class pago_reserva extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {  
+    	reserva_exito exito=new reserva_exito(null);
+    	exito.setVisible(true);
+    	
         // TODO add your handling code here:
     }                                        
 
@@ -116,7 +120,7 @@ public class pago_reserva extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new pago_reserva().setVisible(true);
+            new pago_reserva("El valor de la reserva a pagar es de: $ 10.000").setVisible(true);
         });
     }
 

@@ -1,12 +1,17 @@
 package interfaz;
 
-public class info_habitacion extends javax.swing.JFrame {
+import java.io.IOException;
+import java.util.ArrayList;
 
+import controlador.controlador;
+
+public class info_habitacion extends javax.swing.JFrame {
+	controlador control= controlador.getInstance();
     /**
      * Creates new form info_habitacion
      */
-    public info_habitacion() {
-        initComponents();
+    public info_habitacion(String id,String fechaInicio,String fechaFin,ArrayList<String>disponibles) {
+        initComponents(id,fechaInicio,fechaFin,disponibles);
     }
 
     /**
@@ -16,7 +21,9 @@ public class info_habitacion extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
-    private void initComponents() {
+    private void initComponents(String id,String fechaInicio,String fechaFin,ArrayList<String>disponibles) {
+    	
+    	ArrayList<String> info=control.mostrarCaracteristicasHbatiacion(id);
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -82,14 +89,17 @@ public class info_habitacion extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
+        jTextField1.setToolTipText(info.get(0));
         jPanel1.add(jTextField1);
         jTextField1.setBounds(170, 30, 190, 20);
+        jTextField2.setToolTipText(info.get(1));
         jPanel1.add(jTextField2);
         jTextField2.setBounds(170, 60, 190, 20);
+        jTextField3.setToolTipText(info.get(2));
         jPanel1.add(jTextField3);
         jTextField3.setBounds(170, 90, 190, 20);
 
-        jTextField4.setToolTipText("");
+        jTextField4.setToolTipText(info.get(3));
         jPanel1.add(jTextField4);
         jTextField4.setBounds(170, 120, 190, 20);
 
@@ -97,12 +107,22 @@ public class info_habitacion extends javax.swing.JFrame {
         jButton1.setText("Reservar");
         jPanel1.add(jButton1);
         jButton1.setBounds(30, 630, 110, 30);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	jButton1ActionPerformed(evt,id,fechaInicio,fechaFin);
+            }
+        });
+        
 
         jButton2.setBackground(new java.awt.Color(255, 249, 132));
         jButton2.setText("Volver");
         jPanel1.add(jButton2);
         jButton2.setBounds(280, 630, 110, 30);
-
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	jButton2ActionPerformed(evt,fechaInicio,fechaFin,disponibles);
+            }
+        });
         jLabel2.setText("ID");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(50, 30, 12, 17);
@@ -184,67 +204,67 @@ public class info_habitacion extends javax.swing.JFrame {
         jPanel1.add(jLabel20);
         jLabel20.setBounds(50, 570, 40, 17);
 
-        jTextField5.setToolTipText("");
+        jTextField5.setToolTipText(info.get(4));
         jPanel1.add(jTextField5);
         jTextField5.setBounds(170, 120, 190, 20);
 
-        jTextField6.setToolTipText("");
+        jTextField6.setToolTipText(info.get(5));
         jPanel1.add(jTextField6);
         jTextField6.setBounds(170, 150, 190, 20);
 
-        jTextField7.setToolTipText("");
+        jTextField7.setToolTipText(info.get(6));
         jPanel1.add(jTextField7);
         jTextField7.setBounds(170, 180, 190, 20);
 
-        jTextField8.setToolTipText("");
+        jTextField8.setToolTipText(info.get(7));
         jPanel1.add(jTextField8);
         jTextField8.setBounds(170, 210, 190, 20);
 
-        jTextField9.setToolTipText("");
+        jTextField9.setToolTipText(info.get(8));
         jPanel1.add(jTextField9);
         jTextField9.setBounds(170, 240, 190, 20);
 
-        jTextField10.setToolTipText("");
+        jTextField10.setToolTipText(info.get(9));
         jPanel1.add(jTextField10);
         jTextField10.setBounds(170, 270, 190, 20);
 
-        jTextField11.setToolTipText("");
+        jTextField11.setToolTipText(info.get(10));
         jPanel1.add(jTextField11);
         jTextField11.setBounds(170, 300, 190, 20);
 
-        jTextField12.setToolTipText("");
+        jTextField12.setToolTipText(info.get(11));
         jPanel1.add(jTextField12);
         jTextField12.setBounds(170, 330, 190, 20);
 
-        jTextField13.setToolTipText("");
+        jTextField13.setToolTipText(info.get(12));
         jPanel1.add(jTextField13);
         jTextField13.setBounds(170, 360, 190, 20);
 
-        jTextField14.setToolTipText("");
+        jTextField14.setToolTipText(info.get(13));
         jPanel1.add(jTextField14);
         jTextField14.setBounds(170, 390, 190, 20);
 
-        jTextField15.setToolTipText("");
+        jTextField15.setToolTipText(info.get(14));
         jPanel1.add(jTextField15);
         jTextField15.setBounds(170, 420, 190, 20);
 
-        jTextField16.setToolTipText("");
+        jTextField16.setToolTipText(info.get(15));
         jPanel1.add(jTextField16);
         jTextField16.setBounds(170, 450, 190, 20);
 
-        jTextField17.setToolTipText("");
+        jTextField17.setToolTipText(info.get(16));
         jPanel1.add(jTextField17);
         jTextField17.setBounds(170, 480, 190, 20);
 
-        jTextField18.setToolTipText("");
+        jTextField18.setToolTipText(info.get(17));
         jPanel1.add(jTextField18);
         jTextField18.setBounds(170, 510, 190, 20);
 
-        jTextField19.setToolTipText("");
+        jTextField19.setToolTipText(info.get(18));
         jPanel1.add(jTextField19);
         jTextField19.setBounds(170, 540, 190, 20);
 
-        jTextField20.setToolTipText("");
+        jTextField20.setToolTipText(info.get(19));
         jPanel1.add(jTextField20);
         jTextField20.setBounds(170, 570, 190, 20);
 
@@ -252,7 +272,7 @@ public class info_habitacion extends javax.swing.JFrame {
         jPanel1.add(jLabel21);
         jLabel21.setBounds(50, 600, 80, 17);
 
-        jTextField21.setToolTipText("");
+        jTextField21.setToolTipText(info.get(20));
         jPanel1.add(jTextField21);
         jTextField21.setBounds(170, 600, 190, 20);
 
@@ -266,34 +286,18 @@ public class info_habitacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                           
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt,String id,String fechaInicio,String fechaFin) {  
+    	datos_huespedes datos=new datos_huespedes(id,fechaInicio,fechaFin);
+    	datos.setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(info_habitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new info_habitacion().setVisible(true);
-        });
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt,String fechaInicio,String fechaFin,ArrayList<String>disponibles) {
+    	lista_habitaciones lista=new lista_habitaciones(disponibles,fechaInicio,fechaFin);
+    	lista.setVisible(true);
     }
+   
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;

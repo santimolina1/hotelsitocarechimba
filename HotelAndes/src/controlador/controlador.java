@@ -208,12 +208,14 @@ public class controlador {
 	
 	
 	
-	public void reservar1(String nombre,String id, String fecha_llegada, String fecha_salida) throws IOException
+	public String reservar1(String nombre,String id, String fecha_llegada, String fecha_salida) throws IOException
 	{
 		FuncionesEmpleado empleado = new FuncionesEmpleado();
 		Date Fecha_llegada = formatearHora(fecha_llegada,"dd/MM/yy");
 		Date Fecha_salida = formatearHora(fecha_salida,"dd/MM/yy");
-		empleado.reservar(Fecha_llegada, Fecha_salida, id, 2, nombre, huespedes, reservas);
+		float valor=empleado.reservar(Fecha_llegada, Fecha_salida, id, 2, nombre, huespedes, reservas);
+		String resp=("El valor de la reserva a pagar es de: $"+Float.toString(valor));
+		return resp;
 	}
 	
 	public ArrayList<String> mostrarDisponiblesFechas(String fecha_llegada, String fecha_salida) {
@@ -232,8 +234,10 @@ public class controlador {
 		return caracteristicas;
 	}
 	
-	public String mostrarCaracteristicasHbatiacion(String id) {
-		String todo ="ajd";
+	public ArrayList<String> mostrarCaracteristicasHbatiacion(String id) {
+		FuncionesEmpleado empleado = new FuncionesEmpleado();
+		ArrayList<String> todo=empleado.mostrarInfoHabitacion(id);
+		
 		return todo;
 	}
 }

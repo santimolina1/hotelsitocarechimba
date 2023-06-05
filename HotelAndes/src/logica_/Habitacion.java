@@ -81,4 +81,7 @@ public class Habitacion implements Servicio {
 		return "N.A";
 	}
 
+	public ArrayList<String> getAtributosAdicionales(){
+		return atributosAdicionales;
+	}
 }

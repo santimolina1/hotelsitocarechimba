@@ -101,7 +101,7 @@ private static Hotel instancia;
 
 			if (persona.equals("administrador")) {
 				retorno="admin";
-				admins.ejecutarAplicacion();
+				//admins.ejecutarAplicacion();
 			}
 			if (persona.equals("usuario")) {
 				retorno="user";
