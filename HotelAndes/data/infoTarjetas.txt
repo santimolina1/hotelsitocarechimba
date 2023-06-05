@@ -1,0 +1,5 @@
+metodo;numero;cedula;codigo;fechaVencimiento;saldo;reportada
+tarjeta;1234567890;1234567;001;1223;100000000;1
+tarjeta;1234567891;7654321;0921;20000;0
+tarjeta;10109878;12312;9825;100000000000;0
+payPal;prueba@gmail.com;12123212;contraseña;1028;100000;0
