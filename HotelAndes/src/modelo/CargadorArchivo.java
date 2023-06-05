@@ -20,6 +20,7 @@ import logica_.Reserva;
 import logica_.Servicio;
 import logica_.ServicioRecreativo;
 import logica_.Tarifa;
+import logica_.Tarjeta;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -497,17 +498,33 @@ public class CargadorArchivo {
 	
 	
 	public HashMap<String, ArrayList<String>> cargarFechas(String txtFile) throws IOException {
+<<<<<<< HEAD
         HashMap<String, ArrayList<String>> fechas= new HashMap<String, ArrayList<String>>();
         FileReader archivo = new FileReader(txtFile);
         BufferedReader br = new BufferedReader(archivo);
         String linea = br.readLine();
         String[] titulos = linea.split(";");
         linea = br.readLine();
+=======
+		HashMap<String, ArrayList<String>> fechas= new HashMap<String, ArrayList<String>>();
+		FileReader archivo = new FileReader(txtFile);
+		BufferedReader br = new BufferedReader(archivo);
+		String linea = br.readLine();
+		String[] titulos = linea.split(";");
+		linea = br.readLine();
+>>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
 
+<<<<<<< HEAD
         while (linea != null) // Cuando se llegue al final del archivo, linea tendrá el valor null
         {
             //metodo;numero;cedula;codigo;fechaVencimiento;saldo;reportada
+=======
+		while (linea != null) // Cuando se llegue al final del archivo, linea tendrá el valor null
+		{
+			//metodo;numero;cedula;codigo;fechaVencimiento;saldo;reportada
+>>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
 
+<<<<<<< HEAD
         String[] partes = linea.split(";");
         String fecha1 = partes[0];
         String pa1 = (partes[1]);
@@ -517,7 +534,29 @@ public class CargadorArchivo {
         System.out.println(pa2);
         System.out.println(pa3);
         System.out.println(fecha);
+=======
+		String[] partes = linea.split(";");
+		String fecha = partes[0];
+		String pa1 = (partes[1]);
+		String pa2 = partes[2];
+		String pa3 = (partes[3]);
+		
+		linea = br.readLine(); // Leer la siguiente línea
+		ArrayList<String> datos= new ArrayList<String>();
+		if (pa1!="") {
+			datos.add(pa1);
+		}
+		if (pa2!="") {
+			datos.add(pa2);
+		}
+		if (pa3!="") {
+			datos.add(pa3);
+		}
+		fechas.put(fecha, datos);
+	}
+>>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
 
+<<<<<<< HEAD
         linea = br.readLine(); // Leer la siguiente línea
         ArrayList<String> datos= new ArrayList<String>();
         if (pa1!=null) {
@@ -530,7 +569,13 @@ public class CargadorArchivo {
             datos.add(pa3);
         }
         fechas.put(fecha1, datos);
+=======
+	br.close();
+	return fechas;
+>>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
     }
+	
+	
 
     br.close();
     return fechas;
