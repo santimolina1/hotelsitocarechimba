@@ -30,6 +30,7 @@ public class habitaciones_disponibles extends javax.swing.JFrame {
      */
     public habitaciones_disponibles() {
         initComponents();
+        setSize(490, 390);
     }
 
     /**
@@ -62,11 +63,7 @@ public class habitaciones_disponibles extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(130, 50, 230, 20);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
+        
         jPanel1.add(jTextField1);
         jTextField1.setBounds(190, 100, 190, 30);
         jPanel1.add(jTextField2);
@@ -91,6 +88,11 @@ public class habitaciones_disponibles extends javax.swing.JFrame {
         jButton2.setText("Volver");
         jPanel1.add(jButton2);
         jButton2.setBounds(330, 290, 110, 30);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	botonVolverActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Fecha inicio (DD/MM/AAA)");
         jPanel1.add(jLabel2);
@@ -106,8 +108,10 @@ public class habitaciones_disponibles extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
+    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    	dispose(); // Cerrar la ventana emergente
+        ventana_usuario menu=new ventana_usuario();
+        menu.setVisible(true);
     }                                           
 
     private void botonMostarHabitacionesActionPerformed(java.awt.event.ActionEvent evt) throws IOException {

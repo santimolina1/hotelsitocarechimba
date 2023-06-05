@@ -217,7 +217,7 @@ private static Hotel instancia;
 	public static String fechaString(Date date) {
 		SimpleDateFormat dateFormatter=null;
         
-        dateFormatter = new SimpleDateFormat("dd/MM");
+        dateFormatter = new SimpleDateFormat("dd/MM/YYYY");
        
         return dateFormatter.format(date);
 	}

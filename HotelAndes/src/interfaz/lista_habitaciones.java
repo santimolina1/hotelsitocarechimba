@@ -9,6 +9,7 @@ public class lista_habitaciones extends javax.swing.JFrame {
      */
     public lista_habitaciones(ArrayList<String>disponibles,String fechaInicio,String fechaFin ) {
         initComponents(disponibles,fechaInicio,fechaFin);
+        setSize(490, 390);
     }
 
     /**
@@ -71,12 +72,14 @@ public class lista_habitaciones extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         habitaciones_disponibles dispo=new habitaciones_disponibles();
+        dispose();
         dispo.setVisible(true);
     }                                        
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt,String fechaInicio,String fechaFin,ArrayList<String>disponibles) {                                         
     	String id =  (String) jComboBox1.getSelectedItem();
     	info_habitacion info=new info_habitacion(id,fechaInicio,fechaFin,disponibles);
+    	dispose();
     	info.setVisible(true);
     }                                        
 

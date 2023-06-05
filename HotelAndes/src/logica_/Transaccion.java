@@ -16,7 +16,11 @@ public class Transaccion {
 	
 	public String verificarDatos(String  tarjeta, String codigo) {
 		String retorno="";
+<<<<<<< HEAD
 		//if
+=======
+		
+>>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
 		
 		
 		
