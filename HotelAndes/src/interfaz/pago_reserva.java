@@ -55,6 +55,12 @@ public class pago_reserva extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(255, 249, 132));
         jButton2.setText("Pagar");
         jButton2.setToolTipText("");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pagarActionPerformed(evt);
+            }
+        });
+
         
         jPanel1.add(jButton2);
         jButton2.setBounds(80, 200, 100, 30);
@@ -86,14 +92,20 @@ public class pago_reserva extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold>  
+    
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {  
     	reserva_exito exito=new reserva_exito(null);
     	exito.setVisible(true);
     	
         // TODO add your handling code here:
-    }                                        
+    } 
+    private void pagarActionPerformed(java.awt.event.ActionEvent evt) { 
+    	reserva_exito exito=new reserva_exito(null);
+    	exito.setVisible(true);
+    	new ventana_usuario().setVisible(true);
+    } 
 
     /**
      * @param args the command line arguments

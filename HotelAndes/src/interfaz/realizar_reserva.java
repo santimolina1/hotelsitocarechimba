@@ -125,8 +125,7 @@ public class realizar_reserva extends javax.swing.JFrame {
         String fechaInicio = jTextField3.getText();
         String fechaSalida = jTextField4.getText();
         
-        //HashMap<String, Float> valores=control.reservar(nombreUsuario, numAcompanantes, fechaInicio, fechaSalida);
-        //ReservaRespuesta respuesta=new ReservaRespuesta(valores);
+        //vaRespuesta respuesta=new ReservaRespuesta(valores);
         //respuesta.setVisible(true);
         //System.out.println(valores);
     }

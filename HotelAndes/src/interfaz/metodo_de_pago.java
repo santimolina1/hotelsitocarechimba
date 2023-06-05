@@ -1,9 +1,12 @@
 package interfaz;
 
-public class metodo_de_pago extends javax.swing.JFrame {
+import logica_.Consumo;
 
-    public metodo_de_pago() {
+public class metodo_de_pago extends javax.swing.JFrame {
+	private Consumo c;
+    public metodo_de_pago(Consumo c) {
         initComponents();
+        this.c=c;
     }
 
                             
@@ -97,10 +100,10 @@ public class metodo_de_pago extends javax.swing.JFrame {
     	//new ventana_usuario().setVisible(true);
     }
     private void payPalActionPerformed(java.awt.event.ActionEvent evt) {                                         
-    	new metodo_Paypal().setVisible(true);
+    	new metodo_Paypal(c).setVisible(true);
     }
     private void tarjetaActionPerformed(java.awt.event.ActionEvent evt) {                                         
-    	new metodo_credito().setVisible(true);
+    	new metodo_credito(c).setVisible(true);
     }
 
                         

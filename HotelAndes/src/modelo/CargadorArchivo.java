@@ -492,15 +492,11 @@ public class CargadorArchivo {
 
 		while (linea != null) // Cuando se llegue al final del archivo, linea tendrá el valor null
 		{
-<<<<<<< HEAD
-			//metodo;numero;cedula;codigo;fechaVencimiento;saldo;reportada
+
 			System.out.println(linea);
 		String[] partes = linea.split(";");
 		String fecha = partes[0];
-		String pa1 = (partes[1]);
-		String pa2 = partes[2];
-		String pa3 = (partes[3]);
-=======
+		
 			// metodo;numero;cedula;codigo;fechaVencimiento;saldo;reportada
 			ArrayList<String> ids = new ArrayList<String>();
 			fechas.put(linea, ids);
@@ -509,7 +505,7 @@ public class CargadorArchivo {
 		br.close();
 		System.out.println(fechas);
 		return fechas;
->>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
+
 		
 	}
 
