@@ -16,7 +16,7 @@ public class Transaccion {
 	
 	public String verificarDatos(String  tarjeta, String codigo) {
 		String retorno="";
-		if
+		
 		
 		
 		
