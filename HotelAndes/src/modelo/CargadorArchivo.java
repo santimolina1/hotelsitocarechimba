@@ -508,7 +508,7 @@ public class CargadorArchivo {
 		while (linea != null) // Cuando se llegue al final del archivo, linea tendrá el valor null
 		{
 			//metodo;numero;cedula;codigo;fechaVencimiento;saldo;reportada
-
+			System.out.println(linea);
 		String[] partes = linea.split(";");
 		String fecha = partes[0];
 		String pa1 = (partes[1]);

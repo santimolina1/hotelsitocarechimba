@@ -9,9 +9,10 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 import consola.MenuAdmin;
+import modelo.CargadorArchivo;
 
 public class ventana_admin extends javax.swing.JFrame {
-
+	CargadorArchivo cargador = CargadorArchivo.getInstance();
     
     public ventana_admin() {
         initComponents();
@@ -127,6 +128,7 @@ public class ventana_admin extends javax.swing.JFrame {
 			MenuAdmin.ejecutarCargarBebidas();
 			MenuAdmin.ejecutarCargarPlatos();
 	    	MenuAdmin.ejecutarCargarServicios();
+	    	cargador.cargarFechas("./data/fechas.txt");
 		} catch (IOException e) {
 			new error_carga().setVisible(true);
 			e.printStackTrace();
