@@ -57,11 +57,26 @@ public class datos_huespedes extends javax.swing.JFrame {
         jButton1.setText("Reservar");
         jPanel1.add(jButton1);
         jButton1.setBounds(90, 260, 110, 30);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                try {
+					jButton1ActionPerformed(evt,id,fechaInicio,fechaFin);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(255, 249, 132));
         jButton2.setText("Volver");
         jPanel1.add(jButton2);
         jButton2.setBounds(310, 260, 110, 30);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Nombre");
         jPanel1.add(jLabel2);
@@ -79,7 +94,16 @@ public class datos_huespedes extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt,String id,String fechaInicio,String fechaFin) throws IOException {  
     	String nombreUsuario = jTextField1.getText();
     	String resp=control.reservar1(nombreUsuario, id, fechaFin, fechaFin);
+    	pago_reserva pago=new pago_reserva(resp);
+    	pago.setVisible(true);
     	
+    	
+    }
+    
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+    	habitaciones_disponibles habitaciones= new habitaciones_disponibles();
+    	habitaciones.setVisible(true);
     }
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:

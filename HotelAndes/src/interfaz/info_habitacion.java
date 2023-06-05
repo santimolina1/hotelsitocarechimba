@@ -24,6 +24,7 @@ public class info_habitacion extends javax.swing.JFrame {
     private void initComponents(String id,String fechaInicio,String fechaFin,ArrayList<String>disponibles) {
     	
     	ArrayList<String> info=control.mostrarCaracteristicasHbatiacion(id);
+    	System.out.println(info);
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -89,17 +90,17 @@ public class info_habitacion extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jTextField1.setToolTipText(info.get(0));
+        jTextField1.setText(info.get(0));
         jPanel1.add(jTextField1);
         jTextField1.setBounds(170, 30, 190, 20);
-        jTextField2.setToolTipText(info.get(1));
+        jTextField2.setText(info.get(1));
         jPanel1.add(jTextField2);
         jTextField2.setBounds(170, 60, 190, 20);
-        jTextField3.setToolTipText(info.get(2));
+        jTextField3.setText(info.get(2));
         jPanel1.add(jTextField3);
         jTextField3.setBounds(170, 90, 190, 20);
 
-        jTextField4.setToolTipText(info.get(3));
+        jTextField4.setText(info.get(3));
         jPanel1.add(jTextField4);
         jTextField4.setBounds(170, 120, 190, 20);
 
@@ -204,67 +205,67 @@ public class info_habitacion extends javax.swing.JFrame {
         jPanel1.add(jLabel20);
         jLabel20.setBounds(50, 570, 40, 17);
 
-        jTextField5.setToolTipText(info.get(4));
+        jTextField5.setText(info.get(4));
         jPanel1.add(jTextField5);
         jTextField5.setBounds(170, 120, 190, 20);
 
-        jTextField6.setToolTipText(info.get(5));
+        jTextField6.setText(info.get(5));
         jPanel1.add(jTextField6);
         jTextField6.setBounds(170, 150, 190, 20);
 
-        jTextField7.setToolTipText(info.get(6));
+        jTextField7.setText(info.get(6));
         jPanel1.add(jTextField7);
         jTextField7.setBounds(170, 180, 190, 20);
 
-        jTextField8.setToolTipText(info.get(7));
+        jTextField8.setText(info.get(7));
         jPanel1.add(jTextField8);
         jTextField8.setBounds(170, 210, 190, 20);
 
-        jTextField9.setToolTipText(info.get(8));
+        jTextField9.setText(info.get(8));
         jPanel1.add(jTextField9);
         jTextField9.setBounds(170, 240, 190, 20);
 
-        jTextField10.setToolTipText(info.get(9));
+        jTextField10.setText(info.get(9));
         jPanel1.add(jTextField10);
         jTextField10.setBounds(170, 270, 190, 20);
 
-        jTextField11.setToolTipText(info.get(10));
+        jTextField11.setText(info.get(10));
         jPanel1.add(jTextField11);
         jTextField11.setBounds(170, 300, 190, 20);
 
-        jTextField12.setToolTipText(info.get(11));
+        jTextField12.setText(info.get(11));
         jPanel1.add(jTextField12);
         jTextField12.setBounds(170, 330, 190, 20);
 
-        jTextField13.setToolTipText(info.get(12));
+        jTextField13.setText(info.get(12));
         jPanel1.add(jTextField13);
         jTextField13.setBounds(170, 360, 190, 20);
 
-        jTextField14.setToolTipText(info.get(13));
+        jTextField14.setText(info.get(13));
         jPanel1.add(jTextField14);
         jTextField14.setBounds(170, 390, 190, 20);
 
-        jTextField15.setToolTipText(info.get(14));
+        jTextField15.setText(info.get(14));
         jPanel1.add(jTextField15);
         jTextField15.setBounds(170, 420, 190, 20);
 
-        jTextField16.setToolTipText(info.get(15));
+        jTextField16.setText(info.get(15));
         jPanel1.add(jTextField16);
         jTextField16.setBounds(170, 450, 190, 20);
 
-        jTextField17.setToolTipText(info.get(16));
+        jTextField17.setText(info.get(16));
         jPanel1.add(jTextField17);
         jTextField17.setBounds(170, 480, 190, 20);
 
-        jTextField18.setToolTipText(info.get(17));
+        jTextField18.setText(info.get(17));
         jPanel1.add(jTextField18);
         jTextField18.setBounds(170, 510, 190, 20);
 
-        jTextField19.setToolTipText(info.get(18));
+        jTextField19.setText(info.get(18));
         jPanel1.add(jTextField19);
         jTextField19.setBounds(170, 540, 190, 20);
 
-        jTextField20.setToolTipText(info.get(19));
+        jTextField20.setText(info.get(19));
         jPanel1.add(jTextField20);
         jTextField20.setBounds(170, 570, 190, 20);
 
@@ -272,7 +273,7 @@ public class info_habitacion extends javax.swing.JFrame {
         jPanel1.add(jLabel21);
         jLabel21.setBounds(50, 600, 80, 17);
 
-        jTextField21.setToolTipText(info.get(20));
+        jTextField21.setText(info.get(20));
         jPanel1.add(jTextField21);
         jTextField21.setBounds(170, 600, 190, 20);
 

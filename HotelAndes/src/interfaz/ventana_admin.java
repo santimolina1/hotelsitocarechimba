@@ -130,6 +130,8 @@ public class ventana_admin extends javax.swing.JFrame {
 			MenuAdmin.ejecutarCargarPlatos();
 	    	MenuAdmin.ejecutarCargarServicios();
 	    	cargador.cargarFechas("./data/fechas.txt");
+	    	MenuAdmin.ejecutarCargarCamas();
+	    	MenuAdmin.ejecutarCargarHabitaciones();
 	    	
 		} catch (IOException e) {
 			new error_carga().setVisible(true);

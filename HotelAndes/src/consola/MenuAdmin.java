@@ -195,7 +195,7 @@ public class MenuAdmin {
 
 	public void ejecutarCargarHabitaciones() throws IOException {
 		
-		String archivo = input ("Ingrese el nombre del archivo en formato .txt: ");
+		String archivo = "habitacion.txt";
 		
 		
 		File archivoHabitaciones= new File ("./data/" + archivo);
@@ -223,7 +223,7 @@ public class MenuAdmin {
 
 
 	public void ejecutarCargarCamas() throws IOException {
-		String archivo = input ("Ingrese el nombre del archivo en formato .txt: ");
+		String archivo = "camas.txt ";
 		
 		
 		File archivoCamas= new File ("./data/" + archivo);
