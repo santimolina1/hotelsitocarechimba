@@ -1,2 +1,6 @@
 Producto   ----   Precio ----  Pagado
+<<<<<<< HEAD
 cityTourHistorico   ----   4820.0   ----   
+=======
+Safari   ----   54300.0   ----   
+>>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git

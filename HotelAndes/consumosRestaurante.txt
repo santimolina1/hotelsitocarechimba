@@ -1,2 +1,6 @@
 Producto   ----   Precio ----  Pagado
+<<<<<<< HEAD
 Gatorade   ----   4000.0   ----   
+=======
+Cerveza   ----   7000.0   ----   
+>>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
