@@ -1,2 +1,2 @@
-Tarifa habitación estandar   ----   0.0
-1   ----   100000.0
+Tarifa habitación suiteDoble   ----   0.0
+3   ----   200000.0

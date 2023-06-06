@@ -1,0 +1,11 @@
+Número de factura: 2675
+Fecha: 2023-06-06
+Nombre: claudia
+Producto   ----   Precio ----  Pagado
+NadoConDelfines   ----   3580.0   ----   false
+Waffles   ----   11000.0   ----   false
+3   ----   200000.0   ----   true
+Tarifa habitación suiteDoble   ----   0.0   ----   false
+Precio neto de lo NO pago: 14580.0
+valor del IVA de lo NO pago: 2770.2
+Valor total de lo NO pago: 17350.2
