@@ -1,11 +1,13 @@
 package logica_;
 
+import java.io.IOException;
+
 public class PagoOnline {
 	
 	private PasarelasDePagos pasarela;
 	
 	
-	public void PagoOnline(String clasePago, String archivo) {
+	public PagoOnline(String clasePago, String archivo, Transaccion tra) throws IOException {
 		try
 		{
 		// 1. Dado el nombre completo (claseAgenda), encontramos un objeto de la clase
@@ -27,9 +29,17 @@ public class PagoOnline {
 		*/
 		catch (Exception e)
 		{
-		System.out.println("Hubo otro error construyendo la agenda telefónica: " + e.getMessage());
+		System.out.println("Hubo otro error  " + e.getMessage());
 		e.printStackTrace();
 		}
+		pasarela.agregarPago(tra,archivo);
+		
 	}
+
+
+	public PasarelasDePagos getPasarela() {
+		return pasarela;
+	}
+	
 
 }

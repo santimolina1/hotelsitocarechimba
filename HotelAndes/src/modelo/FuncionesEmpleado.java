@@ -228,7 +228,7 @@ public class FuncionesEmpleado {
 	 * ); }
 	 * 
 	 * }
-	 */
+	 
 	public HashMap<String, Float> calcularValoresTotales(ArrayList<String> habitacionesReservadas,
 			HashMap<String, Habitacion> habitaciones, HashMap<Date, Float> tarifaEstandar,
 			HashMap<Date, Float> tarifaSuite, HashMap<Date, Float> tarifaSuiteDoble,
@@ -267,7 +267,7 @@ public class FuncionesEmpleado {
 
 		return (valoresTotales);
 	}
-
+*/
 	public void cargarConsumo(HashMap<String, Object> opcion) {
 		Servicio elServicio = null;
 		System.out.println(opcion);
@@ -394,7 +394,7 @@ public class FuncionesEmpleado {
 		hotel.crearReserva(reserva);
 		Habitacion hab = habitaciones.get(id);
 		co.cargarConsumo(hab);
-		//co.cargarConsumo(tarifa);
+		co.cargarConsumo(tarifa);
 
 		return (Float) valorTotal;
 	}
@@ -405,22 +405,24 @@ public class FuncionesEmpleado {
 
 		Habitacion habitacion = habitaciones.get(idHabitacion);
 		float valorTotal = 0;
-		Tarifa tarifa = null;
+		
+		float valorBaseT =0;
 		for (Date fecha : fechasEntreEntradaYSalida) {
 			float valorBase = habitacion.getPrecioTotal();
 			String tipo = habitacion.getTipo();
+			
 
-			Float valorAdicional = null;
+			Float valorAdicional = 0f;
 			if (tipo == "estandar") {
 
 				valorAdicional = tarifaEstandar.get(fecha);
-				tarifa = new Tarifa("estandar", valorAdicional, fecha);
+				valorBaseT +=valorAdicional;
 			} else if (tipo == "suite") {
 				valorAdicional = tarifaSuite.get(fecha);
-				tarifa = new Tarifa("suite", valorAdicional, fecha);
+				valorBaseT +=valorAdicional;
 			} else if (tipo == "suiteDoble") {
 				valorAdicional = tarifaSuiteDoble.get(fecha);
-				tarifa = new Tarifa("suiteDoble", valorAdicional, fecha);
+				valorBaseT +=valorAdicional;
 			}
 
 			if (valorAdicional != null) {
@@ -428,8 +430,11 @@ public class FuncionesEmpleado {
 			}
 
 			valorTotal += valorBase;
+			System.out.println(valorTotal);
 		}
 		ArrayList<Object> retorno = new ArrayList<Object>();
+		String tipo = habitacion.getTipo();
+		Tarifa tarifa = new Tarifa(tipo, valorBaseT, fechasEntreEntradaYSalida);
 		retorno.add(valorTotal);
 		retorno.add(tarifa);
 		return retorno;

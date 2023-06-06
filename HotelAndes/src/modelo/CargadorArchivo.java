@@ -367,7 +367,7 @@ public class CargadorArchivo {
 
 			}
 
-			Tarifa laTarifa = new Tarifa(tipoHabitación, extra, fecha);
+			Tarifa laTarifa = new Tarifa(tipoHabitación, extra, null);
 
 			if ((tarifas.keySet()).contains(fecha)) {
 				ArrayList<Tarifa> listaTarifas = tarifas.get(fecha);
@@ -493,15 +493,10 @@ public class CargadorArchivo {
 		while (linea != null) // Cuando se llegue al final del archivo, linea tendrá el valor null
 		{
 
-<<<<<<< HEAD
 			System.out.println(linea);
 		String[] partes = linea.split(";");
 		String fecha = partes[0];
-		
-			// metodo;numero;cedula;codigo;fechaVencimiento;saldo;reportada
-=======
 	
->>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
 			ArrayList<String> ids = new ArrayList<String>();
 			fechas.put(linea, ids);
 			linea = br.readLine();
@@ -510,10 +505,7 @@ public class CargadorArchivo {
 		System.out.println(fechas);
 		return fechas;
 
-<<<<<<< HEAD
-		
-=======
->>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
+
 	}
 
 	public HashMap<String, ArrayList<String>> getFechas() {

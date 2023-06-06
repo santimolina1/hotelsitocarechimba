@@ -51,7 +51,7 @@ public class AplicacionCliente {
 				if (opcion_seleccionada == 1) {
 					ingresarDatos();
 				} else if (opcion_seleccionada == 2) {
-					reservar();
+					//reservar();
 				} else if (opcion_seleccionada == 3) {
 					checkIn();
 				} 
@@ -274,7 +274,7 @@ public class AplicacionCliente {
 		System.out.println("\n");
 
 	}
-
+/*
 	public void reservar() throws IOException {
 
 		String nombre = input("Ingrese su nombre completo: ");
@@ -319,7 +319,7 @@ public class AplicacionCliente {
 		}
 
 	}
-
+*/
 	public void cancelarReserva() throws IOException {
 		String nombre = input("Ingresa tu nombre: ");
 		FuncionesEmpleado empleado = new FuncionesEmpleado();

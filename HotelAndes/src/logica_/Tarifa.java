@@ -11,17 +11,17 @@ public class Tarifa implements Servicio{
 	CargadorArchivo cargador = CargadorArchivo.getInstance();
 	private String tipoHabitacion;
 	private float precio;
-	private Date fecha;
+	private ArrayList<Date> fechasEntreEntradaYSalida;
 	public HashMap<Date, Float> tarifaEstandar = cargador.getTarifaEstandar();
 	public HashMap<Date, Float> tarifaSuite = cargador.getTarifaSuite();
 	public HashMap<Date, Float> tarifaSuiteDoble = cargador.getTarifaSuiteDoble();
 
 	private String[] diaSemana;
 
-	public Tarifa(String tipoHabitacion, float precio, Date fecha) {
+	public Tarifa(String tipoHabitacion, float precio,ArrayList<Date> fechasEntreEntradaYSalida) {
 		this.tipoHabitacion = tipoHabitacion;
 		this.precio = precio;
-		this.fecha = fecha;
+		this.fechasEntreEntradaYSalida = fechasEntreEntradaYSalida;
 
 	}
 
@@ -37,13 +37,13 @@ public class Tarifa implements Servicio{
 		return precio;
 	}
 
-	public Date getFecha() {
-		return fecha;
+	public ArrayList<Date>  getFecha() {
+		return fechasEntreEntradaYSalida;
 	}
 
 	@Override
 	public String getNombre() {
-		String nombre= "Tarifa habitación "+ tipoHabitacion + " en la fecha: " + fechaString(fecha);
+		String nombre= "Tarifa habitación "+ tipoHabitacion ;
 		return nombre;
 	}
 

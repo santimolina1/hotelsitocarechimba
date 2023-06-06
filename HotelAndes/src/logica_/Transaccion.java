@@ -15,17 +15,20 @@ public class Transaccion {
 	}
 	
 	public String verificarDatos(String  tarjeta, String codigo) {
-		String retorno="";
-<<<<<<< HEAD
-		//if
-=======
-		
->>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
-		
-		
-		
-		
-		return retorno;
+		String a="";		
+			return a;
+	}
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public float getValor() {
+		return valor;
+	}
+
+	public String getResultado() {
+		return resultado;
 	}
 	
 	

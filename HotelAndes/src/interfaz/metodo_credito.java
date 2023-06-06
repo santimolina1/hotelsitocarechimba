@@ -7,16 +7,20 @@ import javax.swing.JOptionPane;
 
 import Excepciones.PagoException;
 import logica_.Consumo;
+import logica_.PagoOnline;
+import logica_.PasarelasDePagos;
 import logica_.Transaccion;
 import logica_.VerificarPago;
 
 public class metodo_credito extends javax.swing.JFrame {
 	private Consumo c;
+	private String metodo;
 	public VerificarPago verificador =VerificarPago.getInstance();
-    public metodo_credito(Consumo c) {
+    public metodo_credito(Consumo c,String metodo) {
         initComponents();
         setSize(490, 390);
         this.c=c;
+        this.metodo=metodo;
     }
 
                              
@@ -63,7 +67,12 @@ public class metodo_credito extends javax.swing.JFrame {
         jButton1.setBounds(170, 240, 110, 30);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-            	ConfirmarActionPerformed(evt);
+            	try {
+					ConfirmarActionPerformed(evt);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
 
@@ -125,25 +134,39 @@ public class metodo_credito extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new metodo_credito(null).setVisible(true);
+            new metodo_credito(null,null).setVisible(true);
         });
     }
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {                                         
     	new metodo_de_pago(null).setVisible(true);
     }
-    private void ConfirmarActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void ConfirmarActionPerformed(java.awt.event.ActionEvent evt) throws IOException {                                         
     	String numero= jLabel2.getText();
     	String contraseña=jLabel3.getText();
+    	String clase=null;
+    	String archivo=null;
+    	if(metodo.equals("visa")) {
+    		clase="Visa";
+    		archivo="Visa";
+    	}
+    	else if(metodo.equals("master")) {
+    		clase="MasterCard";
+    		archivo="Master";
+    	}
+    	
     	try {
 			verificador.verificacion(numero,contraseña);
-			new Transaccion(new Date(), c.getPrecio(),"exitoso");
+			Transaccion tra=new Transaccion(new Date(), c.getPrecio(),"exitoso");
+			new PagoOnline(clase,archivo,tra);
 			c.setPagado(true);
 		} catch (IOException e) {
-			new Transaccion(new Date(), c.getPrecio(),"fail");
+			Transaccion tra=new Transaccion(new Date(), c.getPrecio(),"fail");
+			new PagoOnline(clase,archivo,tra);
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		} catch (PagoException e) {
-			new Transaccion(new Date(), c.getPrecio(),"fail");
+			Transaccion tra=new Transaccion(new Date(), c.getPrecio(),"fail");
+			new PagoOnline(clase,archivo,tra);
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		}
