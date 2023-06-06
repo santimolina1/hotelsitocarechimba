@@ -1,0 +1,2 @@
+Producto   ----   Precio ----  Pagado
+cityTourHistorico   ----   4820.0   ----   

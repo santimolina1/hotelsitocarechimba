@@ -1,0 +1,2 @@
+Tarifa habitación estandar   ----   0.0
+1   ----   100000.0

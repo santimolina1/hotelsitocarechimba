@@ -1,0 +1,9 @@
+Número de factura: 9021
+Fecha: 2023-06-05
+Nombre: clau
+Producto   ----   Precio ----  Pagado
+3   ----   200000.0   ----   false
+Tarifa habitación suiteDoble   ----   0.0   ----   false
+Precio neto de lo NO pago: 200000.0
+valor del IVA de lo NO pago: 38000.0
+Valor total de lo NO pago: 238000.0

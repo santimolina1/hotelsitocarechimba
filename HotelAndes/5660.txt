@@ -1,0 +1,11 @@
+Número de factura: 6214
+Fecha: 2023-06-06
+Nombre: clau
+Producto   ----   Precio ----  Pagado
+1   ----   100000.0   ----   false
+cityTourHistorico   ----   4820.0   ----   false
+Tarifa habitación estandar   ----   0.0   ----   false
+Gatorade   ----   4000.0   ----   false
+Precio neto de lo NO pago: 108820.0
+valor del IVA de lo NO pago: 20675.8
+Valor total de lo NO pago: 129495.8
