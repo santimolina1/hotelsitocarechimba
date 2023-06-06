@@ -66,23 +66,16 @@ public class ventana_usuario extends javax.swing.JFrame {
             }
         });
 
-		reservarBut.setText("Realizar una reserva");
+		reservarBut.setText("Habitaciones disponibles");
 		jPanel1.add(reservarBut);
-		reservarBut.setBounds(160, 110, 148, 30);
+		reservarBut.setBounds(160, 110, 190, 30);
 		reservarBut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
             	reservarButActionPerformed(evt);
             }
         });
 
-		checkInBut.setText("Realizar Check-in");
-		jPanel1.add(checkInBut);
-		checkInBut.setBounds(320, 110, 132, 30);
-		checkInBut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-            	checkInButActionPerformed(evt);
-            }
-        });
+		
 
 		catalogoBut.setText("Catalogo de Servicios");
 		jPanel1.add(catalogoBut);
