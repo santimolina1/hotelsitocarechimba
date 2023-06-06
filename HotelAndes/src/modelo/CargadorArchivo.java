@@ -1,8 +1,10 @@
 package modelo;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -485,14 +487,30 @@ public class CargadorArchivo {
 
 	public HashMap<String, ArrayList<String>> cargarFechas(String txtFile) throws IOException {
 
-		HashMap<String, ArrayList<String>> fechas = new HashMap<String, ArrayList<String>>();
-		FileReader archivo = new FileReader(txtFile);
-		BufferedReader br = new BufferedReader(archivo);
-		String linea = br.readLine();
+		
+		try (BufferedReader br = new BufferedReader(new FileReader(txtFile))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] elementos = linea.split(";", 2);
+                String fecha = elementos[0].trim(); // Primer elemento de la línea es la fecha
 
-		while (linea != null) // Cuando se llegue al final del archivo, linea tendrá el valor null
-		{
+                // Crear una lista para almacenar los elementos
+                ArrayList<String> listaElementos = new ArrayList<>();
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                if (elementos.length > 1) {
+                    String[] elementosArray = elementos[1].split(";");
+                    for (String elemento : elementosArray) {
+                        if (!elemento.isEmpty()) {
+                            listaElementos.add(elemento.trim());
+                        }
+                    }
+                }
+=======
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
 			System.out.println(linea);
 		String[] partes = linea.split(";");
 		String fecha = partes[0];
@@ -504,15 +522,37 @@ public class CargadorArchivo {
 		br.close();
 		System.out.println(fechas);
 		return fechas;
+>>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+                // Agregar la lista de elementos al HashMap usando la fecha como clave
+                fechas.put(fecha, listaElementos);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return fechas;
+    }
+=======
+<<<<<<< HEAD
+		
+=======
+>>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
+>>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
 	}
+>>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
 
 	public HashMap<String, ArrayList<String>> getFechas() {
 		return fechas;
 	}
 
 	public void addStringToDate(String date, String str) {
+		
 		if (fechas.containsKey(date)) {
 			List<String> values = fechas.get(date);
 			values.add(str);
@@ -520,6 +560,32 @@ public class CargadorArchivo {
 					"El string '" + str + "' se agregó correctamente a la lista de valores para la fecha " + date);
 		} else {
 			System.out.println("La fecha " + date + " no existe en el HashMap.");
+			System.out.println(fechas);
 		}
+		try {
+        	File archivo = new File("./data/fechas.txt");
+            File archivoTemporal = new File("temp.txt");
+            BufferedReader br = new BufferedReader(new FileReader(archivo));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(archivoTemporal));
+
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                if (linea.startsWith(date)) {
+                    linea += ";" + str;
+                }
+                bw.write(linea);
+                bw.newLine();
+            }
+
+            br.close();
+            bw.close();
+
+            // Reemplazar el archivo original con el archivo temporal
+            archivo.delete();
+            archivoTemporal.renameTo(archivo);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
 }
