@@ -9,6 +9,7 @@ import logica_.Consumo;
 import logica_.Factura;
 
 public class factura extends javax.swing.JFrame {
+	Factura f;
 	controlador control= controlador.getInstance();
     public factura() {
         initComponents();
@@ -36,9 +37,14 @@ public class factura extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jButton1.setBackground(new java.awt.Color(255, 249, 133));
-        jButton1.setText("Descargar");
+        jButton1.setText("Pagar");
         jPanel1.add(jButton1);
         jButton1.setBounds(180, 220, 110, 30);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	pagarActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(255, 249, 133));
         jButton2.setText("Volver");
@@ -63,7 +69,7 @@ public class factura extends javax.swing.JFrame {
         pack();
     }                      
     private void info() {
-    	Factura f=control.generarFactura();
+    	 f=control.generarFactura();
     	listModel.addElement("Número de factura: " + f.getNumeroFactura());
     	listModel.addElement("Fecha: " + f.getFecha());
     	listModel.addElement("Nombre: " + f.getNombre());
@@ -87,6 +93,10 @@ public class factura extends javax.swing.JFrame {
     public void volverActionPerformed(java.awt.event.ActionEvent evt) {
     	 new ventana_principal_inicio().setVisible(true);
     }
+    public void pagarActionPerformed(java.awt.event.ActionEvent evt) {
+    	Consumo c= f.getConsumos().get(0);
+   	 new metodo_de_pago(c).setVisible(true);
+   }
                         
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
