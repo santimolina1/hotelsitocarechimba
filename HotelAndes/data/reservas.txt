@@ -65,11 +65,22 @@ clau;Sat Oct 15 00:00:00 COT 2022;Sat Oct 15 00:00:00 COT 2022;2;6;reserva
 clau;Thu Oct 20 00:00:00 COT 2022;Thu Oct 20 00:00:00 COT 2022;2;45;reserva
 clau;Sun Feb 13 00:00:00 COT 2022;Sun Feb 13 00:00:00 COT 2022;2;7;reserva
 clau;Tue Mar 22 00:00:00 COT 2022;Tue Mar 22 00:00:00 COT 2022;2;5;reserva
-<<<<<<< HEAD
 clau;Sun Jul 30 00:00:00 COT 2023;Sun Jul 30 00:00:00 COT 2023;2;36;reserva
-=======
-clau;Tue Oct 25 00:00:00 COT 2022;Tue Oct 25 00:00:00 COT 2022;2;35;reserva
-clau;Tue Jul 12 00:00:00 COT 2022;Tue Jul 12 00:00:00 COT 2022;2;2;reserva
-clau;Sat May 13 00:00:00 COT 2023;Sat May 13 00:00:00 COT 2023;2;1;reserva
-clau;Fri Oct 13 00:00:00 COT 2023;Fri Oct 13 00:00:00 COT 2023;2;1;reserva
->>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
+clau;Sun Jul 09 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;2;46;reserva
+clau;Thu Jul 06 00:00:00 COT 2023;Thu Jul 06 00:00:00 COT 2023;2;4;reserva
+clau;Fri Jul 07 00:00:00 COT 2023;Fri Jul 07 00:00:00 COT 2023;2;6;reserva
+clau;Sat Jul 08 00:00:00 COT 2023;Sat Jul 08 00:00:00 COT 2023;2;7;reserva
+clau;Sun Jul 30 00:00:00 COT 2023;Sun Jul 30 00:00:00 COT 2023;2;8;reserva
+clau;Thu Feb 09 00:00:00 COT 2023;Thu Feb 09 00:00:00 COT 2023;2;2;reserva
+clau;Mon Jul 10 00:00:00 COT 2023;Mon Jul 10 00:00:00 COT 2023;2;1;reserva
+clau;Mon Jul 10 00:00:00 COT 2023;Mon Jul 10 00:00:00 COT 2023;2;2;reserva
+clau;Mon Jul 10 00:00:00 COT 2023;Mon Jul 10 00:00:00 COT 2023;2;3;reserva
+clau;Wed Jul 05 00:00:00 COT 2023;Wed Jul 05 00:00:00 COT 2023;2;1;reserva
+clau;Sun Jul 09 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;2;1;reserva
+clau;Sat Jul 08 00:00:00 COT 2023;Sat Jul 08 00:00:00 COT 2023;2;1;reserva
+clau;Sat Jul 08 00:00:00 COT 2023;Sat Jul 08 00:00:00 COT 2023;2;1;reserva
+clau;Sat Jul 08 00:00:00 COT 2023;Sat Jul 08 00:00:00 COT 2023;2;1;reserva
+clau;Sun Jul 09 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;2;1;reserva
+clau;Sun Jul 09 00:00:00 COT 2023;Sun Jul 09 00:00:00 COT 2023;2;1;reserva
+clau;Fri Jul 07 00:00:00 COT 2023;Fri Jul 07 00:00:00 COT 2023;2;1;reserva
+clau;Fri Feb 10 00:00:00 COT 2023;Fri Feb 10 00:00:00 COT 2023;2;1;reserva

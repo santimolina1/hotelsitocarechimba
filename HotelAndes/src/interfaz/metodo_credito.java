@@ -141,17 +141,19 @@ public class metodo_credito extends javax.swing.JFrame {
     	new metodo_de_pago(null).setVisible(true);
     }
     private void ConfirmarActionPerformed(java.awt.event.ActionEvent evt) throws IOException {                                         
-    	String numero= jLabel2.getText();
-    	String contraseña=jLabel3.getText();
+    	String numero= jTextField1.getText();
+    	System.out.println(numero);
+    	String contraseña=jTextField3.getText();
+    	System.out.println(contraseña);
     	String clase=null;
     	String archivo=null;
     	if(metodo.equals("visa")) {
-    		clase="Visa";
-    		archivo="Visa";
+    		clase="logica_.Visa";
+    		archivo="./data/Visa.txt";
     	}
     	else if(metodo.equals("master")) {
-    		clase="MasterCard";
-    		archivo="Master";
+    		clase="logica_.MasterCard";
+    		archivo="./data/Master.txt";
     	}
     	
     	try {
@@ -170,6 +172,7 @@ public class metodo_credito extends javax.swing.JFrame {
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		}
+    	new ventana_usuario().setVisible(true);
     	
     }
 

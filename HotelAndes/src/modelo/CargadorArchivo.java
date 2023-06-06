@@ -487,50 +487,30 @@ public class CargadorArchivo {
 
 	public HashMap<String, ArrayList<String>> cargarFechas(String txtFile) throws IOException {
 
-		
 		try (BufferedReader br = new BufferedReader(new FileReader(txtFile))) {
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                String[] elementos = linea.split(";", 2);
-                String fecha = elementos[0].trim(); // Primer elemento de la línea es la fecha
+			String linea;
+			while ((linea = br.readLine()) != null) {
+				String[] elementos = linea.split(";", 2);
+				String fecha = elementos[0].trim(); // Primer elemento de la línea es la fecha
 
-                // Crear una lista para almacenar los elementos
-                ArrayList<String> listaElementos = new ArrayList<>();
+				// Crear una lista para almacenar los elementos
+				ArrayList<String> listaElementos = new ArrayList<>();
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-                if (elementos.length > 1) {
-                    String[] elementosArray = elementos[1].split(";");
-                    for (String elemento : elementosArray) {
-                        if (!elemento.isEmpty()) {
-                            listaElementos.add(elemento.trim());
-                        }
-                    }
-                }
-=======
-<<<<<<< HEAD
->>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
-			System.out.println(linea);
-		String[] partes = linea.split(";");
-		String fecha = partes[0];
-	
-			ArrayList<String> ids = new ArrayList<String>();
-			fechas.put(linea, ids);
-			linea = br.readLine();
-		}
-		br.close();
-		System.out.println(fechas);
-		return fechas;
->>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
 
-<<<<<<< HEAD
+				if (elementos.length > 1) {
+					String[] elementosArray = elementos[1].split(";");
+					for (String elemento : elementosArray) {
+						if (!elemento.isEmpty()) {
+							listaElementos.add(elemento.trim());
+						}
+					}
+				}
 
-=======
-<<<<<<< HEAD
-                // Agregar la lista de elementos al HashMap usando la fecha como clave
-                fechas.put(fecha, listaElementos);
-            }
+				// Agregar la lista de elementos al HashMap usando la fecha como clave
+				fechas.put(fecha, listaElementos);
+			}
+
+		
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -538,21 +518,15 @@ public class CargadorArchivo {
 
         return fechas;
     }
-=======
-<<<<<<< HEAD
-		
-=======
->>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
->>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
-	}
->>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
+
+	
 
 	public HashMap<String, ArrayList<String>> getFechas() {
 		return fechas;
 	}
 
 	public void addStringToDate(String date, String str) {
-		
+
 		if (fechas.containsKey(date)) {
 			List<String> values = fechas.get(date);
 			values.add(str);
@@ -563,29 +537,29 @@ public class CargadorArchivo {
 			System.out.println(fechas);
 		}
 		try {
-        	File archivo = new File("./data/fechas.txt");
-            File archivoTemporal = new File("temp.txt");
-            BufferedReader br = new BufferedReader(new FileReader(archivo));
-            BufferedWriter bw = new BufferedWriter(new FileWriter(archivoTemporal));
+			File archivo = new File("./data/fechas.txt");
+			File archivoTemporal = new File("temp.txt");
+			BufferedReader br = new BufferedReader(new FileReader(archivo));
+			BufferedWriter bw = new BufferedWriter(new FileWriter(archivoTemporal));
 
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                if (linea.startsWith(date)) {
-                    linea += ";" + str;
-                }
-                bw.write(linea);
-                bw.newLine();
-            }
+			String linea;
+			while ((linea = br.readLine()) != null) {
+				if (linea.startsWith(date)) {
+					linea += ";" + str;
+				}
+				bw.write(linea);
+				bw.newLine();
+			}
 
-            br.close();
-            bw.close();
+			br.close();
+			bw.close();
 
-            // Reemplazar el archivo original con el archivo temporal
-            archivo.delete();
-            archivoTemporal.renameTo(archivo);
+			// Reemplazar el archivo original con el archivo temporal
+			archivo.delete();
+			archivoTemporal.renameTo(archivo);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }

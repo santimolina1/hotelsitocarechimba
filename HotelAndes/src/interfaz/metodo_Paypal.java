@@ -119,19 +119,20 @@ public class metodo_Paypal extends javax.swing.JFrame {
     	try {
 			verificador.verificacion(numero,contraseña);
 			Transaccion tra=new Transaccion(new Date(), c.getPrecio(),"exitoso");
-			new PagoOnline("PayPal","Paypal",tra);
+			new PagoOnline("logica_.PayPal","./data/Paypal.txt",tra);
 			c.setPagado(true);
 		} catch (IOException e) {
 			Transaccion tra=new Transaccion(new Date(), c.getPrecio(),"fail");
-			new PagoOnline("PayPal","Paypal",tra);
+			new PagoOnline("logica_.PayPal","./data/Paypal.txt",tra);
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		} catch (PagoException e) {
 			Transaccion tra=new Transaccion(new Date(), c.getPrecio(),"fail");
-			new PagoOnline("PayPal","Paypal",tra);
+			new PagoOnline("logica_.PayPal","./data/Paypal.txt",tra);
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		}
+    	new ventana_usuario().setVisible(true);
     }
                     
     private javax.swing.JButton jButton1;

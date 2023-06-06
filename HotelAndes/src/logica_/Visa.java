@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Visa  extends PasarelasDePagos {
+public class Visa extends PasarelasDePagos{
 	private ArrayList<Transaccion>pagos=new ArrayList<Transaccion>();
 	@Override
 	public void agregarPago(Transaccion transaccion,String archivo) throws IOException {
@@ -29,8 +29,8 @@ public class Visa  extends PasarelasDePagos {
 			// escribir
 			
 			for (Transaccion i : pagos) {
-				if(trans.contains(i)) {
-					pw.println(i.getFecha() + ";" + i.getValor() + ";" + i.getResultado());
+				if(!trans.contains(i)) {
+					pw.println(fechaString(i.getFecha()) + ";" + i.getValor() + ";" + i.getResultado());
 					
 				}
 			}
@@ -59,7 +59,7 @@ public class Visa  extends PasarelasDePagos {
 
 			System.out.println(linea);
 		String[] partes = linea.split(";");
-		Date fecha = formatearHora(partes[0],"DD/MM/YY");
+		Date fecha = formatearFecha((partes[0]),"dd/MM");
 		float valor = Float.parseFloat(partes[1]);
 		String resultado = partes[2];
 		Transaccion laTra= new Transaccion(fecha,valor,resultado);
@@ -74,7 +74,7 @@ public class Visa  extends PasarelasDePagos {
 		return trans;
 		
 	}
-	public Date formatearHora(String date_time, String formato) {
+	public Date formatearFecha(String date_time, String formato) {
 
 		SimpleDateFormat dateParser = new SimpleDateFormat(formato);
 		Date date = null;
@@ -88,6 +88,13 @@ public class Visa  extends PasarelasDePagos {
 			}
 		}
 		return date;
+	}
+	public  String fechaString(Date date) {
+		SimpleDateFormat dateFormatter=null;
+        
+        dateFormatter = new SimpleDateFormat("dd/MM");
+       
+        return dateFormatter.format(date);
 	}
 	
 }

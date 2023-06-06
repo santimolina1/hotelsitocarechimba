@@ -19,7 +19,7 @@ public class PagoOnline {
 		// 3. Cargamos los contactos llamando al método abstracto de AgendaTelefonica:
 		// la implementación que se ejecutará dependerá de la clase exacta que se haya
 		// recibido como el parámetro claseAgenda
-		
+		pasarela.agregarPago(tra,archivo);
 		}
 		/*
 		catch (IOException e)
@@ -32,7 +32,7 @@ public class PagoOnline {
 		System.out.println("Hubo otro error  " + e.getMessage());
 		e.printStackTrace();
 		}
-		pasarela.agregarPago(tra,archivo);
+		
 		
 	}
 

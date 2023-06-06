@@ -3,7 +3,9 @@ package logica_;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 import Excepciones.PagoException;
@@ -28,7 +30,7 @@ public class VerificarPago {
 	
 	public HashMap<String,Tarjeta> cargarTarjetas() throws IOException {
 		HashMap<String,Tarjeta>  tarjetas= new HashMap<String,Tarjeta> ();
-		FileReader archivo = new FileReader("./data/infoTarjetas");
+		FileReader archivo = new FileReader("./data/infoTarjetas.txt");
 		BufferedReader br = new BufferedReader(archivo);
 		String linea = br.readLine();
 		String[] titulos = linea.split(";");
@@ -75,7 +77,12 @@ public class VerificarPago {
 			}
 		}
 		HashMap<String,Tarjeta>  tarjetas=cargarTarjetas();
+		for(String i: tarjetas.keySet()) {
+			System.out.println( i);
+			
+		}
 		Tarjeta tarje= tarjetas.get(numero);
+		System.out.println(tarje);
 		 
 		
 		if (tarje==null) {
@@ -94,11 +101,19 @@ public class VerificarPago {
 				
 				
 			}
-			if(tarje.getReportada()=="1") {
+			if(tarje.getReportada().equals("1")) {
 				tarjetaReportadaException ex = new tarjetaReportadaException(numero);
 				throw ex;
 			}
 		}
+	}
+	
+	public static String fechaString(Date date) {
+		SimpleDateFormat dateFormatter=null;
+        
+        dateFormatter = new SimpleDateFormat("dd/MM");
+       
+        return dateFormatter.format(date);
 	}
 
 }
