@@ -1,0 +1,8 @@
+Número de factura: 3780
+Fecha: 2023-06-05
+Nombre: clau
+Producto   ----   Precio ----  Pagado
+35   ----   100000.0   ----   true
+Precio neto de lo NO pago: 0.0
+valor del IVA de lo NO pago: 0.0
+Valor total de lo NO pago: 0.0

@@ -497,6 +497,7 @@ public class CargadorArchivo {
                 // Crear una lista para almacenar los elementos
                 ArrayList<String> listaElementos = new ArrayList<>();
 
+<<<<<<< HEAD
                 if (elementos.length > 1) {
                     String[] elementosArray = elementos[1].split(";");
                     for (String elemento : elementosArray) {
@@ -505,7 +506,26 @@ public class CargadorArchivo {
                         }
                     }
                 }
+=======
+<<<<<<< HEAD
+			System.out.println(linea);
+		String[] partes = linea.split(";");
+		String fecha = partes[0];
+		
+			// metodo;numero;cedula;codigo;fechaVencimiento;saldo;reportada
+=======
+	
+>>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
+			ArrayList<String> ids = new ArrayList<String>();
+			fechas.put(linea, ids);
+			linea = br.readLine();
+		}
+		br.close();
+		System.out.println(fechas);
+		return fechas;
+>>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
 
+<<<<<<< HEAD
                 // Agregar la lista de elementos al HashMap usando la fecha como clave
                 fechas.put(fecha, listaElementos);
             }
@@ -516,6 +536,13 @@ public class CargadorArchivo {
 
         return fechas;
     }
+=======
+<<<<<<< HEAD
+		
+=======
+>>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
+	}
+>>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
 
 	public HashMap<String, ArrayList<String>> getFechas() {
 		return fechas;

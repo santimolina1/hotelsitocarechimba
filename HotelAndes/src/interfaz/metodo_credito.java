@@ -1,18 +1,22 @@
 package interfaz;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.swing.JOptionPane;
 
 import Excepciones.PagoException;
+import logica_.Consumo;
+import logica_.Transaccion;
 import logica_.VerificarPago;
 
 public class metodo_credito extends javax.swing.JFrame {
-
+	private Consumo c;
 	public VerificarPago verificador =VerificarPago.getInstance();
-    public metodo_credito() {
+    public metodo_credito(Consumo c) {
         initComponents();
         setSize(490, 390);
+        this.c=c;
     }
 
                              
@@ -121,22 +125,25 @@ public class metodo_credito extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new metodo_credito().setVisible(true);
+            new metodo_credito(null).setVisible(true);
         });
     }
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {                                         
-    	new metodo_de_pago().setVisible(true);
+    	new metodo_de_pago(null).setVisible(true);
     }
     private void ConfirmarActionPerformed(java.awt.event.ActionEvent evt) {                                         
     	String numero= jLabel2.getText();
     	String contraseña=jLabel3.getText();
     	try {
 			verificador.verificacion(numero,contraseña);
-			
+			new Transaccion(new Date(), c.getPrecio(),"exitoso");
+			c.setPagado(true);
 		} catch (IOException e) {
+			new Transaccion(new Date(), c.getPrecio(),"fail");
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		} catch (PagoException e) {
+			new Transaccion(new Date(), c.getPrecio(),"fail");
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		}

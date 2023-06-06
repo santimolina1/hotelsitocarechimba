@@ -96,8 +96,10 @@ public class pago_unitario extends javax.swing.JFrame {
     			cons=i;
     		}
     	}
-    	cons.setPagado(true);
-    }                                        
+    	new metodo_de_pago(cons).setVisible(true);
+    	//cons.setPagado(true);
+    }   
+    
                     
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
