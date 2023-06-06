@@ -7,12 +7,16 @@ import javax.swing.JOptionPane;
 
 import Excepciones.PagoException;
 import logica_.Consumo;
+import logica_.PagoOnline;
+import logica_.PasarelasDePagos;
 import logica_.Transaccion;
 import logica_.VerificarPago;
 import modelo.CargadorArchivo;
 
 public class metodo_Paypal extends javax.swing.JFrame {
 	private Consumo c;
+	
+	
 	public VerificarPago verificador =VerificarPago.getInstance();
     public metodo_Paypal(Consumo c) {
         initComponents();
@@ -54,7 +58,12 @@ public class metodo_Paypal extends javax.swing.JFrame {
         jButton1.setBounds(170, 240, 110, 30);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-            	ConfirmarActionPerformed(evt);
+            	try {
+					ConfirmarActionPerformed(evt);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
 
@@ -104,19 +113,22 @@ public class metodo_Paypal extends javax.swing.JFrame {
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {                                         
     	new metodo_de_pago(null).setVisible(true);
     }
-    private void ConfirmarActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void ConfirmarActionPerformed(java.awt.event.ActionEvent evt) throws IOException {                                         
     	String numero= jLabel2.getText();
     	String contraseña=jLabel3.getText();
     	try {
 			verificador.verificacion(numero,contraseña);
-			new Transaccion(new Date(), c.getPrecio(),"exitoso");
+			Transaccion tra=new Transaccion(new Date(), c.getPrecio(),"exitoso");
+			new PagoOnline("PayPal","Paypal",tra);
 			c.setPagado(true);
 		} catch (IOException e) {
-			new Transaccion(new Date(), c.getPrecio(),"fail");
+			Transaccion tra=new Transaccion(new Date(), c.getPrecio(),"fail");
+			new PagoOnline("PayPal","Paypal",tra);
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		} catch (PagoException e) {
-			new Transaccion(new Date(), c.getPrecio(),"fail");
+			Transaccion tra=new Transaccion(new Date(), c.getPrecio(),"fail");
+			new PagoOnline("PayPal","Paypal",tra);
 			JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		}

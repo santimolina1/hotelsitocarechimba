@@ -57,7 +57,7 @@ public class metodo_de_pago extends javax.swing.JFrame {
         jButton4.setBounds(280, 230, 130, 30);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-            	tarjetaActionPerformed(evt);
+            	tarjetaMActionPerformed(evt);
             }
         });
 
@@ -66,7 +66,7 @@ public class metodo_de_pago extends javax.swing.JFrame {
         jButton5.setBounds(70, 230, 130, 30);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-            	tarjetaActionPerformed(evt);
+            	tarjetaVActionPerformed(evt);
             }
         });
 
@@ -93,7 +93,7 @@ public class metodo_de_pago extends javax.swing.JFrame {
     }
     public static void main(String args[]) {
         
-            new metodo_de_pago().setVisible(true);
+            new metodo_de_pago(null).setVisible(true);
         
     }
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {                                         
@@ -102,8 +102,11 @@ public class metodo_de_pago extends javax.swing.JFrame {
     private void payPalActionPerformed(java.awt.event.ActionEvent evt) {                                         
     	new metodo_Paypal(c).setVisible(true);
     }
-    private void tarjetaActionPerformed(java.awt.event.ActionEvent evt) {                                         
-    	new metodo_credito(c).setVisible(true);
+    private void tarjetaMActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    	new metodo_credito(c,"master").setVisible(true);
+    }
+    private void tarjetaVActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    	new metodo_credito(c,"visa").setVisible(true);
     }
 
                         

@@ -99,12 +99,12 @@ public class pago_reserva extends javax.swing.JFrame {
     	reserva_exito exito=new reserva_exito(null);
     	exito.setVisible(true);
     	
-        // TODO add your handling code here:
+        
     } 
     private void pagarActionPerformed(java.awt.event.ActionEvent evt) { 
     	reserva_exito exito=new reserva_exito(null);
     	exito.setVisible(true);
-    	new ventana_usuario().setVisible(true);
+    	new pago_unitario().setVisible(true);
     } 
 
     /**

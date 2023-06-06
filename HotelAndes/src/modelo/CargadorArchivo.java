@@ -369,7 +369,7 @@ public class CargadorArchivo {
 
 			}
 
-			Tarifa laTarifa = new Tarifa(tipoHabitación, extra, fecha);
+			Tarifa laTarifa = new Tarifa(tipoHabitación, extra, null);
 
 			if ((tarifas.keySet()).contains(fecha)) {
 				ArrayList<Tarifa> listaTarifas = tarifas.get(fecha);
@@ -496,6 +496,7 @@ public class CargadorArchivo {
 				// Crear una lista para almacenar los elementos
 				ArrayList<String> listaElementos = new ArrayList<>();
 
+
 				if (elementos.length > 1) {
 					String[] elementosArray = elementos[1].split(";");
 					for (String elemento : elementosArray) {
@@ -509,12 +510,16 @@ public class CargadorArchivo {
 				fechas.put(fecha, listaElementos);
 			}
 
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 
-		return fechas;
-	}
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return fechas;
+    }
+
+	
 
 	public HashMap<String, ArrayList<String>> getFechas() {
 		return fechas;
