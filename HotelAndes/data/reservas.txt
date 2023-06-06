@@ -73,3 +73,4 @@ clau;Tue Jul 12 00:00:00 COT 2022;Tue Jul 12 00:00:00 COT 2022;2;2;reserva
 clau;Sat May 13 00:00:00 COT 2023;Sat May 13 00:00:00 COT 2023;2;1;reserva
 clau;Fri Oct 13 00:00:00 COT 2023;Fri Oct 13 00:00:00 COT 2023;2;1;reserva
 >>>>>>> branch 'master' of https://github.com/santimolina1/hotelsitocarechimba.git
+clau;Tue Jun 06 00:00:00 COT 2023;Tue Jun 06 00:00:00 COT 2023;2;22;reserva

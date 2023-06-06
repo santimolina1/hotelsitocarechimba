@@ -1,0 +1,2 @@
+Producto   ----   Precio ----  Pagado
+Safari   ----   54300.0   ----   

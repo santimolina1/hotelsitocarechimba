@@ -1,0 +1,2 @@
+Producto   ----   Precio ----  Pagado
+Cerveza   ----   7000.0   ----   
